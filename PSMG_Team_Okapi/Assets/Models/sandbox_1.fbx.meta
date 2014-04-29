@@ -9,12 +9,14 @@ ModelImporter:
     100006: floor
     100008: walls_001
     100010: ceiling
+    100012: Sun
     400000: barrier
     400002: //RootNode
     400004: walls
     400006: floor
     400008: walls_001
     400010: ceiling
+    400012: Sun
     2300000: barrier
     2300002: walls
     2300004: floor

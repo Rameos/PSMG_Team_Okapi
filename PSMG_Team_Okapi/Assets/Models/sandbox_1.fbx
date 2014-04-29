@@ -11,9 +11,9 @@ FBXHeaderExtension:  {
 		Year: 2014
 		Month: 04
 		Day: 29
-		Hour: 12
-		Minute: 51
-		Second: 01
+		Hour: 23
+		Minute: 06
+		Second: 45
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2014-04-29 12:51:01:000"
+CreationTime: "2014-04-29 23:06:45:000"
 Creator: "Blender version 2.70 (sub 0)"
 
 ; Object definitions
@@ -29,7 +29,7 @@ Creator: "Blender version 2.70 (sub 0)"
 
 Definitions:  {
 	Version: 100
-	Count: 11
+	Count: 13
 	ObjectType: "Model" {
 		Count: 4
 	}
@@ -40,10 +40,10 @@ Definitions:  {
 		Count: 4
 	}
 	ObjectType: "Texture" {
-		Count: 1
+		Count: 2
 	}
 	ObjectType: "Video" {
-		Count: 1
+		Count: 2
 	}
 	ObjectType: "Pose" {
 		Count: 1
@@ -151,7 +151,7 @@ Objects:  {
 		          0.000002,-4.999995,20.169006,0.000002,-4.999997,9.831006,9.880505,-4.999997,9.880508,10.000002,-4.999995,20.169006,
 		          0.000002,5.000005,20.169006,0.000002,5.000003,9.831004,9.880505,5.000003,9.880507,10.000002,5.000005,20.169006,
 		          20.169003,-4.999997,10.000006,20.119499,-4.999995,20.119503,20.169003,5.000003,10.000004,20.119499,5.000005,20.119503,
-		          9.831007,-4.999998,0.000005,9.831002,5.000001,0.000005,20.168997,-4.999998,0.000005,20.169003,5.000001,0.000005,
+		          9.831002,-4.999998,0.000005,9.831002,5.000001,0.000005,20.169003,-4.999998,0.000005,20.169003,5.000001,0.000005,
 		          9.880505,4.999995,-9.880498,20.169003,-5.000005,-9.999995,20.169003,4.999995,-9.999995,10.000002,-5.000011,-20.168997,
 		          20.119499,-5.000011,-20.119493,20.119499,4.999989,-20.119492,9.880505,-5.000005,-9.880498,10.000002,4.999989,-20.168995,
 		          0.000002,-5.000005,-9.830996,0.000002,4.999995,-9.830996,0.000002,-5.000011,-20.168997,0.000002,4.999989,-20.168995,
@@ -206,9 +206,9 @@ Objects:  {
 			         0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,
 			         0.999988,-0.000000,0.004892,0.999988,-0.000000,0.004892,0.999988,-0.000000,0.004892,0.999988,-0.000000,0.004892,
 			         0.004892,0.000000,0.999988,0.004892,0.000000,0.999988,0.004892,0.000000,0.999988,0.004892,0.000000,0.999988,
-			         1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,
-			         -0.999987,-0.000000,0.005010,-0.999987,-0.000000,0.005010,-0.999987,-0.000000,0.005010,-0.999987,-0.000000,0.005010,
-			         1.000000,-0.000000,0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,0.000000,
+			         1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,
+			         -0.999987,0.000000,0.005010,-0.999987,0.000000,0.005010,-0.999987,0.000000,0.005010,-0.999987,0.000000,0.005010,
+			         1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,1.000000,0.000000,0.000000,
 			         0.999988,0.000000,-0.004892,0.999988,0.000000,-0.004892,0.999988,0.000000,-0.004892,0.999988,0.000000,-0.004892,
 			         0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,
 			         -0.005010,0.000000,0.999987,-0.005010,0.000000,0.999987,-0.005010,0.000000,0.999987,-0.005010,0.000000,0.999987,
@@ -283,6 +283,43 @@ Objects:  {
 			Smoothing: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 			           0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: -0.982247,0.005983,0.005885,1.982247,-0.982148,-1.970280,-0.982247,1.982247,2.970280,-0.982247,0.994115,2.970280,
+			    -0.982148,-0.982247,-1.970280,-1.970280,-0.982148,1.982149,-0.982148,2.970280,0.005885,0.994017,0.994115,-0.982247,
+			    -0.982247,-0.982149,-1.970280,2.970280,0.994115,0.005983,1.982247,0.994017,0.005983,1.982149,0.994016,0.994115,
+			    0.994016,1.982149,-0.982247,0.994017,1.982247,0.994115,1.982247,-1.970280,2.970280,0.005983,1.982148,0.994017,
+			    0.005885,0.005885,2.970280,1.982149,-1.970280,0.005885,0.994115,-0.982149,0.005983,-0.982247,-0.982148,0.994115,
+			    0.994115,-1.970280,0.005885,-0.982247,-0.982247,2.970280,-1.970280,0.994017,1.982148,0.005983,-0.982148,0.005983,
+			    -1.970280,-0.982247,1.982148,-1.970280,1.982148,1.982247,0.994115,0.994017,1.982247,1.982149,-0.982148,0.005885,
+			    0.994016,-1.970280,1.982148,0.994115,0.994115,1.982247,0.005983,0.994017,0.994016,2.970280,-0.982148,0.994017,
+			    -0.982247,0.005885,-0.982247,-0.982247,0.005983,-1.970280,0.005885,1.982149,-1.970280,1.982247,0.005885,2.970280,
+			    0.994115,0.005885,-1.970280,0.005983,1.982247,0.005983,1.982148,-0.982149,0.994016,0.005885,-0.982148,-0.982149,
+			    1.982247,-0.982247,0.994115,1.982149,0.994016,0.994017,-1.970280,-0.982149,1.982247,0.005885,0.005983,0.994115,
+			    0.005983,-0.982149,-0.982247,0.994115,-0.982148,1.982247,2.970280,-1.970280,1.982148,1.982149,2.970280,-0.982149,
+			    0.005885,-1.970280,0.994016,0.005983,-0.982247,-1.970280,1.982148,-0.982247,1.982148,0.005885,-1.970280,0.994115,
+			    1.982148,2.970280,0.005983,0.005885,0.005885,-0.982149,0.005983,0.005983,2.970280,0.994115,-1.970280,1.982149,
+			    0.994016,1.982247,0.994115,0.994115,0.005885,0.994115,0.994016,-0.982149,1.982247,-0.982149,-0.982247,1.982149,
+			    0.005885,0.005983,0.994016,-0.982247,0.005983,1.982247,0.005983,2.970280,2.970280,0.994017,2.970280,0.005885
+			UVIndex: 74,7,36,49,12,63,26,48,72,2,6,31,80,59,41,24,87,66,79,58,42,50,28,91,90,35,47,10,0,55,33,19,73,81,45,62,17,65,16,18,86,29,8,51,67,77,83,89,57,27,54,76,37,30,11,75,34,14,39,23,43,85,61,70,
+			         3,52,13,32,84,92,93,46,1,68,9,53,22,56,15,94,71,88,64,95,69,21,60,4,38,44,5,78,82,20,40,25,49,36,7,74,48,26,63,12,31,6,2,72,24,41,59,80,58,79,66,87,91,28,50,42,10,47,35,90,19,33,55,0,
+			         62,45,81,73,18,16,65,17,51,8,29,86,89,83,77,67,76,54,27,57,75,11,30,37,23,39,14,34,70,61,85,43,32,13,52,3,46,93,92,84,53,9,68,1,94,15,56,22,95,64,88,71,4,60,21,69,78,5,44,38,25,40,20,82,
+			         74,49,49,74,36,7,7,36,12,48,48,12,26,63,63,26,72,31,31,72,6,2,2,6,24,41,41,24,59,80,80,59,91,28,28,91,66,87,87,66,58,79,79,58,50,42,42,50,47,35,35,47,84,46,46,84,90,10,10,90,68,1,1,68,
+			         33,55,55,33,0,19,19,0,64,88,88,64,15,56,56,15,16,65,65,16,73,62,62,73,45,81,81,45,17,18,18,17,86,51,51,86,8,29,29,8,67,89,89,67,83,77,77,83,54,27,27,54,69,4,4,69,57,76,76,57,40,20,20,40,
+			         11,30,30,11,37,75,75,37,39,14,14,39,34,23,23,34,85,43,43,85,70,61,61,70,13,52,52,13,3,32,32,3,93,92,92,93,53,9,9,53,22,94,94,22,71,95,95,71,60,21,21,60,5,44,44,5,82,25,25,82,38,78,78,38
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
 		LayerElementMaterial: 0 {
 			Version: 101
 			Name: ""
@@ -298,6 +335,10 @@ Objects:  {
 			}
 			LayerElement:  {
 				Type: "LayerElementSmoothing"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
 				TypedIndex: 0
 			}
 			LayerElement:  {
@@ -469,6 +510,28 @@ Objects:  {
 			ReferenceInformationType: "Direct"
 			Smoothing: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: 0.500000,0.749950,0.250050,0.250051,0.749949,0.749950,0.749948,0.000101,0.250051,0.000101,0.000100,0.500000,
+			    0.999899,0.500000,0.999898,0.000100,0.499999,0.250051,0.999899,0.250050,0.749949,0.250050,0.499999,0.000101,
+			    0.749949,0.500000,0.250050,0.500000,0.000100,0.749950,0.749949,0.999900,0.999899,0.999900,0.250050,0.749950,
+			    0.000100,0.999900,0.000102,0.000101,0.250050,0.999900,0.000101,0.250050,0.999899,0.749950,0.500000,0.999900
+			UVIndex: 3,7,9,10,11,3,10,8,9,6,12,10,0,23,20,17,17,20,18,14,1,21,19,4,8,1,4,11,12,6,22,2,2,22,16,15,2,15,23,0,17,14,5,13,13,5,21,1,10,9,7,3,8,10,3,11,10,12,6,9,17,20,23,0,
+			         14,18,20,17,4,19,21,1,11,4,1,8,2,22,6,12,15,16,22,2,0,23,15,2,13,5,14,17,1,21,5,13,8,10,10,8,3,11,11,3,9,7,7,9,7,3,3,7,6,9,9,6,10,12,12,10,22,6,6,22,15,16,16,15,
+			         16,22,22,16,2,0,0,2,0,17,17,0,20,23,23,20,14,18,18,14,18,20,20,18,5,14,14,5,13,1,1,13,4,19,19,4,19,21,21,19,11,4,4,11,1,8,8,1,12,2,2,12,23,15,15,23,17,13,13,17,21,5,5,21
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
 		LayerElementMaterial: 0 {
 			Version: 101
 			Name: ""
@@ -484,6 +547,10 @@ Objects:  {
 			}
 			LayerElement:  {
 				Type: "LayerElementSmoothing"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
 				TypedIndex: 0
 			}
 			LayerElement:  {
@@ -880,7 +947,7 @@ Objects:  {
 			Property: "Reflectivity", "double", "",0
 		}
 	}
-	Material: "Material::Sandbox_Floor", "" {
+	Material: "Material::Sandbox_Floor__sandbox_1_uvMap_png", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -910,7 +977,7 @@ Objects:  {
 			Property: "Reflectivity", "double", "",0
 		}
 	}
-	Material: "Material::Sandbox_Walls_001", "" {
+	Material: "Material::Sandbox_Walls_001__ConcreteBunker0214_1_S_jpg", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -970,6 +1037,27 @@ Objects:  {
 			Property: "Reflectivity", "double", "",0
 		}
 	}
+	Video: "Video::ConcreteBunker0214_1_S_jpg", "Clip" {
+		Type: "Clip"
+		Properties60:  {
+			Property: "FrameRate", "double", "",0
+			Property: "LastFrame", "int", "",0
+			Property: "Width", "int", "",0
+			Property: "Height", "int", "",0
+			Property: "Path", "charptr", "", "ConcreteBunker0214_1_S.jpg"
+			Property: "StartFrame", "int", "",0
+			Property: "StopFrame", "int", "",0
+			Property: "PlaySpeed", "double", "",1
+			Property: "Offset", "KTime", "",0
+			Property: "InterlaceMode", "enum", "",0
+			Property: "FreeRunning", "bool", "",0
+			Property: "Loop", "bool", "",0
+			Property: "AccessMode", "enum", "",0
+		}
+		UseMipMap: 0
+		Filename: "ConcreteBunker0214_1_S.jpg"
+		RelativeFilename: "C:\Users\flibbo\Desktop\okapi\repo\PSMG_Team_Okapi\Assets\Textures\ConcreteBunker0214_1_S.jpg"
+	}
 	Video: "Video::sandbox_1_uvMap_png", "Clip" {
 		Type: "Clip"
 		Properties60:  {
@@ -991,6 +1079,35 @@ Objects:  {
 		Filename: "sandbox_1_uvMap.png"
 		RelativeFilename: "C:\Users\flibbo\Desktop\okapi\blender\sandbox_1_uvMap.png"
 	}
+	Texture: "Texture::ConcreteBunker0214_1_S_jpg", "TextureVideoClip" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::ConcreteBunker0214_1_S_jpg"
+		Properties60:  {
+			Property: "Translation", "Vector", "A+",0,0,0
+			Property: "Rotation", "Vector", "A+",0,0,0
+			Property: "Scaling", "Vector", "A+",1,1,1
+			Property: "Texture alpha", "Number", "A+",0
+			Property: "TextureTypeUse", "enum", "",0
+			Property: "CurrentTextureBlendMode", "enum", "",1
+			Property: "UseMaterial", "bool", "",0
+			Property: "UseMipMap", "bool", "",0
+			Property: "CurrentMappingType", "enum", "",0
+			Property: "UVSwap", "bool", "",0
+			Property: "WrapModeU", "enum", "",0
+			Property: "WrapModeV", "enum", "",0
+			Property: "TextureRotationPivot", "Vector3D", "",0,0,0
+			Property: "TextureScalingPivot", "Vector3D", "",0,0,0
+			Property: "VideoProperty", "object", ""
+		}
+		Media: "Video::ConcreteBunker0214_1_S_jpg"
+		FileName: "ConcreteBunker0214_1_S.jpg"
+		RelativeFilename: "C:\Users\flibbo\Desktop\okapi\repo\PSMG_Team_Okapi\Assets\Textures\ConcreteBunker0214_1_S.jpg"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
 	Texture: "Texture::sandbox_1_uvMap_png", "TextureVideoClip" {
 		Type: "TextureVideoClip"
 		Version: 202
@@ -999,7 +1116,7 @@ Objects:  {
 			Property: "Translation", "Vector", "A+",0,0,0
 			Property: "Rotation", "Vector", "A+",0,0,0
 			Property: "Scaling", "Vector", "A+",1,1,1
-			Property: "Texture alpha", "Number", "A+",0
+			Property: "Texture alpha", "Number", "A+",1
 			Property: "TextureTypeUse", "enum", "",0
 			Property: "CurrentTextureBlendMode", "enum", "",1
 			Property: "UseMaterial", "bool", "",0
@@ -1087,13 +1204,17 @@ Relations:  {
 	}
 	Material: "Material::Sandbox_Ceiling", "" {
 	}
-	Material: "Material::Sandbox_Floor", "" {
+	Material: "Material::Sandbox_Floor__sandbox_1_uvMap_png", "" {
 	}
-	Material: "Material::Sandbox_Walls_001", "" {
+	Material: "Material::Sandbox_Walls_001__ConcreteBunker0214_1_S_jpg", "" {
 	}
 	Material: "Material::barrier_material__sandbox_1_uvMap_png", "" {
 	}
+	Texture: "Texture::ConcreteBunker0214_1_S_jpg", "TextureVideoClip" {
+	}
 	Texture: "Texture::sandbox_1_uvMap_png", "TextureVideoClip" {
+	}
+	Video: "Video::ConcreteBunker0214_1_S_jpg", "Clip" {
 	}
 	Video: "Video::sandbox_1_uvMap_png", "Clip" {
 	}
@@ -1104,14 +1225,17 @@ Relations:  {
 
 Connections:  {
 	Connect: "OO", "Model::walls", "Model::Scene"
-	Connect: "OO", "Model::floor", "Model::walls"
-	Connect: "OO", "Model::ceiling", "Model::walls"
-	Connect: "OO", "Model::barrier", "Model::walls"
-	Connect: "OO", "Material::Sandbox_Walls_001", "Model::walls"
-	Connect: "OO", "Material::Sandbox_Floor", "Model::floor"
+	Connect: "OO", "Model::floor", "Model::Scene"
+	Connect: "OO", "Model::ceiling", "Model::Scene"
+	Connect: "OO", "Model::barrier", "Model::Scene"
+	Connect: "OO", "Material::Sandbox_Walls_001__ConcreteBunker0214_1_S_jpg", "Model::walls"
+	Connect: "OO", "Material::Sandbox_Floor__sandbox_1_uvMap_png", "Model::floor"
 	Connect: "OO", "Material::Sandbox_Ceiling", "Model::ceiling"
 	Connect: "OO", "Material::barrier_material__sandbox_1_uvMap_png", "Model::barrier"
+	Connect: "OO", "Texture::ConcreteBunker0214_1_S_jpg", "Model::walls"
+	Connect: "OO", "Texture::sandbox_1_uvMap_png", "Model::floor"
 	Connect: "OO", "Texture::sandbox_1_uvMap_png", "Model::barrier"
+	Connect: "OO", "Video::ConcreteBunker0214_1_S_jpg", "Texture::ConcreteBunker0214_1_S_jpg"
 	Connect: "OO", "Video::sandbox_1_uvMap_png", "Texture::sandbox_1_uvMap_png"
 }
 ;Takes and animation section
