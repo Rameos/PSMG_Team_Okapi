@@ -6,17 +6,38 @@ ModelImporter:
     100000: barrier
     100002: //RootNode
     100004: walls
+    100006: floor
+    100008: walls_001
+    100010: ceiling
     400000: barrier
     400002: //RootNode
     400004: walls
+    400006: floor
+    400008: walls_001
+    400010: ceiling
     2300000: barrier
     2300002: walls
+    2300004: floor
+    2300006: //RootNode
+    2300008: walls_001
+    2300010: ceiling
     3300000: barrier
     3300002: walls
+    3300004: floor
+    3300006: //RootNode
+    3300008: walls_001
+    3300010: ceiling
     4300000: barrier
     4300002: walls
+    4300004: floor
+    4300006: walls_001
+    4300008: ceiling
     6400000: barrier
     6400002: walls
+    6400004: floor
+    6400006: //RootNode
+    6400008: walls_001
+    6400010: ceiling
     7400000: Default Take
     9500000: //RootNode
   materials:
