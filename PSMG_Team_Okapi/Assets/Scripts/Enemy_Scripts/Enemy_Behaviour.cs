@@ -29,6 +29,8 @@ public class Enemy_Behaviour : MonoBehaviour
     private enum States { idle, alert, angry, frozen };
     private States state;
 
+    private ChangeTexture changeTexture;
+
     void Start()
     {
         patrolpoints = patrolpointsIdle;
@@ -36,6 +38,9 @@ public class Enemy_Behaviour : MonoBehaviour
         currentpoint = 0;
         currentspeed = movespeed;
         state = States.idle;
+
+        changeTexture = gameObject.GetComponent<ChangeTexture>();
+        Debug.Log(changeTexture);
     }
 
 
@@ -84,6 +89,8 @@ public class Enemy_Behaviour : MonoBehaviour
         print("Ghost alert");
 
         // Geist soll gelb werden
+
+        changeTexture.changeLooks("alert");
     }
 
     // for alert or angry ghost
@@ -116,6 +123,7 @@ public class Enemy_Behaviour : MonoBehaviour
         print("Ghost idle");
 
         // Geist soll wieder grün werden
+        changeTexture.changeLooks("idle");
     }
 
     private void BecomeAngry()
@@ -125,6 +133,7 @@ public class Enemy_Behaviour : MonoBehaviour
         print("Ghost angry");
 
         // Geist soll rot werden
+        changeTexture.changeLooks("angry");
     }
 
     private void Freeze()
@@ -134,6 +143,7 @@ public class Enemy_Behaviour : MonoBehaviour
         print("Ghost frozen");
 
         // Geist soll blau werden
+        changeTexture.changeLooks("frozen");
 
         frozentime = 0;
     }
