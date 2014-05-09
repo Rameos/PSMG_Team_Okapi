@@ -18,6 +18,9 @@ ModelImporter:
     100024: walls_006
     100026: walls_007
     100028: walls_008
+    100030: walls_000
+    100032: walls_009
+    100034: walls_010
     400000: barrier
     400002: //RootNode
     400004: walls
@@ -33,6 +36,9 @@ ModelImporter:
     400024: walls_006
     400026: walls_007
     400028: walls_008
+    400030: walls_000
+    400032: walls_009
+    400034: walls_010
     2300000: barrier
     2300002: walls
     2300004: floor
@@ -46,6 +52,9 @@ ModelImporter:
     2300020: walls_006
     2300022: walls_007
     2300024: walls_008
+    2300026: walls_000
+    2300028: walls_009
+    2300030: walls_010
     3300000: barrier
     3300002: walls
     3300004: floor
@@ -59,6 +68,9 @@ ModelImporter:
     3300020: walls_006
     3300022: walls_007
     3300024: walls_008
+    3300026: walls_000
+    3300028: walls_009
+    3300030: walls_010
     4300000: barrier
     4300002: walls
     4300004: floor
@@ -71,6 +83,9 @@ ModelImporter:
     4300018: walls_004
     4300020: walls_003
     4300022: walls_002
+    4300024: walls_010
+    4300026: walls_009
+    4300028: walls_000
     6400000: barrier
     6400002: walls
     6400004: floor
@@ -84,6 +99,9 @@ ModelImporter:
     6400020: walls_006
     6400022: walls_007
     6400024: walls_008
+    6400026: walls_000
+    6400028: walls_009
+    6400030: walls_010
     7400000: Default Take
     9500000: //RootNode
   materials:
