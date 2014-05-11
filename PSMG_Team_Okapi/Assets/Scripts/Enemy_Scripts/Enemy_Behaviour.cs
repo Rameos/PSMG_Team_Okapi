@@ -30,6 +30,7 @@ public class Enemy_Behaviour : MonoBehaviour
     private States state;
 
     private ChangeTexture changeTexture;
+    private bool debug = true;
 
     void Start()
     {
@@ -72,7 +73,10 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckRadius()
     {
-        if (GetPlayerDistance() < alertRadius) AlertGhost();
+        if (GetPlayerDistance() < alertRadius)
+        {
+            AlertGhost();
+        }
     }
 
     private void CheckEyeLine()
@@ -85,19 +89,24 @@ public class Enemy_Behaviour : MonoBehaviour
         state = States.alert;
         patrolpoints = patrolpointsAlert;
         currentpoint = 0;
+        currentspeed = movespeed;
         homepoint = transform.position;
-        print("Ghost alert");
 
-        // Geist soll gelb werden
-
-        changeTexture.changeLooks("alert");
+        if (debug) // Geist soll gelb werden
+        {
+            changeTexture.changeLooks("alert");
+            print("Ghost alert");
+        }
     }
 
     // for alert or angry ghost
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
     {
-        if (GetPlayerDistance() > GetReach()) ReturnToIdle();
+        if (GetPlayerDistance() > GetReach())
+        {
+            ReturnToIdle();
+        }
     }
 
     private float GetReach()
@@ -105,7 +114,7 @@ public class Enemy_Behaviour : MonoBehaviour
         // berechnung vom Reach anhand von maxStartDistance, maxPlayerDistance, minPlayerDistance;
 
         float leeway = maxPlayerDistance - minPlayerDistance;
-        float distance = GetDistance(homepoint, transform.position);
+        float distance = Util.GetDistance(homepoint, transform.position);
         float percentage = distance / maxStartDistance;
 
         return minPlayerDistance + leeway*percentage;
@@ -113,37 +122,48 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckPlayerDist() // überprüft ob wechsel zu Angry stattfinden soll
     {
-        if (GetPlayerDistance() <= angryRadius) BecomeAngry();
+        if (GetPlayerDistance() <= angryRadius)
+        {
+            BecomeAngry();
+        }
     }
 
     private void ReturnToIdle()
     {
         state = States.idle;
         patrolpoints = patrolpointsIdle;
-        print("Ghost idle");
+        currentspeed = movespeed;
 
-        // Geist soll wieder grün werden
-        changeTexture.changeLooks("idle");
+        if (debug) // Geist soll wieder grün werden
+        {
+            changeTexture.changeLooks("idle");
+            print("Ghost idle");
+        }
     }
 
     private void BecomeAngry()
     {
         state = States.angry;
         currentspeed = maxspeed;
-        print("Ghost angry");
 
-        // Geist soll rot werden
-        changeTexture.changeLooks("angry");
+        if (debug) // Geist soll rot werden
+        {
+            changeTexture.changeLooks("angry");
+            print("Ghost angry");
+        }
     }
 
     private void Freeze()
     {
         state = States.frozen;
-        currentspeed = 0; // unnötig falls sleep verwendet wird
-        print("Ghost frozen");
+        currentspeed = 0;
 
         // Geist soll blau werden
-        changeTexture.changeLooks("frozen");
+        if(debug)
+        {
+            changeTexture.changeLooks("frozen");
+            print("Ghost frozen");
+        }
 
         frozentime = 0;
     }
@@ -152,17 +172,14 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckFreeze()
     {
-        if (frozentime < freezetime) frozentime += Time.deltaTime;
-        else Unfreeze();
-    }
-
-    private void Unfreeze()
-    {
-        state = States.alert;
-        currentspeed = movespeed;
-        print("Ghost alert");
-
-        // Geist soll gelb werden
+        if (frozentime < freezetime)
+        {
+            frozentime += Time.deltaTime;
+        }
+        else
+        {
+            AlertGhost();
+        }
     }
 
 
@@ -170,13 +187,27 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Transform()
     {
-        if (transform.position == patrolpoints[currentpoint].position)
+        if(Util.GetDistance(transform.position,patrolpoints[currentpoint].position) < 0.1)
         {
             currentpoint++;
-            if (currentpoint >= patrolpoints.Length) currentpoint = 0;
+            if (currentpoint >= patrolpoints.Length)
+            {
+                currentpoint = 0;
+            }
         }
-        transform.position = Vector3.MoveTowards(transform.position, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime);
+        if (false) // if not facing front
+        {
+            Turn();
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime);
+        }
+    }
 
+    private void Turn()
+    {
+        // while not facing front, rotate.
     }
 
     private float GetPlayerDistance()
@@ -184,14 +215,6 @@ public class Enemy_Behaviour : MonoBehaviour
         Vector3 enemy = transform.position;
         Vector3 player = patrolpointsAlert[0].position;
 
-        return GetDistance(enemy, player);
-    }
-
-    private float GetDistance(Vector3 v1, Vector3 v2) // berechnet horizontalen abstand zwischen zwei vektoren
-    {
-        float a = Mathf.Abs(v1.x - v2.x);
-        float b = Mathf.Abs(v1.z - v2.z);
-
-        return Mathf.Sqrt(a * a + b * b);
+        return Util.GetDistance(enemy, player);
     }
 }
