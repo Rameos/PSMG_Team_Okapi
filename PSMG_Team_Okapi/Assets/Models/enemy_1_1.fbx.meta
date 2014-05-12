@@ -10,6 +10,11 @@ ModelImporter:
     100008: Enemy_body_001
     100010: Enemy_body_002
     100012: Enemy_Eye
+    100014: arm_1
+    100016: arm_2
+    100018: legs
+    100020: Pulsator
+    100022: Shield
     400000: Blade
     400002: Cube_001
     400004: //RootNode
@@ -17,30 +22,55 @@ ModelImporter:
     400008: Enemy_body_001
     400010: Enemy_body_002
     400012: Enemy_Eye
+    400014: arm_1
+    400016: arm_2
+    400018: legs
+    400020: Pulsator
+    400022: Shield
     2300000: Blade
     2300002: Cube_001
     2300004: Enemy_body
     2300006: Enemy_body_001
     2300008: Enemy_body_002
     2300010: Enemy_Eye
+    2300012: arm_1
+    2300014: arm_2
+    2300016: legs
+    2300018: Pulsator
+    2300020: Shield
     3300000: Blade
     3300002: Cube_001
     3300004: Enemy_body
     3300006: Enemy_body_001
     3300008: Enemy_body_002
     3300010: Enemy_Eye
+    3300012: arm_1
+    3300014: arm_2
+    3300016: legs
+    3300018: Pulsator
+    3300020: Shield
     4300000: Enemy_body_002
     4300002: Enemy_body
     4300004: Enemy_body_001
     4300006: Enemy_Eye
     4300008: Blade
     4300010: Cube_001
+    4300012: arm_2
+    4300014: arm_1
+    4300016: legs
+    4300018: Pulsator
+    4300020: Shield
     6400000: Blade
     6400002: Cube_001
     6400004: Enemy_body
     6400006: Enemy_body_001
     6400008: Enemy_body_002
     6400010: Enemy_Eye
+    6400012: arm_1
+    6400014: arm_2
+    6400016: legs
+    6400018: Pulsator
+    6400020: Shield
     7400000: Default Take
     9500000: //RootNode
     11100000: //RootNode
@@ -102,7 +132,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .649999976
+    globalScale: .600000024
     meshCompression: 0
     addColliders: 1
     importBlendShapes: 1
