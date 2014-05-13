@@ -108,7 +108,7 @@ namespace iViewX
 
         public void UseGazeFilter()
         {
-           if(useGazeFilter)
+           if(!useGazeFilter)
            {
                useGazeFilter = false;
                gazeController.disableGazeFilter();
@@ -293,6 +293,14 @@ namespace iViewX
                     // Invoke Start and Update of the GazeEvent
                     hitMono.OnObjectHit(hit);
 
+                }
+                else
+                {
+                    if (oldSelection != null)
+                    {
+                        oldSelection.OnObjectExit();
+                        oldSelection = null;
+                    }
                 }
 
             }

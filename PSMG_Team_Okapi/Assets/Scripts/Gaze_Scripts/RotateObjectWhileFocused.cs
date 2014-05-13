@@ -38,6 +38,7 @@ public class RotateObjectWhileFocused : MonoBehaviourWithGazeComponent{
     //Reset the Element.Transform when the gaze leaves the Collider
     public override void OnGazeExit()
     {
+        Debug.Log("Gaze Exit");
         transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 }
