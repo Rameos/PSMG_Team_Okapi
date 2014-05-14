@@ -97,7 +97,7 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private void CheckPoints()
+    private void CheckPoints() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
         if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
         {
@@ -111,14 +111,17 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Transform()
     {
+        Vector3 target = patrolpoints[currentpoint].position;
+        float step = currentspeed * Time.deltaTime;
+
         if (Vector3.Angle(transform.forward, patrolpoints[currentpoint].position) > 5) // if not facing front
         {
-            //transform.position = Vector3.RotateTowards(transform.forward, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime, 0);
-            transform.Rotate(transform.up * 10 * Time.deltaTime);
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, target, step, 0.0F);
+            transform.rotation = Quaternion.LookRotation(newDir);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target, step);
         }
     }
 
