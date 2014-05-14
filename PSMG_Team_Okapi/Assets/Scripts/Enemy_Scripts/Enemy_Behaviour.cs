@@ -38,8 +38,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Update()
     {
-        CheckPoints();
-        Transform();
+        UpdateWayPoints();
+        Move();
 
         switch (states.getState())
         {
@@ -67,7 +67,18 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckEyeLine()
     {
-        Debug.DrawRay(transform.position, patrolpoints[currentpoint].position, Color.red);
+        //public Transform target;
+
+        NavMeshHit hit;
+        if (NavMesh.Raycast(transform.position, patrolpoints[currentpoint].position, out hit, -1))
+        {
+            print("hit");
+        }
+
+        Ray ray = new Ray();
+        ray.origin = transform.position;
+        ray.direction = transform.forward;
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
     }
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
@@ -97,7 +108,7 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private void CheckPoints() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
+    private void UpdateWayPoints() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
         if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
         {
@@ -109,19 +120,26 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private void Transform()
+    private void Move()
     {
         Vector3 target = patrolpoints[currentpoint].position;
         float step = currentspeed * Time.deltaTime;
 
-        if (Vector3.Angle(transform.forward, patrolpoints[currentpoint].position) > 5) // if not facing front
-        {
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, target, step, 0.0F);
-            transform.rotation = Quaternion.LookRotation(newDir);
+        print("Angle: " + Vector3.Angle(transform.forward, target - transform.position));
+
+        transform.LookAt(target);
+
+        /*if (Vector3.Angle(transform.forward, target - transform.position) > 2) // if not facing front
+        { 
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, target-transform.position, step, 0.0F);
+            transform.rotation = Quaternion.LookRotation(newDir); // rotate to front
         }
-        else
+        else*/
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, step);
+            if (GetPlayerDistance() > 1.5)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
+            }
         }
     }
 
