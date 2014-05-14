@@ -15,22 +15,16 @@ public class Enemy_Behaviour : MonoBehaviour
     public float alertRadius; // radius in dem spieler erkannt wird
     public float eyereach; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
 
-    private float maxStartDistance = 10; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
-    public float maxPlayerDistance; // Obergrenze des Abstands für die Verfolgung
-    public float minPlayerDistance; // Untergrenze des Abstands für die Verfolgung
+    private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
+    public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
+    public float minPlayerDistance = 11; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius; // Abstand zum Spieler, bei der Geist angry wird
-    private float freezetime = 10; // wie lange geist schläft (in sec) wenn er eingefroren wird
-    private float frozentime;
 
     private int currentpoint;
     private Vector3 homepoint;
 
-    private enum States { idle, alert, angry, frozen };
-    private States state;
-
-    private ChangeTexture changeTexture;
-    private bool debug = true;
+    private Enemy_States states;
 
     void Start()
     {
@@ -38,74 +32,49 @@ public class Enemy_Behaviour : MonoBehaviour
         transform.position = patrolpoints[0].position;
         currentpoint = 0;
         currentspeed = movespeed;
-        state = States.idle;
 
-        changeTexture = gameObject.GetComponent<ChangeTexture>();
-        Debug.Log(changeTexture);
+        states = gameObject.GetComponent<Enemy_States>();
     }
-
 
     void Update()
     {
-
+        CheckPoints();
         Transform();
 
-        switch (state)
+        switch (states.getState())
         {
-            case States.idle:
+            case Enemy_States.States.idle:
                 CheckRadius();
                 CheckEyeLine();
                 break;
-            case States.alert:
+            case Enemy_States.States.alert:
                 CheckReach();
                 CheckPlayerDist();
                 break;
-            case States.angry:
+            case Enemy_States.States.angry:
                 CheckReach();
-                break;
-            case States.frozen:
-                CheckFreeze();
                 break;
         }
     }
-
-    // for idle Ghost:
 
     private void CheckRadius()
     {
         if (GetPlayerDistance() < alertRadius)
         {
-            AlertGhost();
+            states.AlertGhost();
         }
     }
 
     private void CheckEyeLine()
     {
-
+        Debug.DrawRay(transform.position, patrolpoints[currentpoint].position, Color.red);
     }
-
-    private void AlertGhost()
-    {
-        state = States.alert;
-        patrolpoints = patrolpointsAlert;
-        currentpoint = 0;
-        currentspeed = movespeed;
-        homepoint = transform.position;
-
-        if (debug) // Geist soll gelb werden
-        {
-            changeTexture.changeLooks("alert");
-            print("Ghost alert");
-        }
-    }
-
-    // for alert or angry ghost
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
     {
         if (GetPlayerDistance() > GetReach())
         {
-            ReturnToIdle();
+            states.ReturnToIdle();
         }
     }
 
@@ -117,77 +86,20 @@ public class Enemy_Behaviour : MonoBehaviour
         float distance = Util.GetDistance(homepoint, transform.position);
         float percentage = distance / maxStartDistance;
 
-        return minPlayerDistance + leeway*percentage;
+        return minPlayerDistance + leeway * percentage;
     }
 
     private void CheckPlayerDist() // überprüft ob wechsel zu Angry stattfinden soll
     {
         if (GetPlayerDistance() <= angryRadius)
         {
-            BecomeAngry();
+            states.BecomeAngry();
         }
     }
 
-    private void ReturnToIdle()
+    private void CheckPoints()
     {
-        state = States.idle;
-        patrolpoints = patrolpointsIdle;
-        currentspeed = movespeed;
-
-        if (debug) // Geist soll wieder grün werden
-        {
-            changeTexture.changeLooks("idle");
-            print("Ghost idle");
-        }
-    }
-
-    private void BecomeAngry()
-    {
-        state = States.angry;
-        currentspeed = maxspeed;
-
-        if (debug) // Geist soll rot werden
-        {
-            changeTexture.changeLooks("angry");
-            print("Ghost angry");
-        }
-    }
-
-    private void Freeze()
-    {
-        state = States.frozen;
-        currentspeed = 0;
-
-        // Geist soll blau werden
-        if(debug)
-        {
-            changeTexture.changeLooks("frozen");
-            print("Ghost frozen");
-        }
-
-        frozentime = 0;
-    }
-
-    // for frozen Ghost
-
-    private void CheckFreeze()
-    {
-        if (frozentime < freezetime)
-        {
-            frozentime += Time.deltaTime;
-        }
-        else
-        {
-            AlertGhost();
-        }
-    }
-
-
-    // for all states
-
-    private void Transform()
-    {
-        if(Util.GetDistance(transform.position,patrolpoints[currentpoint].position) < 0.1)
+        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
         {
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
@@ -195,19 +107,19 @@ public class Enemy_Behaviour : MonoBehaviour
                 currentpoint = 0;
             }
         }
-        if (false) // if not facing front
+    }
+
+    private void Transform()
+    {
+        if (Vector3.Angle(transform.forward, patrolpoints[currentpoint].position) > 5) // if not facing front
         {
-            Turn();
+            //transform.position = Vector3.RotateTowards(transform.forward, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime, 0);
+            transform.Rotate(transform.up * 10 * Time.deltaTime);
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, patrolpoints[currentpoint].position, currentspeed * Time.deltaTime);
         }
-    }
-
-    private void Turn()
-    {
-        // while not facing front, rotate.
     }
 
     private float GetPlayerDistance()
@@ -216,5 +128,40 @@ public class Enemy_Behaviour : MonoBehaviour
         Vector3 player = patrolpointsAlert[0].position;
 
         return Util.GetDistance(enemy, player);
+    }
+
+    public void setPatrolpointsIdle()
+    {
+        patrolpoints = patrolpointsIdle;
+    }
+
+    public void setPatrolpointsAlert()
+    {
+        patrolpoints = patrolpointsAlert;
+    }
+
+    public void setMaxSpeed()
+    {
+        currentspeed = maxspeed;
+    }
+
+    public void resetSpeed()
+    {
+        currentspeed = movespeed;
+    }
+
+    public void setNoSpeed()
+    {
+        currentspeed = 0;
+    }
+
+    public void resetCurrentpoint()
+    {
+        currentpoint = 0;
+    }
+
+    public void setHomePoint()
+    {
+        homepoint = transform.position;
     }
 }
