@@ -21,7 +21,6 @@ public class Enemy_States : MonoBehaviour
         state = States.idle;
         changeTexture = gameObject.GetComponent<ChangeTexture>();
         behaviour = gameObject.GetComponent<Enemy_Behaviour>();
-        Debug.Log(changeTexture);
     }
 
     void Update()

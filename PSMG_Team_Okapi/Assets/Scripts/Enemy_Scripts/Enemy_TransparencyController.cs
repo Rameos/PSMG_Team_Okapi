@@ -32,7 +32,17 @@ public class Enemy_TransparencyController : MonoBehaviour {
         Color c = gameObject.renderer.material.color;
         c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, 0.0f), 1.0f);
         gameObject.renderer.material.color = c;
-        //Util.ChangeAlpha(enemy.material, currentDelta);
+
+        for (int childIndex = 0; childIndex < gameObject.transform.childCount; childIndex++)
+        {
+            Transform child = gameObject.transform.GetChild(childIndex);
+            Renderer childRenderer = child.gameObject.renderer;
+
+            if (childRenderer != null)
+            {
+                childRenderer.material.color = c;
+            }            
+        }
     }
 
     public void GazeEnter()

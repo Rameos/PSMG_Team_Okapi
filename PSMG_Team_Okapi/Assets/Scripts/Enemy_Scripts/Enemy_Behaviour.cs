@@ -110,7 +110,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void UpdateWayPoints() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
-        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
+        if (patrolpoints.Length > 0 && Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
         {
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
@@ -122,6 +122,11 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Move()
     {
+        if (patrolpoints.Length == 0)
+        {
+            return;
+        }
+
         Vector3 target = patrolpoints[currentpoint].position;
         float step = currentspeed * Time.deltaTime;
 
