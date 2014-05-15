@@ -69,11 +69,11 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         //public Transform target;
 
-        NavMeshHit hit;
+        /*NavMeshHit hit;
         if (NavMesh.Raycast(transform.position, patrolpoints[currentpoint].position, out hit, -1))
         {
             print("hit");
-        }
+        }*/
 
         Ray ray = new Ray();
         ray.origin = transform.position;
@@ -125,16 +125,17 @@ public class Enemy_Behaviour : MonoBehaviour
         Vector3 target = patrolpoints[currentpoint].position;
         float step = currentspeed * Time.deltaTime;
 
-        print("Angle: " + Vector3.Angle(transform.forward, target - transform.position));
+		Vector3 v1 = new Vector3 (transform.forward.x, 0, transform.forward.z);
+		Vector3 v2 = new Vector3 (target.x - transform.position.x, 0, target.z - transform.position.z);
 
-        transform.LookAt(target);
-
-        /*if (Vector3.Angle(transform.forward, target - transform.position) > 2) // if not facing front
+        print("Angle: " + Vector3.Angle(v1, v2));
+        
+        if (Vector3.Angle(v1, v2) > 2) // if not facing front
         { 
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, target-transform.position, step, 0.0F);
+            Vector3 newDir = Vector3.RotateTowards(v1, v2, step, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir); // rotate to front
         }
-        else*/
+        else
         {
             if (GetPlayerDistance() > 1.5)
             {
