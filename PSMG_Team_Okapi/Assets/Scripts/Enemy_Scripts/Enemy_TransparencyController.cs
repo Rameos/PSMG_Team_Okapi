@@ -6,10 +6,10 @@ public class Enemy_TransparencyController : MonoBehaviour {
     // negative == become invisible
     // positive == become visible
     public float currentDelta = 0.00f;
-    public float idleBecomeInvisible = -0.01f;
+    public float idleBecomeInvisible = -0.03f;
     public float idleBecomeVisible = 0.005f;
     public float alertBecomeInvisible = -0.01f;
-    public float alertBecomeVisible = 0.01f;
+    public float alertBecomeVisible = 0.05f;
     public float angryBecomeInvisible = -0.0005f;
     public float angryBecomeVisible = 0.1f;
 

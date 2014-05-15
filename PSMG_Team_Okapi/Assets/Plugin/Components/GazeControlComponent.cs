@@ -108,15 +108,13 @@ namespace iViewX
 
         public void UseGazeFilter()
         {
-           if(!useGazeFilter)
-           {
-               useGazeFilter = false;
-               gazeController.disableGazeFilter();
+           if(useGazeFilter)
+           {                              
+               gazeController.enableGazeFilter();
            }
            else
            {
-               useGazeFilter = true;
-               gazeController.enableGazeFilter();
+               gazeController.disableGazeFilter();
            }
         }
 
