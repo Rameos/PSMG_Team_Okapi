@@ -9,27 +9,42 @@ ModelImporter:
     100006: Forcefield
     100008: //RootNode
     100010: Sockel
+    100012: Inner_Ring
+    100014: Outer_Ring
+    100016: Sturz
     400000: 1__Ring
     400002: 2__Ring
     400004: 3__Ring
     400006: Forcefield
     400008: //RootNode
     400010: Sockel
+    400012: Inner_Ring
+    400014: Outer_Ring
+    400016: Sturz
     2300000: 1__Ring
     2300002: 2__Ring
     2300004: 3__Ring
     2300006: Forcefield
     2300008: Sockel
+    2300010: Inner_Ring
+    2300012: Outer_Ring
+    2300014: Sturz
     3300000: 1__Ring
     3300002: 2__Ring
     3300004: 3__Ring
     3300006: Forcefield
     3300008: Sockel
+    3300010: Inner_Ring
+    3300012: Outer_Ring
+    3300014: Sturz
     4300000: 1__Ring
     4300002: 2__Ring
     4300004: 3__Ring
     4300006: Forcefield
     4300008: Sockel
+    4300010: Inner_Ring
+    4300012: Sturz
+    4300014: Outer_Ring
     9500000: //RootNode
   materials:
     importMaterials: 1
