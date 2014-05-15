@@ -5,12 +5,12 @@ public class Enemy_States : MonoBehaviour
 {
 
     public enum States { idle, alert, angry, frozen };
-    private static States state;
+    private States state;
 
-    private static bool debug = true;
+    private bool debug = true;
 
     private float freezetime = 10; // wie lange geist schläft (in sec) wenn er eingefroren wird
-    private static float frozentime;
+    private float frozentime;
 
     private ChangeTexture changeTexture;
     private Enemy_Behaviour behaviour;

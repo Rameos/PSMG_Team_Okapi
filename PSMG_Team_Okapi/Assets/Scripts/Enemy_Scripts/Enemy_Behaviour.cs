@@ -12,14 +12,14 @@ public class Enemy_Behaviour : MonoBehaviour
     public float maxspeed = 4; // geschwindigkeit wenn angry
     private float currentspeed;
 
-    public float alertRadius; // radius in dem spieler erkannt wird
-    public float eyereach; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
+    public float alertRadius = 10; // radius in dem spieler erkannt wird
+    private float eyereach = 15; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
     public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
     public float minPlayerDistance = 11; // Untergrenze des Abstands für die Verfolgung
 
-    public float angryRadius; // Abstand zum Spieler, bei der Geist angry wird
+    public float angryRadius = 4; // Abstand zum Spieler, bei der Geist angry wird
 
     private int currentpoint;
     private Vector3 homepoint;
@@ -28,6 +28,17 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Start()
     {
+        if(patrolpointsIdle.Length == 0)
+        {
+            patrolpointsIdle = new Transform [1] {GameObject.Find("Player").transform };
+            movespeed = 0;
+            maxspeed = 0;
+        }
+        if(patrolpointsAlert.Length == 0)
+        {
+            patrolpointsAlert = new Transform[1] { GameObject.Find("Player").transform };
+        }
+
         patrolpoints = patrolpointsIdle;
         transform.position = patrolpoints[0].position;
         currentpoint = 0;
@@ -48,8 +59,8 @@ public class Enemy_Behaviour : MonoBehaviour
                 CheckEyeLine();
                 break;
             case Enemy_States.States.alert:
-                CheckReach();
                 CheckPlayerDist();
+                CheckReach();
                 break;
             case Enemy_States.States.angry:
                 CheckReach();
@@ -59,6 +70,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckRadius()
     {
+        print("Distance(Alert) " + GetPlayerDistance());
         if (GetPlayerDistance() < alertRadius)
         {
             states.AlertGhost();
@@ -102,6 +114,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckPlayerDist() // überprüft ob wechsel zu Angry stattfinden soll
     {
+        print("Distance " + GetPlayerDistance());
         if (GetPlayerDistance() <= angryRadius)
         {
             states.BecomeAngry();
@@ -153,6 +166,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         Vector3 enemy = transform.position;
         Vector3 player = patrolpointsAlert[0].position;
+        player = GameObject.Find("Player").transform.position;
 
         return Util.GetDistance(enemy, player);
     }
