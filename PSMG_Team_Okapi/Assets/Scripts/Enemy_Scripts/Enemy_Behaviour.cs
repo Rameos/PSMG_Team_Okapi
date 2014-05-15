@@ -78,7 +78,7 @@ public class Enemy_Behaviour : MonoBehaviour
         Ray ray = new Ray();
         ray.origin = transform.position;
         ray.direction = transform.forward;
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
+        //Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
     }
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
@@ -128,7 +128,7 @@ public class Enemy_Behaviour : MonoBehaviour
 		Vector3 v1 = new Vector3 (transform.forward.x, 0, transform.forward.z);
 		Vector3 v2 = new Vector3 (target.x - transform.position.x, 0, target.z - transform.position.z);
 
-        print("Angle: " + Vector3.Angle(v1, v2));
+        //print("Angle: " + Vector3.Angle(v1, v2));
         
         if (Vector3.Angle(v1, v2) > 2) // if not facing front
         { 

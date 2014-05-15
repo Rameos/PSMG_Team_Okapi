@@ -8,7 +8,7 @@ public class ChangeTexture : MonoBehaviour
     public Material angryMat;
     public Material frozenMat;
 
-    Renderer enemyBody;
+    private Renderer enemyBody;
 
 	// Use this for initialization
 	void Start () 
@@ -18,6 +18,8 @@ public class ChangeTexture : MonoBehaviour
 
     public void changeLooks(string state)
     {
+        Color oldColor = enemyBody.material.color;
+
         switch(state)
         {
             case "idle":
@@ -47,8 +49,9 @@ public class ChangeTexture : MonoBehaviour
                 break;
         }
 
-        
-        
+        Color newColor = enemyBody.material.color;
+        newColor.a = oldColor.a;
+        enemyBody.material.color = newColor; 
     }
     void OnCollisionEnter(Collision hit)
     {

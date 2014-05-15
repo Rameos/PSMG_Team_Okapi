@@ -11,4 +11,11 @@ public class Util
 
         return Mathf.Sqrt(a * a + b * b);
     }
+
+    public static void ChangeAlpha(Material mat, float delta)
+    {
+        Color color = mat.color;
+        color.a = Mathf.Max(Mathf.Min(color.a + delta, 0.0f), 1.0f);
+        mat.color = color;
+    }
 }
