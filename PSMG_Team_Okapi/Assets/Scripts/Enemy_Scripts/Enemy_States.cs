@@ -12,8 +12,8 @@ public class Enemy_States : MonoBehaviour
     private float freezetime = 10; // wie lange geist schläft (in sec) wenn er eingefroren wird
     private static float frozentime;
 
-    private static ChangeTexture changeTexture;
-    private static Enemy_Behaviour behaviour;
+    private ChangeTexture changeTexture;
+    private Enemy_Behaviour behaviour;
 
 
     void Start()

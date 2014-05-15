@@ -40,7 +40,10 @@ public class Enemy_TransparencyController : MonoBehaviour {
 
             if (childRenderer != null)
             {
-                childRenderer.material.color = c;
+                Color childColor = childRenderer.material.color;
+                childColor.a = c.a;
+
+                childRenderer.material.color = childColor;
             }            
         }
     }
