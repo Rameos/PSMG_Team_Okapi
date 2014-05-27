@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ChangeTexture : MonoBehaviour 
+public class Enemy_ChangeTexture : MonoBehaviour 
 {
     public Material idleMat;
     public Material alertMat;

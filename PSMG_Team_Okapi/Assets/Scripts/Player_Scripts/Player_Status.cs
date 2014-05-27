@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerStatus  : MonoBehaviour
+public class Player_Status  : MonoBehaviour
 {
 
     public enum MovementState { none, walk, traverse}

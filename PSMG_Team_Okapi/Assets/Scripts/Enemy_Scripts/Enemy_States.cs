@@ -12,14 +12,14 @@ public class Enemy_States : MonoBehaviour
     private float freezetime = 10; // wie lange geist schläft (in sec) wenn er eingefroren wird
     private float frozentime;
 
-    private ChangeTexture changeTexture;
+    private Enemy_ChangeTexture changeTexture;
     private Enemy_Behaviour behaviour;
 
 
     void Start()
     {
         state = States.idle;
-        changeTexture = gameObject.GetComponent<ChangeTexture>();
+        changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
         behaviour = gameObject.GetComponent<Enemy_Behaviour>();
     }
 

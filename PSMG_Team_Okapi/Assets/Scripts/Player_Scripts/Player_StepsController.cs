@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StepsController : MonoBehaviour {
+public class Player_StepsController : MonoBehaviour {
     public string actualState;
 
-    private PlayerStatus status;
+    private Player_Status status;
 
 	// Use this for initialization
 	void Start () {
-        status = GetComponent<PlayerStatus>();
+        status = GetComponent<Player_Status>();
         actualState = status.getState();
 	}
 	
