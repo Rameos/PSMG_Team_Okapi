@@ -4,13 +4,13 @@ using iViewX;
 
 public class InitEyetrackingDebugMock : MonoBehaviour {
 
-    public bool initOnStart = true;
+    public bool calibrationOnStart = true;
 
 	// Use this for initialization
 	void Start () {
-        if (initOnStart && !gazeModel.isEyeTrackerRunning)
+        if (calibrationOnStart && !gazeModel.isEyeTrackerRunning)
         {
-            GazeControlComponent.Instance.StartCalibration();
+            //GazeControlComponent.Instance.StartCalibration();
         }
 	}
 	

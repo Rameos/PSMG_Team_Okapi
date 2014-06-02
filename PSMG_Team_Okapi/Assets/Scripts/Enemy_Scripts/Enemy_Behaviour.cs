@@ -70,7 +70,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckRadius()
     {
-        print("Distance(Alert) " + GetPlayerDistance());
+        //print("Distance(Alert) " + GetPlayerDistance());
         if (GetPlayerDistance() < alertRadius)
         {
             states.AlertGhost();
