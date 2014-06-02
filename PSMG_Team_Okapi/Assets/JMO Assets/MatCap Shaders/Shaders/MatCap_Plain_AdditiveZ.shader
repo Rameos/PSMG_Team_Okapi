@@ -11,7 +11,7 @@ Shader "MatCap/Vertex/Plain Additive Z"
 	Subshader
 	{
 		Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
-		Lighting Off
+		Lighting On
 		
 	    Pass
 	    {
