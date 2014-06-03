@@ -8,18 +8,19 @@ public class Enemy_Behaviour : MonoBehaviour
     public Transform[] patrolpointsAlert; // enthält erstmal nur Spieler
     private Transform[] patrolpoints;
 
-    public float movespeed = 2; // geschwindigkeit wenn idle oder alert
-    public float maxspeed = 4; // geschwindigkeit wenn angry
+    public float idlespeed = 1; // geschwindigkeit wenn idle oder alert
+    public float alertspeed = 2;
+    public float angryspeed = 3; // geschwindigkeit wenn angry
     private float currentspeed;
 
-    public float alertRadius = 10; // radius in dem spieler erkannt wird
-    private float eyereach = 15; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
+    public float alertRadius = 12; // radius in dem spieler erkannt wird
+    private float eyereach = 16; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
     public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
-    public float minPlayerDistance = 11; // Untergrenze des Abstands für die Verfolgung
+    public float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
 
-    public float angryRadius = 4; // Abstand zum Spieler, bei der Geist angry wird
+    public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
 
     private int currentpoint;
     private Vector3 homepoint;
@@ -28,29 +29,27 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Start()
     {
-        if(patrolpointsIdle.Length == 0)
-        {
-            patrolpointsIdle = new Transform [1] {GameObject.Find("Player").transform };
-            movespeed = 0;
-            maxspeed = 0;
-        }
-        if(patrolpointsAlert.Length == 0)
+        if (patrolpointsAlert.Length == 0)
         {
             patrolpointsAlert = new Transform[1] { GameObject.Find("Player").transform };
         }
 
         patrolpoints = patrolpointsIdle;
-        transform.position = patrolpoints[0].position;
         currentpoint = 0;
-        currentspeed = movespeed;
+        currentspeed = idlespeed;
 
         states = gameObject.GetComponent<Enemy_States>();
+
+        SetListeners();
     }
 
     void Update()
     {
-        UpdateWayPoints();
-        Move();
+        if (patrolpoints.Length > 0)
+        {
+            UpdateWayPoints();
+            Move();
+        }
 
         switch (states.getState())
         {
@@ -114,7 +113,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckPlayerDist() // überprüft ob wechsel zu Angry stattfinden soll
     {
-        print("Distance " + GetPlayerDistance());
+        //print("Distance " + GetPlayerDistance());
         if (GetPlayerDistance() <= angryRadius)
         {
             states.BecomeAngry();
@@ -143,13 +142,13 @@ public class Enemy_Behaviour : MonoBehaviour
         Vector3 target = patrolpoints[currentpoint].position;
         float step = currentspeed * Time.deltaTime;
 
-		Vector3 v1 = new Vector3 (transform.forward.x, 0, transform.forward.z);
-		Vector3 v2 = new Vector3 (target.x - transform.position.x, 0, target.z - transform.position.z);
+        Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
+        Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
 
         //print("Angle: " + Vector3.Angle(v1, v2));
-        
+
         if (Vector3.Angle(v1, v2) > 2) // if not facing front
-        { 
+        {
             Vector3 newDir = Vector3.RotateTowards(v1, v2, step, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir); // rotate to front
         }
@@ -171,38 +170,58 @@ public class Enemy_Behaviour : MonoBehaviour
         return Util.GetDistance(enemy, player);
     }
 
-    public void setPatrolpointsIdle()
+    public void SetPatrolpointsIdle()
     {
         patrolpoints = patrolpointsIdle;
     }
 
-    public void setPatrolpointsAlert()
+    public void SetPatrolpointsAlert()
     {
         patrolpoints = patrolpointsAlert;
     }
 
-    public void setMaxSpeed()
+    public void SetIdleSpeed()
     {
-        currentspeed = maxspeed;
+        currentspeed = idlespeed;
     }
 
-    public void resetSpeed()
+    public void SetAlertSpeed()
     {
-        currentspeed = movespeed;
+        currentspeed = alertspeed;
     }
 
-    public void setNoSpeed()
+    public void SetAngrySpeed()
+    {
+        currentspeed = angryspeed;
+    }
+
+    public void SetNoSpeed()
     {
         currentspeed = 0;
     }
 
-    public void resetCurrentpoint()
+    public void ResetCurrentpoint()
     {
         currentpoint = 0;
     }
 
-    public void setHomePoint()
+    public void SetHomePoint()
     {
         homepoint = transform.position;
+    }
+
+    private void SetListeners()
+    {
+        states.OnAlert += SetPatrolpointsAlert;
+        states.OnAlert += ResetCurrentpoint;
+        states.OnAlert += SetAlertSpeed;
+        states.OnAlert += SetHomePoint;
+
+        states.OnBecomeAngry += SetAngrySpeed;
+
+        states.OnFreeze += SetNoSpeed;
+
+        states.OnReturnToIdle += SetPatrolpointsIdle;
+        states.OnReturnToIdle += SetIdleSpeed;
     }
 }
