@@ -5,11 +5,15 @@ using iViewX;
 public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
 {
 
-    private Enemy_TransparencyController transparencyController;
+    public delegate void OnEnemyGazeEntered();
+    public event OnEnemyGazeEntered EnemyGazeEntered;
+
+    public delegate void OnEnemyGazeExited();
+    public event OnEnemyGazeExited EnemyGazeExited;    
 
 	// Use this for initialization
 	void Start () {
-        transparencyController = gameObject.transform.parent.GetComponent<Enemy_TransparencyController>();
+        
 	}
 	
 	// Update is called once per frame
@@ -19,8 +23,8 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
 
     public override void OnGazeEnter(RaycastHit hit)
     {
-        Debug.Log("GazeEntered");
-        transparencyController.GazeEnter();
+        //Debug.Log("GazeEntered");        
+        EnemyGazeEntered();
     }
     
     public override void OnGazeStay(RaycastHit hit)
@@ -30,7 +34,7 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
         
     public override void OnGazeExit()
     {
-        Debug.Log("GazeExit");
-        transparencyController.GazeExit();
+        //Debug.Log("GazeExit");        
+        EnemyGazeExited();
     }
 }

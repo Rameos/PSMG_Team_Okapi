@@ -21,7 +21,6 @@ namespace iViewX
     {
 
         public bool useGazeFilter = true;
-        public bool useLocalConnectionSettings = true; 
         /// <summary>
         /// Required designer variables.
         /// </summary>

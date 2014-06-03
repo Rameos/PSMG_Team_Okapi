@@ -68,6 +68,12 @@ namespace iViewX
         {
             int errorID = disconnetFromETDevice();
 
+            //Silence "Failed to delete sockets"
+            if (errorID == 124)
+            {
+                return;
+            }            
+
             //ErrorMessage
             getLogdata(errorID, errorIDContainer.STATE_DISCONNET);
         }
