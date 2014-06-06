@@ -18,6 +18,17 @@ ModelImporter:
     100024: Wall
     100026: Door_lower_Slider_left
     100028: Door_upper_Slider_right
+    100030: Door_lower_Slider_right
+    100032: Door_upper_Slider_right_001
+    100034: Door_upper_Slider_right_lightStripe
+    100036: Door_upper_Slider_Light_Emitter
+    100038: Fan_Housing_Light_Emitter
+    100040: Gate_Body_bottom_outlet
+    100042: Gate_Body_center_outlet
+    100044: Gate_Body_top_outlet
+    100046: Gate_Body_top_semiCenter_outlet
+    100048: Light_Emitter_SideSlider
+    100050: Light_Emitter_TopSlider
     400000: Camera
     400002: Door_lower_Slider
     400004: Door_upper_Slider
@@ -33,6 +44,17 @@ ModelImporter:
     400024: Wall
     400026: Door_lower_Slider_left
     400028: Door_upper_Slider_right
+    400030: Door_lower_Slider_right
+    400032: Door_upper_Slider_right_001
+    400034: Door_upper_Slider_right_lightStripe
+    400036: Door_upper_Slider_Light_Emitter
+    400038: Fan_Housing_Light_Emitter
+    400040: Gate_Body_bottom_outlet
+    400042: Gate_Body_center_outlet
+    400044: Gate_Body_top_outlet
+    400046: Gate_Body_top_semiCenter_outlet
+    400048: Light_Emitter_SideSlider
+    400050: Light_Emitter_TopSlider
     2300000: Door_lower_Slider
     2300002: Door_upper_Slider
     2300004: Fan_Housing
@@ -44,6 +66,17 @@ ModelImporter:
     2300016: Wall
     2300018: Door_lower_Slider_left
     2300020: Door_upper_Slider_right
+    2300022: Door_lower_Slider_right
+    2300024: Door_upper_Slider_right_001
+    2300026: Door_upper_Slider_right_lightStripe
+    2300028: Door_upper_Slider_Light_Emitter
+    2300030: Fan_Housing_Light_Emitter
+    2300032: Gate_Body_bottom_outlet
+    2300034: Gate_Body_center_outlet
+    2300036: Gate_Body_top_outlet
+    2300038: Gate_Body_top_semiCenter_outlet
+    2300040: Light_Emitter_SideSlider
+    2300042: Light_Emitter_TopSlider
     3300000: Door_lower_Slider
     3300002: Door_upper_Slider
     3300004: Fan_Housing
@@ -55,6 +88,17 @@ ModelImporter:
     3300016: Wall
     3300018: Door_lower_Slider_left
     3300020: Door_upper_Slider_right
+    3300022: Door_lower_Slider_right
+    3300024: Door_upper_Slider_right_001
+    3300026: Door_upper_Slider_right_lightStripe
+    3300028: Door_upper_Slider_Light_Emitter
+    3300030: Fan_Housing_Light_Emitter
+    3300032: Gate_Body_bottom_outlet
+    3300034: Gate_Body_center_outlet
+    3300036: Gate_Body_top_outlet
+    3300038: Gate_Body_top_semiCenter_outlet
+    3300040: Light_Emitter_SideSlider
+    3300042: Light_Emitter_TopSlider
     4300000: Fan_Housing
     4300002: Screw_lower
     4300004: Screw_upper
@@ -66,6 +110,39 @@ ModelImporter:
     4300016: Gate_Body
     4300018: Door_lower_Slider_left
     4300020: Door_upper_Slider_right
+    4300022: Door_lower_Slider_right
+    4300024: Door_upper_Slider_right_001
+    4300026: Door_upper_Slider_right_lightStripe
+    4300028: Fan_Housing_Light_Emitter
+    4300030: Light_Emitter_SideSlider
+    4300032: Light_Emitter_TopSlider
+    4300034: Gate_Body_center_outlet
+    4300036: Gate_Body_top_semiCenter_outlet
+    4300038: Gate_Body_top_outlet
+    4300040: Gate_Body_bottom_outlet
+    4300042: Door_upper_Slider_Light_Emitter
+    6400000: Door_lower_Slider
+    6400002: Door_lower_Slider_left
+    6400004: Door_upper_Slider_right
+    6400006: Fan_Housing
+    6400008: Gate_Body
+    6400010: Screw_lower
+    6400012: Screw_upper
+    6400014: Slider
+    6400016: Top_Slider
+    6400018: Wall
+    6400020: Door_lower_Slider_right
+    6400022: Door_upper_Slider
+    6400024: Door_upper_Slider_right_001
+    6400026: Door_upper_Slider_right_lightStripe
+    6400028: Door_upper_Slider_Light_Emitter
+    6400030: Fan_Housing_Light_Emitter
+    6400032: Gate_Body_bottom_outlet
+    6400034: Gate_Body_center_outlet
+    6400036: Gate_Body_top_outlet
+    6400038: Gate_Body_top_semiCenter_outlet
+    6400040: Light_Emitter_SideSlider
+    6400042: Light_Emitter_TopSlider
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -88,7 +165,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
