@@ -3,24 +3,28 @@ using System.Collections;
 
 public class Enemy_States : MonoBehaviour
 {
+    public delegate void StateChangeHandler();
+
+    public event StateChangeHandler OnAlert;
+    public event StateChangeHandler OnBecomeAngry;
+    public event StateChangeHandler OnFreeze;
+    public event StateChangeHandler OnReturnToIdle;
 
     public enum States { idle, alert, angry, frozen };
     private States state;
 
     private bool debug = true;
 
-    private float freezetime = 10; // wie lange geist schläft (in sec) wenn er eingefroren wird
-    private float frozentime;
+    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
+    private float frozentime; // zeit, die gegner bereits eingefroren ist
 
     private Enemy_ChangeTexture changeTexture;
-    private Enemy_Behaviour behaviour;
 
 
     void Start()
     {
         state = States.idle;
         changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
-        behaviour = gameObject.GetComponent<Enemy_Behaviour>();
     }
 
     void Update()
@@ -34,53 +38,64 @@ public class Enemy_States : MonoBehaviour
     public void AlertGhost()
     {
         state = States.alert;
-        behaviour.setPatrolpointsAlert();
-        behaviour.resetCurrentpoint();
-        behaviour.resetSpeed();
-        behaviour.setHomePoint();
 
-        if (debug) // Geist soll gelb werden
+        if (OnAlert != null)
+        {
+            OnAlert();
+        }
+
+        if (debug)
         {
             changeTexture.changeLooks("alert");
-            print("Ghost alert");
+            print("Enemy alert");
         }
     }
 
     public void ReturnToIdle()
     {
         state = States.idle;
-        behaviour.setPatrolpointsIdle();
-        behaviour.resetSpeed();
 
-        if (debug) // Geist soll wieder grün werden
+        if (OnReturnToIdle != null)
+        {
+            OnReturnToIdle();
+        }
+
+        if (debug)
         {
             changeTexture.changeLooks("idle");
-            print("Ghost idle");
+            print("Enemy idle");
         }
     }
 
     public void BecomeAngry()
     {
         state = States.angry;
-        behaviour.setMaxSpeed();
 
-        if (debug) // Geist soll rot werden
+        if (OnBecomeAngry != null)
+        {
+            OnBecomeAngry();
+        }
+
+        if (debug)
         {
             changeTexture.changeLooks("angry");
-            print("Ghost angry");
+            print("Enemy angry");
         }
     }
 
     public void Freeze()
     {
         state = States.frozen;
-        behaviour.setNoSpeed();
 
-        // Geist soll blau werden
+        if (OnFreeze != null)
+        {
+            OnFreeze();
+        }
+
         if (debug)
         {
             changeTexture.changeLooks("frozen");
-            print("Ghost frozen");
+            print("Enemy frozen");
         }
 
         frozentime = 0;
