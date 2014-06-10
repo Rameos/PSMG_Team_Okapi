@@ -58,7 +58,7 @@ public class Inkubator_State : MonoBehaviour {
                     && !tempObject.name.Equals("Sturz")
                     && !tempObject.name.Equals("Inkubator_light"))
                 {
-                    Debug.Log(transform.GetChild(i).gameObject.name);
+                    //Debug.Log(transform.GetChild(i).gameObject.name);
                     transform.GetChild(i).gameObject.SetActive (true);
                 }
                 if (tempObject.name.Equals("Inkubator_light"))

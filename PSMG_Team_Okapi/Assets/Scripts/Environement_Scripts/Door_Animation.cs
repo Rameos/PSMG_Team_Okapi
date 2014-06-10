@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class door_animation : MonoBehaviour
+public class Door_Animation : MonoBehaviour
 {
 
     public bool isOpen;
@@ -20,12 +20,23 @@ public class door_animation : MonoBehaviour
     private bool showStatus = false;
 
 
+
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        SwitchUnit_Controller.Instance.OnActivateSwitch += OnActivateSwitch;
+
+    }
+
+    private void OnActivateSwitch(GameObject door)
+    {
+        if (door == gameObject)
+        {
+            isLocked = false;
+        }
     }
 
     // Update is called once per frame

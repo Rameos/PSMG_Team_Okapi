@@ -22,6 +22,9 @@ ModelImporter:
     100032: Top_Slider
     100034: //RootNode
     100036: Wall
+    100038: Camera
+    100040: Lamp
+    100042: Lamp_001
     400000: Door_lower_Slider_left
     400002: Door_lower_Slider_right
     400004: Door_upper_Slider
@@ -41,6 +44,9 @@ ModelImporter:
     400032: Top_Slider
     400034: //RootNode
     400036: Wall
+    400038: Camera
+    400040: Lamp
+    400042: Lamp_001
     2300000: Door_lower_Slider_left
     2300002: Door_lower_Slider_right
     2300004: Door_upper_Slider
@@ -122,6 +128,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -137,7 +144,7 @@ ModelImporter:
     addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
@@ -164,6 +171,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
