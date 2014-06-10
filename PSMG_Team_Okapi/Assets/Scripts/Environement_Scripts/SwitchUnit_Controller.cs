@@ -12,22 +12,6 @@ public class SwitchUnit_Controller : MonoBehaviour {
     public delegate void StateChangeHandler(GameObject door);
     public event StateChangeHandler OnActivateSwitch;
 
-     // Singleton  
-    private  static SwitchUnit_Controller instance;   
-
-    // Construct  
-    private SwitchUnit_Controller() {}    
-
-    //  Instance  
-    public static SwitchUnit_Controller Instance
-    {
-        get
-        {
-            if (instance == null)
-                instance = GameObject.FindObjectOfType(typeof(SwitchUnit_Controller)) as SwitchUnit_Controller;
-            return instance;
-        }
-    }
 
 
 	// Use this for initialization
@@ -51,7 +35,6 @@ public class SwitchUnit_Controller : MonoBehaviour {
                     }
                 }
                 statusScreen.materials = mats;    
-                //associatedDoor.GetComponent<Door_Animation>().isLocked = false;
                 
                 if (OnActivateSwitch != null)
                 {

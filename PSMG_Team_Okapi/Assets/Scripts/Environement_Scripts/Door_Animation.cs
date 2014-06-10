@@ -9,6 +9,7 @@ public class Door_Animation : MonoBehaviour
     
 
     public Light[] doorStatusLight;
+    public GameObject associatedSwitch;
 
     public Color neutralLight;
     public Color lockedLight;
@@ -27,7 +28,7 @@ public class Door_Animation : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        SwitchUnit_Controller.Instance.OnActivateSwitch += OnActivateSwitch;
+        associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
 
     }
 
