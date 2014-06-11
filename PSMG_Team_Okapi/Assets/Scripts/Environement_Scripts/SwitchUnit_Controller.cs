@@ -41,6 +41,7 @@ public class SwitchUnit_Controller : MonoBehaviour {
                     // trigger Event
                     OnActivateSwitch(associatedDoor);
                 }
+                audio.Play();
             }
         }
 	}
