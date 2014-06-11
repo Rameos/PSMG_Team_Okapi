@@ -28,8 +28,8 @@ public class Enemy_TransparencyController : MonoBehaviour {
         status = gameObject.GetComponent<Enemy_States>();
         gazeInteraction = gameObject.GetComponentInChildren<Enemy_GazeInteraction>();
 
-        gazeInteraction.EnemyGazeEntered += GazeEnter;
-        gazeInteraction.EnemyGazeExited += GazeExit;
+        gazeInteraction.OnEnemyGazeEntered += GazeEnter;
+        gazeInteraction.OnEnemyGazeExited += GazeExit;
 	}
 	
 	// Update is called once per frame
@@ -40,32 +40,30 @@ public class Enemy_TransparencyController : MonoBehaviour {
     void FixedUpdate()
     {
         UpdateRates();
-        UpdateTransparency();        
+        UpdateTransparency();
     }
 
     private void UpdateRates()
     {
-        float currentTime = Time.fixedTime;
+        float currentTime = Time.fixedTime;        
 
-        if (endOfDecay > currentTime)
+        if (gazeActive || endOfDecay >= currentTime)
         {
             IncreaseVisibility();
         }
         else
         {
             DecreaseVisibility();
-        }       
-
-        // reset current decay while gaze is on object
-        if (gazeActive)
-        {
-            endOfDecay = currentTime + decaySec;
-        }
+        }              
     }
 
     private void GazeEnter()
     {
-        gazeActive = true;   
+        gazeActive = true;
+        
+        float currentTime = Time.fixedTime;
+        // reset current decay when gaze enters
+        endOfDecay = currentTime + decaySec;        
     }
 
     private void GazeExit()
@@ -119,7 +117,7 @@ public class Enemy_TransparencyController : MonoBehaviour {
     {
         Color c = gameObject.renderer.material.color;
         c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, 0.0f), 1.0f);
-        gameObject.renderer.material.color = c;
+        gameObject.renderer.material.color = c;        
 
         for (int childIndex = 0; childIndex < gameObject.transform.childCount; childIndex++)
         {

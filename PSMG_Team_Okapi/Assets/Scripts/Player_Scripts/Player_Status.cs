@@ -5,12 +5,20 @@ public class Player_Status  : MonoBehaviour
 {
 
     public enum MovementState { none, walk, traverse}
-    public static int playerHealth;
-
     public MovementState movementState = MovementState.none;
 
     private float vertAxis;
     private float horizAxis;
+
+    public delegate void HealthChangeHandler(int newHealth);
+    public event HealthChangeHandler OnHealthChanged = delegate { };
+
+    private int playerHealth;
+
+    void Start()
+    {
+        playerHealth = 100;
+    }
 
     void Update()
     {
@@ -59,5 +67,19 @@ public class Player_Status  : MonoBehaviour
     {
         return movementState.ToString();
     }
-   
+
+    public int health
+    {
+        get
+        {
+            return playerHealth;
+        }
+        set
+        {
+            playerHealth = Mathf.Max(0, Mathf.Min(100, value));
+            Debug.Log(playerHealth);            
+            
+            OnHealthChanged(playerHealth);
+        }
+    }       
 }
