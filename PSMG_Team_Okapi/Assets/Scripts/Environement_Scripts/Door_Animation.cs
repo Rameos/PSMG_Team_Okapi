@@ -15,6 +15,9 @@ public class Door_Animation : MonoBehaviour
     public Color lockedLight;
     public Color unlockedLight;
 
+    private AudioSource[] audioSources;
+    
+
     private Animator anim;
     private GameObject player;
     private Renderer renderer;
@@ -29,6 +32,8 @@ public class Door_Animation : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
+
+        audioSources = GetComponents<AudioSource>();
 
     }
 
@@ -62,6 +67,8 @@ public class Door_Animation : MonoBehaviour
             if (!isLocked)
             {
                 isOpen = true;
+                if (!audio.isPlaying)
+                    audioSources[0].Play();
             }
             else
             {
@@ -102,7 +109,10 @@ public class Door_Animation : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        if (isOpen)
+            audioSources[1].Play();
         isOpen = false;
         showStatus = false;
+        
     }
 }
