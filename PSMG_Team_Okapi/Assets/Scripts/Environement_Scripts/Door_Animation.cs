@@ -4,10 +4,9 @@ using System.Collections;
 public class Door_Animation : MonoBehaviour
 {
 
-    public bool isOpen;
+    
     public bool isLocked;
     
-
     public Light[] doorStatusLight;
     public GameObject associatedSwitch;
 
@@ -16,8 +15,8 @@ public class Door_Animation : MonoBehaviour
     public Color unlockedLight;
 
     private AudioSource[] audioSources;
-    
 
+    private bool isOpen;
     private Animator anim;
     private GameObject player;
     private Renderer renderer;
