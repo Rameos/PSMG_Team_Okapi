@@ -47,7 +47,7 @@ public class Enemy_States : MonoBehaviour
         if (debug)
         {
             changeTexture.changeLooks("alert");
-            print("Enemy alert");
+            //print("Enemy alert");
         }
     }
 
@@ -63,7 +63,7 @@ public class Enemy_States : MonoBehaviour
         if (debug)
         {
             changeTexture.changeLooks("idle");
-            print("Enemy idle");
+            //print("Enemy idle");
         }
     }
 
@@ -79,7 +79,7 @@ public class Enemy_States : MonoBehaviour
         if (debug)
         {
             changeTexture.changeLooks("angry");
-            print("Enemy angry");
+            //print("Enemy angry");
         }
     }
 
@@ -95,7 +95,7 @@ public class Enemy_States : MonoBehaviour
         if (debug)
         {
             changeTexture.changeLooks("frozen");
-            print("Enemy frozen");
+            //print("Enemy frozen");
         }
 
         frozentime = 0;

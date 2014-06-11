@@ -5,11 +5,10 @@ using iViewX;
 public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
 {
 
-    public delegate void OnEnemyGazeEntered();
-    public event OnEnemyGazeEntered EnemyGazeEntered;
+    public delegate void EnemyGazeHandler();
 
-    public delegate void OnEnemyGazeExited();
-    public event OnEnemyGazeExited EnemyGazeExited;    
+    public event EnemyGazeHandler OnEnemyGazeEntered;
+    public event EnemyGazeHandler OnEnemyGazeExited;    
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +23,7 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
     public override void OnGazeEnter(RaycastHit hit)
     {
         //Debug.Log("GazeEntered");        
-        EnemyGazeEntered();
+        OnEnemyGazeEntered();
     }
     
     public override void OnGazeStay(RaycastHit hit)
@@ -35,6 +34,6 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
     public override void OnGazeExit()
     {
         //Debug.Log("GazeExit");        
-        EnemyGazeExited();
+        OnEnemyGazeExited();
     }
 }
