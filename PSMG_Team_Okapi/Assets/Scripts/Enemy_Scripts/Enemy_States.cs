@@ -15,9 +15,6 @@ public class Enemy_States : MonoBehaviour
 
     private bool debug = true;
 
-    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
-    private float frozentime; // zeit, die gegner bereits eingefroren ist
-
     private Enemy_ChangeTexture changeTexture;
 
 
@@ -25,14 +22,6 @@ public class Enemy_States : MonoBehaviour
     {
         state = States.idle;
         changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
-    }
-
-    void Update()
-    {
-        if (state == States.frozen)
-        {
-            CheckFreeze();
-        }
     }
 
     public void AlertGhost()
@@ -98,19 +87,6 @@ public class Enemy_States : MonoBehaviour
             //print("Enemy frozen");
         }
 
-        frozentime = 0;
-    }
-
-    private void CheckFreeze()
-    {
-        if (frozentime < freezetime)
-        {
-            frozentime += Time.deltaTime;
-        }
-        else
-        {
-            AlertGhost();
-        }
     }
 
     public States getState()
