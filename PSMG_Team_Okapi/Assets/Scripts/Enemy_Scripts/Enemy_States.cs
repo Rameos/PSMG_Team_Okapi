@@ -5,10 +5,10 @@ public class Enemy_States : MonoBehaviour
 {
     public delegate void StateChangeHandler();
 
-    public event StateChangeHandler OnAlert;
-    public event StateChangeHandler OnBecomeAngry;
-    public event StateChangeHandler OnFreeze;
-    public event StateChangeHandler OnReturnToIdle;
+    public event StateChangeHandler OnAlert = delegate{};
+    public event StateChangeHandler OnBecomeAngry = delegate{};
+    public event StateChangeHandler OnFreeze = delegate{};
+    public event StateChangeHandler OnReturnToIdle = delegate{};
 
     public enum States { idle, alert, angry, frozen };
     private States state;
@@ -27,11 +27,7 @@ public class Enemy_States : MonoBehaviour
     public void AlertGhost()
     {
         state = States.alert;
-
-        if (OnAlert != null)
-        {
-            OnAlert();
-        }
+        OnAlert();
 
         if (debug)
         {
@@ -43,11 +39,7 @@ public class Enemy_States : MonoBehaviour
     public void ReturnToIdle()
     {
         state = States.idle;
-
-        if (OnReturnToIdle != null)
-        {
-            OnReturnToIdle();
-        }
+        OnReturnToIdle();
 
         if (debug)
         {
@@ -59,11 +51,7 @@ public class Enemy_States : MonoBehaviour
     public void BecomeAngry()
     {
         state = States.angry;
-
-        if (OnBecomeAngry != null)
-        {
-            OnBecomeAngry();
-        }
+        OnBecomeAngry();
 
         if (debug)
         {
@@ -75,11 +63,7 @@ public class Enemy_States : MonoBehaviour
     public void Freeze()
     {
         state = States.frozen;
-
-        if (OnFreeze != null)
-        {
-            OnFreeze();
-        }
+        OnFreeze();
 
         if (debug)
         {

@@ -13,21 +13,19 @@ public class Enemy_Behaviour : MonoBehaviour
     public float angryspeed = 3; // geschwindigkeit wenn angry
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
-    private float eyereach = 16; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
+    private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
     public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
     public float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
-
     private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
 
     private int currentpoint;
     private Vector3 homepoint;
 
     private NavMeshAgent agent;
-
     private Enemy_States states;
 
     void Start()
@@ -80,9 +78,20 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private void CheckEyeLine()
+    private void CheckEyeLine() // Wenn Gegner Spieler sieht, soll Gegner alert werden
     {
-      
+        Vector3 target = GameObject.Find("Player").transform.position;
+        float step = 2 * agent.speed * Time.deltaTime;
+
+        Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
+        Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
+
+        if (Vector3.Angle(v1, v2) < 5 && GetPlayerDistance() <= eyereach) // if player in front of enemy
+        {
+            //print("player was hit");
+            states.AlertGhost();
+        }
+
     }
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
@@ -120,6 +129,7 @@ public class Enemy_Behaviour : MonoBehaviour
                 currentpoint = 0;
             }
         }
+
         agent.SetDestination(patrolpoints[currentpoint].position);
     }
 
@@ -195,6 +205,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         homepoint = transform.position;
     }
+
 
     private void SetListeners()
     {
