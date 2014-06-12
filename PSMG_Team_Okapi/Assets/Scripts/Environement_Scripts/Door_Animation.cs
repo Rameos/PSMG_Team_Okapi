@@ -30,7 +30,10 @@ public class Door_Animation : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
+        if (associatedSwitch != null)
+        {
+            associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
+        }        
 
         audioSources = GetComponents<AudioSource>();
 
