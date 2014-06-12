@@ -9,7 +9,11 @@ public class Door_IsLockedSound_Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         associatedSwitch = GetComponentInParent<Door_Animation>().associatedSwitch;
-        associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
+        if (associatedSwitch != null)
+        {
+            associatedSwitch.GetComponent<SwitchUnit_Controller>().OnActivateSwitch += OnActivateSwitch;
+        }        
+        
         isLocked = GetComponentInParent<Door_Animation>().isLocked;
         player = GameObject.FindGameObjectWithTag("Player");
 	}
