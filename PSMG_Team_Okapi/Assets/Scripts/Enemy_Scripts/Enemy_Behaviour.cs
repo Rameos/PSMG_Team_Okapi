@@ -11,20 +11,21 @@ public class Enemy_Behaviour : MonoBehaviour
     public float idlespeed = 1; // geschwindigkeit wenn idle oder alert
     public float alertspeed = 2;
     public float angryspeed = 3; // geschwindigkeit wenn angry
-    private float currentspeed;
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
-    private float eyereach = 16; // sichtweite des geistes (sollte gleich Sichtweite des Spielers sein)
+    private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
     public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
     public float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
+    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
 
     private int currentpoint;
     private Vector3 homepoint;
 
+    private NavMeshAgent agent;
     private Enemy_States states;
 
     void Start()
@@ -36,9 +37,11 @@ public class Enemy_Behaviour : MonoBehaviour
 
         patrolpoints = patrolpointsIdle;
         currentpoint = 0;
-        currentspeed = idlespeed;
 
         states = gameObject.GetComponent<Enemy_States>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
+
+        agent.speed = idlespeed;
 
         SetListeners();
     }
@@ -47,18 +50,18 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         if (patrolpoints.Length > 0)
         {
-            UpdateWayPoints();
+            Rotate();
             Move();
         }
 
         switch (states.getState())
         {
             case Enemy_States.States.idle:
-                CheckRadius();
+                CheckAlertRadius();
                 CheckEyeLine();
                 break;
             case Enemy_States.States.alert:
-                CheckPlayerDist();
+                CheckAngryRadius();
                 CheckReach();
                 break;
             case Enemy_States.States.angry:
@@ -67,29 +70,28 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private void CheckRadius()
+    private void CheckAlertRadius()
     {
-        //print("Distance(Alert) " + GetPlayerDistance());
         if (GetPlayerDistance() < alertRadius)
         {
             states.AlertGhost();
         }
     }
 
-    private void CheckEyeLine()
+    private void CheckEyeLine() // Wenn Gegner Spieler sieht, soll Gegner alert werden
     {
-        //public Transform target;
+        Vector3 target = GameObject.Find("Player").transform.position;
+        float step = 2 * agent.speed * Time.deltaTime;
 
-        /*NavMeshHit hit;
-        if (NavMesh.Raycast(transform.position, patrolpoints[currentpoint].position, out hit, -1))
+        Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
+        Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
+
+        if (Vector3.Angle(v1, v2) < 5 && GetPlayerDistance() <= eyereach) // if player in front of enemy
         {
-            print("hit");
-        }*/
+            //print("player was hit");
+            states.AlertGhost();
+        }
 
-        Ray ray = new Ray();
-        ray.origin = transform.position;
-        ray.direction = transform.forward;
-        //Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
     }
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
@@ -100,10 +102,8 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    private float GetReach()
+    private float GetReach() // Reach wird bei größerem Abstand zum homepoint kleiner.
     {
-        // berechnung vom Reach anhand von maxStartDistance, maxPlayerDistance, minPlayerDistance;
-
         float leeway = maxPlayerDistance - minPlayerDistance;
         float distance = Util.GetDistance(homepoint, transform.position);
         float percentage = distance / maxStartDistance;
@@ -111,18 +111,17 @@ public class Enemy_Behaviour : MonoBehaviour
         return minPlayerDistance + leeway * percentage;
     }
 
-    private void CheckPlayerDist() // überprüft ob wechsel zu Angry stattfinden soll
+    private void CheckAngryRadius() // überprüft ob wechsel zu Angry stattfinden soll
     {
-        //print("Distance " + GetPlayerDistance());
         if (GetPlayerDistance() <= angryRadius)
         {
             states.BecomeAngry();
         }
     }
 
-    private void UpdateWayPoints() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
+    private void Move() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
-        if (patrolpoints.Length > 0 && Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.1)
+        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.2)
         {
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
@@ -130,34 +129,22 @@ public class Enemy_Behaviour : MonoBehaviour
                 currentpoint = 0;
             }
         }
+
+        agent.SetDestination(patrolpoints[currentpoint].position);
     }
 
-    private void Move()
+    private void Rotate()
     {
-        if (patrolpoints.Length == 0)
-        {
-            return;
-        }
-
         Vector3 target = patrolpoints[currentpoint].position;
-        float step = currentspeed * Time.deltaTime;
+        float step = 2 * agent.speed * Time.deltaTime;
 
         Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
         Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
 
-        //print("Angle: " + Vector3.Angle(v1, v2));
-
-        if (Vector3.Angle(v1, v2) > 2) // if not facing front
+        if (Vector3.Angle(v1, v2) > 0.5) // if not facing front
         {
             Vector3 newDir = Vector3.RotateTowards(v1, v2, step, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir); // rotate to front
-        }
-        else
-        {
-            if (GetPlayerDistance() > 1.5)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, target, step);
-            }
         }
     }
 
@@ -169,6 +156,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
         return Util.GetDistance(enemy, player);
     }
+
+    // state listeners
 
     public void SetPatrolpointsIdle()
     {
@@ -182,22 +171,29 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetIdleSpeed()
     {
-        currentspeed = idlespeed;
+        agent.speed = idlespeed;
     }
 
     public void SetAlertSpeed()
     {
-        currentspeed = alertspeed;
+        agent.speed = alertspeed;
     }
 
     public void SetAngrySpeed()
     {
-        currentspeed = angryspeed;
+        agent.speed = angryspeed;
     }
 
-    public void SetNoSpeed()
+    public void SetFrozen()
     {
-        currentspeed = 0;
+        StartCoroutine(Freeze());
+    }
+
+    IEnumerator Freeze()
+    {
+        yield return new WaitForSeconds(freezetime);
+
+        states.AlertGhost();
     }
 
     public void ResetCurrentpoint()
@@ -210,6 +206,7 @@ public class Enemy_Behaviour : MonoBehaviour
         homepoint = transform.position;
     }
 
+
     private void SetListeners()
     {
         states.OnAlert += SetPatrolpointsAlert;
@@ -219,7 +216,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
         states.OnBecomeAngry += SetAngrySpeed;
 
-        states.OnFreeze += SetNoSpeed;
+        states.OnFreeze += SetFrozen;
 
         states.OnReturnToIdle += SetPatrolpointsIdle;
         states.OnReturnToIdle += SetIdleSpeed;

@@ -5,18 +5,15 @@ public class Enemy_States : MonoBehaviour
 {
     public delegate void StateChangeHandler();
 
-    public event StateChangeHandler OnAlert;
-    public event StateChangeHandler OnBecomeAngry;
-    public event StateChangeHandler OnFreeze;
-    public event StateChangeHandler OnReturnToIdle;
+    public event StateChangeHandler OnAlert = delegate{};
+    public event StateChangeHandler OnBecomeAngry = delegate{};
+    public event StateChangeHandler OnFreeze = delegate{};
+    public event StateChangeHandler OnReturnToIdle = delegate{};
 
     public enum States { idle, alert, angry, frozen };
     private States state;
 
     private bool debug = true;
-
-    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
-    private float frozentime; // zeit, die gegner bereits eingefroren ist
 
     private Enemy_ChangeTexture changeTexture;
 
@@ -27,22 +24,10 @@ public class Enemy_States : MonoBehaviour
         changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
     }
 
-    void Update()
-    {
-        if (state == States.frozen)
-        {
-            CheckFreeze();
-        }
-    }
-
     public void AlertGhost()
     {
         state = States.alert;
-
-        if (OnAlert != null)
-        {
-            OnAlert();
-        }
+        OnAlert();
 
         if (debug)
         {
@@ -54,11 +39,7 @@ public class Enemy_States : MonoBehaviour
     public void ReturnToIdle()
     {
         state = States.idle;
-
-        if (OnReturnToIdle != null)
-        {
-            OnReturnToIdle();
-        }
+        OnReturnToIdle();
 
         if (debug)
         {
@@ -70,11 +51,7 @@ public class Enemy_States : MonoBehaviour
     public void BecomeAngry()
     {
         state = States.angry;
-
-        if (OnBecomeAngry != null)
-        {
-            OnBecomeAngry();
-        }
+        OnBecomeAngry();
 
         if (debug)
         {
@@ -86,11 +63,7 @@ public class Enemy_States : MonoBehaviour
     public void Freeze()
     {
         state = States.frozen;
-
-        if (OnFreeze != null)
-        {
-            OnFreeze();
-        }
+        OnFreeze();
 
         if (debug)
         {
@@ -98,19 +71,6 @@ public class Enemy_States : MonoBehaviour
             //print("Enemy frozen");
         }
 
-        frozentime = 0;
-    }
-
-    private void CheckFreeze()
-    {
-        if (frozentime < freezetime)
-        {
-            frozentime += Time.deltaTime;
-        }
-        else
-        {
-            AlertGhost();
-        }
     }
 
     public States getState()

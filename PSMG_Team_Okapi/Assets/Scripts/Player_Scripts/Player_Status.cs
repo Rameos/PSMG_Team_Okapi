@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player_Status  : MonoBehaviour
 {
-
     public enum MovementState { none, walk, traverse}
     public MovementState movementState = MovementState.none;
 
@@ -38,8 +37,13 @@ public class Player_Status  : MonoBehaviour
         {
             setState("traverse");
         }
-    }
 
+        // Debugging
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            this.health = 0;
+        }    
+    }
 
     private void setState(string state)
     {
@@ -76,10 +80,20 @@ public class Player_Status  : MonoBehaviour
         }
         set
         {
+            int previousHealth = playerHealth;
+
             playerHealth = Mathf.Max(0, Mathf.Min(100, value));
-            Debug.Log(playerHealth);            
-            
-            OnHealthChanged(playerHealth);
+
+            if (playerHealth != previousHealth)
+            {
+                Debug.Log(playerHealth);
+                OnHealthChanged(playerHealth);
+
+                if (playerHealth <= 0)
+                {
+                    GlobalEvents.TriggerOnPlayerDeath();
+                }
+            }
         }
     }       
 }
