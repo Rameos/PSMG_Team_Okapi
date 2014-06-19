@@ -1,0 +1,23 @@
+1:
+	"17.September: Mein Name ist Roland Kozani. Ich bin der 5. Quartalsleiter der Forschungsstation 'Salomon' und Mitglied des P.A.R.I.A.-Projects. Ich werde in den nächsten drei Monaten als einziger Forscher in dieser Station die Herkunft und Eigenarten von bis jetzt nicht klassifizierten Lebensformen zu erforschen.""
+
+2:
+	"18.September: Die 'Amorphimi Strindgen'. Eine auf den ersten Blick nicht einmal lebendig aussehende Lebensform. Die verschiedenen Pyramiden werden vermutlich durch eine Art Kraftfeld zusammengehalten,	welches auch mit ihrer Fortbewegung und ihrer Fähigkeit nahezu transparent zu erscheinen zusammenhängen muss. Ein konstanter Strom gerichteter elektrischer Energie hebt diese Transparenz auf. Dafür haben wir eine Art Helm samt Brille die diese Energie abgeben kann. Gezielt wird dieser mit den Augen um dabei die Hände frei zu haben."
+
+3:
+	"24.September: In einem alten Eintrag meines Vorgängers hat er die Bezeichnung 'Scyth' für diese Lebewesen verwendet. Ich weis zwar nicht wo er sie herhat aber sie ist immerhin weniger sperrig als ihr wissenschaftlicher Name. Die Herkunft der Scyth ist unklar. Sie wurden in unterirdischen Höhlen in der Nähe des Nordpols durch seismographische Aufnahmen entdeckt. In genau diesen Höhlen in denen jetzt diese Forschungsstation steht. Ansonsten ist fast nichts über sie bekannt. Energieaufnahme, Anatomie. Wir sind uns noch nicht einmal sicher über welche Sinnesorgane sie Verfügen. Bis jetzt reagieren sie auf die Veränderung ihrer Umgebung was eine Art fledermausähnliches Sonar nahelegen würde. Ausserdem scheinen sie auf kurze Entfernungen zu sehen."
+
+4:
+	"29.September: Das Licht ist ausgefallen. Ausserdem ist einer der Inkubatoren ausgefallen. Gott sei Dank war er leer. Aber die Experimente kann ich für heute streichen. Wenn es nicht gleich besser wird muss ich mal nachsehen. Ich hoffe es ist nichts schlimmeres. Ersatzteile in diese Einöde zu bringen dauert eine halbe Ewigkeit. Naja wenigstens geht der Notstromgenerator noch."
+
+5:
+	"Die gesamte Station hat keinen Strom mehr. Scheiße... Ich muss zum Generator laufen um nachzusehen. Immerhin haben die mir erklärt wie ich den wieder zum Laufen kriege und einige kleinere Reperaturen kann ich auch noch... [plötzliches Geräusch] ...Was war das? Ist da jemand? Ich sehe schon Gespenster. Hier ist keiner ausser mir und den Scyth. Oh Nein..."
+
+6:
+	"Sie sind ausgebrochen. Mindestens zwei. Und sie scheinen zu einer Art elektrischen Entladung fähig zu sein. Ich weiss nicht ob das ihre Art der Kommunikation sein soll oder ein Angriff ist. Aber ich denke dass macht keinen Unterschied WAS sie erreichen wollen. Noch ein paar von diesen Stronstößen überlebe ich nicht. Ich habe nur eine Chance. Ich muss den Helm verwenden um die Scyth festzuhalten. ungefähr 4 Sekunden direkten Blickkontakt sollten reichen um ihre Bewgungsfähigkeit stark einzuschränken."
+
+7:
+	"Ich bin nun eine Etage tiefer. Diese Station ist gebaut wie ein Labyrinth. Kein wunder. sie musste ja an die Höhle angepasst werden. Trotzdem bin ich mich grade fast 10 Minuten lang im Kreis gelaufen. Und ich glaube ich habe hier auch wieder einige Scyth gehört. Anscheinend sind die überall von hier bis zum Generator."
+
+8:
+	"Wieviele von diesen Dingern haben die denn hier unten eingefangen und weggesperrt? "
