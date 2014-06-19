@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Player_Status  : MonoBehaviour
 {
-    public enum MovementState { none, walk, traverse}
+    public enum MovementState { none, walk, traverse }
     public MovementState movementState = MovementState.none;
 
     private float vertAxis;
-    private float horizAxis;
+    private float horizAxis;    
 
-    public delegate void HealthChangeHandler(int newHealth);
-    public event HealthChangeHandler OnHealthChanged = delegate { };
-
-    private int playerHealth;
+    public List<GameObject> enemiesChasing;
 
     void Start()
     {
-        playerHealth = 100;
+        enemiesChasing = new List<GameObject>();
     }
 
     void Update()
@@ -36,13 +33,7 @@ public class Player_Status  : MonoBehaviour
         else if (vertAxis == 0 && horizAxis != 0)
         {
             setState("traverse");
-        }
-
-        // Debugging
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            this.health = 0;
-        }    
+        }         
     }
 
     private void setState(string state)
@@ -71,29 +62,4 @@ public class Player_Status  : MonoBehaviour
     {
         return movementState.ToString();
     }
-
-    public int health
-    {
-        get
-        {
-            return playerHealth;
-        }
-        set
-        {
-            int previousHealth = playerHealth;
-
-            playerHealth = Mathf.Max(0, Mathf.Min(100, value));
-
-            if (playerHealth != previousHealth)
-            {
-                Debug.Log(playerHealth);
-                OnHealthChanged(playerHealth);
-
-                if (playerHealth <= 0)
-                {
-                    GlobalEvents.TriggerOnPlayerDeath();
-                }
-            }
-        }
-    }       
 }

@@ -16,30 +16,30 @@ public class Enemy_ChangeTexture : MonoBehaviour
         enemyBody = gameObject.renderer;
 	}
 
-    public void changeLooks(string state)
+    public void changeLooks(Enemy_States.State state)
     {
         Color oldColor = enemyBody.material.color;
 
         switch(state)
         {
-            case "idle":
+            case Enemy_States.State.idle:
             {
                 enemyBody.material = idleMat;
                 break;
             }
-            case "alert":
+            case Enemy_States.State.alert:
             {
                 enemyBody.material = alertMat;
                 break;
             }
-                
-            case "angry":
+
+            case Enemy_States.State.angry:
             {
                 enemyBody.material = angryMat;
                 break;
             }
 
-            case "frozen":
+            case Enemy_States.State.frozen:
             {
                 enemyBody.material = frozenMat;
                 break;

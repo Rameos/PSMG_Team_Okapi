@@ -5,13 +5,13 @@ public class Enemy_States : MonoBehaviour
 {
     public delegate void StateChangeHandler();
 
-    public event StateChangeHandler OnAlert = delegate{};
-    public event StateChangeHandler OnBecomeAngry = delegate{};
-    public event StateChangeHandler OnFreeze = delegate{};
-    public event StateChangeHandler OnReturnToIdle = delegate{};
+    public event StateChangeHandler OnIdle = delegate { };
+    public event StateChangeHandler OnAlert = delegate { };
+    public event StateChangeHandler OnAngry = delegate { };
+    public event StateChangeHandler OnFreeze = delegate { };    
 
-    public enum States { idle, alert, angry, frozen };
-    private States state;
+    public enum State { idle, alert, angry, frozen };
+    public State currentState;
 
     private bool debug = true;
 
@@ -20,66 +20,56 @@ public class Enemy_States : MonoBehaviour
 
     void Start()
     {
-        state = States.idle;
+        currentState = State.idle;
         changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
     }
 
-    public void AlertGhost()
+    public void Idle()
     {
-        state = States.alert;
-        OnAlert();
+        currentState = State.idle;
+        OnIdle();
 
         if (debug)
         {
-            changeTexture.changeLooks("alert");
-            //print("Enemy alert");
-        }
-    }
-
-    public void ReturnToIdle()
-    {
-        state = States.idle;
-        OnReturnToIdle();
-
-        if (debug)
-        {
-            changeTexture.changeLooks("idle");
+            changeTexture.changeLooks(State.idle);
             //print("Enemy idle");
         }
     }
 
-    public void BecomeAngry()
+    public void Alert()
     {
-        state = States.angry;
-        OnBecomeAngry();
+        currentState = State.alert;
+        OnAlert();
 
         if (debug)
         {
-            changeTexture.changeLooks("angry");
+            changeTexture.changeLooks(State.alert);
+            //print("Enemy alert");
+        }
+    }
+
+    public void Angry()
+    {
+        currentState = State.angry;
+        OnAngry();
+
+        if (debug)
+        {
+            changeTexture.changeLooks(State.angry);
             //print("Enemy angry");
         }
     }
 
     public void Freeze()
     {
-        state = States.frozen;
+        currentState = State.frozen;
         OnFreeze();
 
         if (debug)
         {
-            changeTexture.changeLooks("frozen");
+            changeTexture.changeLooks(State.frozen);
             //print("Enemy frozen");
         }
 
-    }
-
-    public States getState()
-    {
-        return state;
-    }
-
-    public void setState(States newState)
-    {
-        state = newState;
     }
 }

@@ -18,8 +18,7 @@ public class Door_Animation : MonoBehaviour
 
     private bool isOpen;
     private Animator anim;
-    private GameObject player;
-    private Renderer renderer;
+    private GameObject player;    
     private bool showStatus = false;
 
 

@@ -18,14 +18,14 @@ public class Enemy_TransparencyController : MonoBehaviour {
     private bool gazeActive = false;
     private float endOfDecay = 0;
 
-    private Enemy_States status;
+    private Enemy_States enemyState;
     private Enemy_GazeInteraction gazeInteraction;
 
 	// Use this for initialization
 	void Start () {
         currentDelta = idleBecomeInvisible;
         //enemy = gameObject.transform.parent.gameObject;
-        status = gameObject.GetComponent<Enemy_States>();
+        enemyState = gameObject.GetComponent<Enemy_States>();
         gazeInteraction = gameObject.GetComponentInChildren<Enemy_GazeInteraction>();
 
         gazeInteraction.OnEnemyGazeEntered += GazeEnter;
@@ -73,18 +73,18 @@ public class Enemy_TransparencyController : MonoBehaviour {
 
     private void IncreaseVisibility()
     {
-        switch (status.getState())
+        switch (enemyState.currentState)
         {
-            case Enemy_States.States.idle:
+            case Enemy_States.State.idle:
                 currentDelta = idleBecomeVisible;
                 break;
-            case Enemy_States.States.alert:
+            case Enemy_States.State.alert:
                 currentDelta = alertBecomeVisible;
                 break;
-            case Enemy_States.States.angry:
+            case Enemy_States.State.angry:
                 currentDelta = angryBecomeVisible;
                 break;
-            case Enemy_States.States.frozen:
+            case Enemy_States.State.frozen:
             // doesn't matter: no transparent shader
             default:
                 currentDelta = idleBecomeVisible;
@@ -94,18 +94,18 @@ public class Enemy_TransparencyController : MonoBehaviour {
 
     private void DecreaseVisibility()
     {
-        switch (status.getState())
+        switch (enemyState.currentState)
         {
-            case Enemy_States.States.idle:
+            case Enemy_States.State.idle:
                 currentDelta = idleBecomeInvisible;
                 break;
-            case Enemy_States.States.alert:
+            case Enemy_States.State.alert:
                 currentDelta = alertBecomeInvisible;
                 break;
-            case Enemy_States.States.angry:
+            case Enemy_States.State.angry:
                 currentDelta = angryBecomeInvisible;
                 break;
-            case Enemy_States.States.frozen:
+            case Enemy_States.State.frozen:
             // doesn't matter: no transparent shader
             default:
                 currentDelta = idleBecomeInvisible;

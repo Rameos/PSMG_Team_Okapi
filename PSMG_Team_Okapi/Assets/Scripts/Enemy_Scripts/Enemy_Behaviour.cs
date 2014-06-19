@@ -26,7 +26,7 @@ public class Enemy_Behaviour : MonoBehaviour
     private Vector3 homepoint;
 
     private NavMeshAgent agent;
-    private Enemy_States states;
+    private Enemy_States enemyState;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class Enemy_Behaviour : MonoBehaviour
         patrolpoints = patrolpointsIdle;
         currentpoint = 0;
 
-        states = gameObject.GetComponent<Enemy_States>();
+        enemyState = gameObject.GetComponent<Enemy_States>();
         agent = gameObject.GetComponent<NavMeshAgent>();
 
         agent.speed = idlespeed;
@@ -54,17 +54,17 @@ public class Enemy_Behaviour : MonoBehaviour
             Move();
         }
 
-        switch (states.getState())
+        switch (enemyState.currentState)
         {
-            case Enemy_States.States.idle:
+            case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
                 break;
-            case Enemy_States.States.alert:
+            case Enemy_States.State.alert:
                 CheckAngryRadius();
                 CheckReach();
                 break;
-            case Enemy_States.States.angry:
+            case Enemy_States.State.angry:
                 CheckReach();
                 break;
         }
@@ -74,14 +74,14 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         if (GetPlayerDistance() < alertRadius)
         {
-            states.AlertGhost();
+            enemyState.Alert();
         }
     }
 
     private void CheckEyeLine() // Wenn Gegner Spieler sieht, soll Gegner alert werden
     {
         Vector3 target = GameObject.Find("Player").transform.position;
-        float step = 2 * agent.speed * Time.deltaTime;
+        //float step = 2 * agent.speed * Time.deltaTime;
 
         Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
         Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
@@ -89,7 +89,7 @@ public class Enemy_Behaviour : MonoBehaviour
         if (Vector3.Angle(v1, v2) < 5 && GetPlayerDistance() <= eyereach) // if player in front of enemy
         {
             //print("player was hit");
-            states.AlertGhost();
+            enemyState.Alert();
         }
 
     }
@@ -98,7 +98,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         if (GetPlayerDistance() > GetReach())
         {
-            states.ReturnToIdle();
+            enemyState.Idle();
         }
     }
 
@@ -115,7 +115,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         if (GetPlayerDistance() <= angryRadius)
         {
-            states.BecomeAngry();
+            enemyState.Angry();
         }
     }
 
@@ -193,7 +193,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(freezetime);
 
-        states.AlertGhost();
+        enemyState.Alert();
     }
 
     public void ResetCurrentpoint()
@@ -209,16 +209,16 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void SetListeners()
     {
-        states.OnAlert += SetPatrolpointsAlert;
-        states.OnAlert += ResetCurrentpoint;
-        states.OnAlert += SetAlertSpeed;
-        states.OnAlert += SetHomePoint;
+        enemyState.OnAlert += SetPatrolpointsAlert;
+        enemyState.OnAlert += ResetCurrentpoint;
+        enemyState.OnAlert += SetAlertSpeed;
+        enemyState.OnAlert += SetHomePoint;
 
-        states.OnBecomeAngry += SetAngrySpeed;
+        enemyState.OnAngry += SetAngrySpeed;
 
-        states.OnFreeze += SetFrozen;
+        enemyState.OnFreeze += SetFrozen;
 
-        states.OnReturnToIdle += SetPatrolpointsIdle;
-        states.OnReturnToIdle += SetIdleSpeed;
+        enemyState.OnIdle += SetPatrolpointsIdle;
+        enemyState.OnIdle += SetIdleSpeed;
     }
 }
