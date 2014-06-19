@@ -9,7 +9,7 @@ public class Player_Status  : MonoBehaviour
     private float vertAxis;
     private float horizAxis;    
 
-    private List<GameObject> enemiesChasing;
+    public List<GameObject> enemiesChasing;
 
     void Start()
     {
