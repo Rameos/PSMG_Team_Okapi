@@ -25,6 +25,8 @@ ModelImporter:
     100038: Camera
     100040: Lamp
     100042: Lamp_001
+    100044: Gate_Body_001
+    100046: Wall_001
     400000: Door_lower_Slider_left
     400002: Door_lower_Slider_right
     400004: Door_upper_Slider
@@ -47,6 +49,8 @@ ModelImporter:
     400038: Camera
     400040: Lamp
     400042: Lamp_001
+    400044: Gate_Body_001
+    400046: Wall_001
     2300000: Door_lower_Slider_left
     2300002: Door_lower_Slider_right
     2300004: Door_upper_Slider
@@ -65,6 +69,8 @@ ModelImporter:
     2300030: Slider
     2300032: Top_Slider
     2300034: Wall
+    2300036: Gate_Body_001
+    2300038: Wall_001
     3300000: Door_lower_Slider_left
     3300002: Door_lower_Slider_right
     3300004: Door_upper_Slider
@@ -83,6 +89,8 @@ ModelImporter:
     3300030: Slider
     3300032: Top_Slider
     3300034: Wall
+    3300036: Gate_Body_001
+    3300038: Wall_001
     4300000: Fan_Housing_Light_Emitter
     4300002: Door_lower_Slider_left
     4300004: Fan_Housing
@@ -101,6 +109,8 @@ ModelImporter:
     4300030: Gate_Body_bottom_outlet
     4300032: Door_upper_Slider
     4300034: Door_upper_Slider_Light_Emitter
+    4300036: Gate_Body_001
+    4300038: Wall_001
     6400000: Door_lower_Slider_left
     6400002: Door_lower_Slider_right
     6400004: Door_upper_Slider
@@ -119,6 +129,8 @@ ModelImporter:
     6400030: Slider
     6400032: Top_Slider
     6400034: Wall
+    6400036: Gate_Body_001
+    6400038: Wall_001
     9500000: //RootNode
   materials:
     importMaterials: 1
