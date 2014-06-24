@@ -17,12 +17,19 @@ public class Enemy_PlayerAttacking : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        //Debug.Log(other.tag);
+        Debug.Log("TestIt");
+        Debug.Log(other.tag);
         if (other.tag == "Player" && isDamaging)
         {
             StartCoroutine(DamagePlayer());        
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Enter...Yeah!");
+    }
+
 
     IEnumerator DamagePlayer() 
     {
