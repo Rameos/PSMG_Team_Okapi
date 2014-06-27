@@ -1,0 +1,16 @@
+TTS-Texte:
+
+-Türen auf: "Door unlocked"
+-Türe zu: "Restricted Area"
+-Türe blockiert --> Türsteuerung betätigen: "Door locked. Please check central Door-Control"
+-Security Breach: "Security Breach. Contamination possible. Please stand by for Evacuation. Do not wander around without your Vision-controlled-Motion-Inhibitor. Thank you!"
+-Tutorial:
+	-Kalibrierung einleiten: "The Vision-controlled Motion-Inhibitor must be calibrated before use. Please look at the right tube. --- Thank you. Now please look at the left tube. --- Excellent! Please carry your personal Moition-Inhibitor with you at all times."
+-Level-Angaben: "Second Level", "Third Level", "Maintanence Level"
+
+TTS-Terminals(?):
+-Verletzung: "In case of a minor or major Injury, please stay calm and relax. Genetically Engineered Viruses and Nanomachines are an essential part of the atmosphere of this station and will treat every inner and outer wound automatically."
+
+-Stromversorgung: "This Station does not rely on external power-supply but is completely autonomous in its energy-production. The energy-management is built to match the highest standards in efficiency as well as security. In the completely impossible case of a critical failure of the main reactor several smaller Generators secure the functionality of doors, lights and elevators."
+
+-Namensgebung: "This Station is named after the first pioneer of this part of the earth. 'Name des Polarforschers' reached this point with an expedition team of only three people. All of them died as their baloon crashed. Over 400 years later this Station was built 2,3 kilometer in the ground, to investigate the strange phenomena in the area of these caves."
