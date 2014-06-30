@@ -1,23 +1,39 @@
 1:
-	"17.September: Mein Name ist Roland Kozani. Ich bin der 5. Quartalsleiter der Forschungsstation 'Salomon' und Mitglied des P.A.R.I.A.-Projects. Ich werde in den nächsten drei Monaten als einziger Forscher in dieser Station die Herkunft und Eigenarten von bis jetzt nicht klassifizierten Lebensformen zu erforschen.""
+	"17.September: Mein Name ist Roland Kozani. Ich bin der 5. Quartalsleiter der Forschungsstation 'Salomon' und Mitglied des P.A.R.I.A.-Projects. Ich werde in den nächsten drei Monaten als einziger Forscher in dieser Station die Herkunft und Eigenarten von bis jetzt nicht klassifizierten Lebensformen zu erforschen."
+	
+	"September 17th: My name is Roland Kozani. I am the fifth quarterly scientist of the 'Salomon Research Center' and a member of the P.A.R.I.A.-Project. For the next three months, as the sole researcher in this facility, I will be investigating the origins and properties of - so far - unclassified life forms."
 
 2:
-	"18.September: Die 'Amorphimi Strindgen'. Eine auf den ersten Blick nicht einmal lebendig aussehende Lebensform. Die verschiedenen Pyramiden werden vermutlich durch eine Art Kraftfeld zusammengehalten,	welches auch mit ihrer Fortbewegung und ihrer Fähigkeit nahezu transparent zu erscheinen zusammenhängen muss. Ein konstanter Strom gerichteter elektrischer Energie hebt diese Transparenz auf. Dafür haben wir eine Art Helm samt Brille die diese Energie abgeben kann. Gezielt wird dieser mit den Augen um dabei die Hände frei zu haben."
+	"18.September: Die 'Amorphimi Strindgen'. Eine auf den ersten Blick nicht einmal lebendig aussehende Lebensform. Die verschiedenen Pyramiden werden vermutlich durch eine Art Kraftfeld zusammengehalten, welches auch mit ihrer Fortbewegung und ihrer Fähigkeit nahezu transparent zu erscheinen zusammenhängen muss. Ein konstanter Strom gerichteter elektrischer Energie hebt diese Transparenz auf. Dafür haben wir eine Art Helm samt Brille die diese Energie abgeben kann. Gezielt wird dieser mit den Augen um dabei die Hände frei zu haben."
+	
+	"September 18th: The 'Amorphimi Strindgen'. A creature that, at first glance, doesn't even look like it might be alive. The pyramid-like extremities seem to be held together by a sort of force-field, which must also be responsible for its movements and its ability to appear almost completely transparent. A constant stream of directed electronic particles cancels out this transparency. We have a sort of helmet with glasses that can generate this stream. You aim it simply by looking at the creature. An ingenious invention that leaves your hands free for other things."
 
 3:
 	"24.September: In einem alten Eintrag meines Vorgängers hat er die Bezeichnung 'Scyth' für diese Lebewesen verwendet. Ich weis zwar nicht wo er sie herhat aber sie ist immerhin weniger sperrig als ihr wissenschaftlicher Name. Die Herkunft der Scyth ist unklar. Sie wurden in unterirdischen Höhlen in der Nähe des Nordpols durch seismographische Aufnahmen entdeckt. In genau diesen Höhlen in denen jetzt diese Forschungsstation steht. Ansonsten ist fast nichts über sie bekannt. Energieaufnahme, Anatomie. Wir sind uns noch nicht einmal sicher über welche Sinnesorgane sie Verfügen. Bis jetzt reagieren sie auf die Veränderung ihrer Umgebung was eine Art fledermausähnliches Sonar nahelegen würde. Ausserdem scheinen sie auf kurze Entfernungen zu sehen."
+	
+	"September 24th: In the records of one of my predecessors, he refers to the Amorphimi Strindgen as 'Scyth'. I have no idea where he got that name, but it's less cumbersome than the scientific term. The origins of the scyth have not been determined yet. They were found in underground caves near the south pole thanks to irregularities picked up by seismometers. Those were the same caves that now also house this research center. Otherwise, practically nothing is known about them. Metabolism, anatomy. We're not even sure what sensory organs they have. So far they seem to react to changes in their environment in a way that suggests they may use echolocation, rather like bats do. They also seem to be able to see for short distances."
 
 4:
 	"29.September: Das Licht ist ausgefallen. Ausserdem ist einer der Inkubatoren ausgefallen. Gott sei Dank war er leer. Aber die Experimente kann ich für heute streichen. Wenn es nicht gleich besser wird muss ich mal nachsehen. Ich hoffe es ist nichts schlimmeres. Ersatzteile in diese Einöde zu bringen dauert eine halbe Ewigkeit. Naja wenigstens geht der Notstromgenerator noch."
+	
+	"September 29th: We've had a power-outage. The lights have gone out in the lab, and one of the incubators used to hold the scyth has failed. Thankfully it was empty, but I doubt I'll be able to perform any more experiments today. If the power isn't back soon, I'll have to go and have a look myself. I hope it's nothing serious - getting spare parts out here takes forever. Well. At least the backup-generator is working."
 
 5:
 	"Die gesamte Station hat keinen Strom mehr. Scheiße... Ich muss zum Generator laufen um nachzusehen. Immerhin haben die mir erklärt wie ich den wieder zum Laufen kriege und einige kleinere Reperaturen kann ich auch noch... [plötzliches Geräusch] ...Was war das? Ist da jemand? Ich sehe schon Gespenster. Hier ist keiner ausser mir und den Scyth. Oh Nein..."
+	
+	"The power seems to have failed for the entire facility. Shit... I'm going to have to go to the generator to see what's wrong. At least they explained to me how to get it to work again, and I should be able to handle smaller repairs, too... [sudden noise] ...What was that? Is there someone here? [laughs] I'm already seeing ghosts. There's nobody here but me and the scyth... Oh. Oh no..."
 
 6:
 	"Sie sind ausgebrochen. Mindestens zwei. Und sie scheinen zu einer Art elektrischen Entladung fähig zu sein. Ich weiss nicht ob das ihre Art der Kommunikation sein soll oder ein Angriff ist. Aber ich denke dass macht keinen Unterschied WAS sie erreichen wollen. Noch ein paar von diesen Stronstößen überlebe ich nicht. Ich habe nur eine Chance. Ich muss den Helm verwenden um die Scyth festzuhalten. ungefähr 4 Sekunden direkten Blickkontakt sollten reichen um ihre Bewgungsfähigkeit stark einzuschränken."
+	
+	"They got out. At least two of them. And they seem to be able to direct electric currents. I'm not sure if they're trying to communicate with me, ore attack, but I don't think it really matters WHAT they're trying to do. I don't think I can survive more than a few of those current surges. I only have one chance, and that is to use the helmet to stop them. About four seconds of direct eye-contact should be enough to immobilize them, at least for a short while."
 
 7:
 	"Ich bin nun eine Etage tiefer. Diese Station ist gebaut wie ein Labyrinth. Kein wunder. sie musste ja an die Höhle angepasst werden. Trotzdem bin ich mich grade fast 10 Minuten lang im Kreis gelaufen. Und ich glaube ich habe hier auch wieder einige Scyth gehört. Anscheinend sind die überall von hier bis zum Generator."
+	
+	"I'm now one level lower. This outpost is built like a labyrinth. I suppose that isn't really surprising - it needed to be adapted to the caves. But still. I spent at least ten minutes running in circles. And I think I heard more scyth. It seems they're all over the place."
 
 8:
 	"Wieviele von diesen Dingern haben die denn hier unten eingefangen und weggesperrt? "
+	
+	"[panting] How many of those things did they catch and lock up down here?"
