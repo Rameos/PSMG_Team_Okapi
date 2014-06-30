@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 6e5a58df6c85c7149b94c2d198efae08
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Door_lower_Slider_left
+    100002: Door_lower_Slider_right
+    100004: Door_upper_Slider
+    100006: Gate_Body
+    100008: Gate_Body_bottom_outlet
+    100010: Light_Emitter_SideSlider
+    100012: Light_Emitter_TopSlider
+    100014: Slider
+    100016: Top_Slider
+    100018: //RootNode
+    100020: Wall
+    400000: Door_lower_Slider_left
+    400002: Door_lower_Slider_right
+    400004: Door_upper_Slider
+    400006: Gate_Body
+    400008: Gate_Body_bottom_outlet
+    400010: Light_Emitter_SideSlider
+    400012: Light_Emitter_TopSlider
+    400014: Slider
+    400016: Top_Slider
+    400018: //RootNode
+    400020: Wall
+    2300000: Door_lower_Slider_left
+    2300002: Door_lower_Slider_right
+    2300004: Door_upper_Slider
+    2300006: Gate_Body
+    2300008: Gate_Body_bottom_outlet
+    2300010: Light_Emitter_SideSlider
+    2300012: Light_Emitter_TopSlider
+    2300014: Slider
+    2300016: Top_Slider
+    2300018: Wall
+    3300000: Door_lower_Slider_left
+    3300002: Door_lower_Slider_right
+    3300004: Door_upper_Slider
+    3300006: Gate_Body
+    3300008: Gate_Body_bottom_outlet
+    3300010: Light_Emitter_SideSlider
+    3300012: Light_Emitter_TopSlider
+    3300014: Slider
+    3300016: Top_Slider
+    3300018: Wall
+    4300000: Wall
+    4300002: Door_lower_Slider_left
+    4300004: Door_lower_Slider_right
+    4300006: Slider
+    4300008: Light_Emitter_SideSlider
+    4300010: Top_Slider
+    4300012: Light_Emitter_TopSlider
+    4300014: Gate_Body
+    4300016: Gate_Body_bottom_outlet
+    4300018: Door_upper_Slider
+    6400000: Door_lower_Slider_left
+    6400002: Door_lower_Slider_right
+    6400004: Door_upper_Slider
+    6400006: Gate_Body
+    6400008: Gate_Body_bottom_outlet
+    6400010: Light_Emitter_SideSlider
+    6400012: Light_Emitter_TopSlider
+    6400014: Slider
+    6400016: Top_Slider
+    6400018: Wall
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
