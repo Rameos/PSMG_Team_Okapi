@@ -7,9 +7,15 @@ public class RandomizeAmbientSounds : MonoBehaviour {
     public float minIntervalSec = 30.0f;
     public float maxIntervalSec = 120.0f;
 
+    // used for monitoring only
     public float intervalSec = 0.0f;
+    public AudioClip lastClip;
+    public float lastClipVolume;
 
-    public AudioClip[] audioClips;    
+    // specify clips and corresponding volume in unity
+    public AudioClip[] audioClips;
+    public float[] volumes;
+    
     	
 	void Start () {
         // init interval
@@ -27,6 +33,13 @@ public class RandomizeAmbientSounds : MonoBehaviour {
 
         //intervalSec = 4.0f; // chosen by a fair dice roll
     }
+    private void SetupRandomClip()
+    {
+        int index = Random.Range(0, audioClips.Length);
+
+        lastClip = audioClips[index];
+        lastClipVolume = index < volumes.Length ? volumes[index] : 100;
+    }
 
     IEnumerator PlayRandomSounds()
     {
@@ -35,9 +48,9 @@ public class RandomizeAmbientSounds : MonoBehaviour {
             yield return new WaitForSeconds(intervalSec);
 
             Vector3 soundLocation = gameObject.transform.position;
-            AudioClip clip = audioClips[Random.Range(0, audioClips.Length)];
+            SetupRandomClip();
 
-            AudioSource.PlayClipAtPoint(clip, soundLocation);
+            AudioSource.PlayClipAtPoint(lastClip, soundLocation, lastClipVolume);
 
             GenerateRandomInterval();
         }
