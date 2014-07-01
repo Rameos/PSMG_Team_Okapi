@@ -70,6 +70,19 @@ ModelImporter:
     4300020: Gate_Body_bottom_outlet
     4300022: Door_upper_Slider
     4300024: Door_upper_Slider_Light_Emitter
+    6400000: Door_lower_Slider_left
+    6400002: Door_lower_Slider_right
+    6400004: Door_upper_Slider
+    6400006: Door_upper_Slider_Light_Emitter
+    6400008: Gate_Body
+    6400010: Gate_Body_001
+    6400012: Gate_Body_bottom_outlet
+    6400014: Light_Emitter_SideSlider
+    6400016: Light_Emitter_TopSlider
+    6400018: Slider
+    6400020: Top_Slider
+    6400022: Wall
+    6400024: Wall_001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -92,10 +105,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
