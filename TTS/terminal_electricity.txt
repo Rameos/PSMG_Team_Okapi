@@ -1,0 +1,1 @@
+This Station does not rely on an external power-supply but is completely autonomous in its energy-production. The energy-management system is designed to match the highest standards in efficiency and security. In the unlikely case of a critical failure of the main reactor several small back-up generators secure the functionality of doors, lights and elevators.
