@@ -6,20 +6,41 @@ import urllib
 BASE_URL = "http://translate.google.com/translate_tts?tl=en&q=%s"
 
 
-def download_files(files, texts):
-    contents = []
-    for file_name, text in zip(files, texts):
-        if len(text) > 100:
-            print "text in %s is too long (%s > 100)" % (file_name, len(text))
+class TTSTextFile(object):
 
-        response = requests.get(BASE_URL % text)
+    def __init__(self, file_name, text=None):
+        self.file_name = file_name
+        self._cached_text = text
+
+    @property
+    def text(self):
+        return self._cached_text or self._read_file_content()
+
+    def _read_file_content(self):
+        with open(self.file_name) as f:
+            self._cached_text = f.read()
+            return self._cached_text
+
+
+def download_mp3_files(tts_text_files):
+    mp3_contents = []
+    for text_file in tts_text_files:
+        if len(text_file.text) > 100:
+            print "text in %s is too long (%s > 100)" % (text_file.file_name, len(text_file.text))
+
+        response = requests.get(BASE_URL % text_file.text)
         if response.status_code != 200:
             pass
             #print "text in %s resulted in status code %s" % (file_name, response.status_code)
 
-        contents.append(response.content)
+        mp3_contents.append(response.content)
 
-    return contents
+    return mp3_contents
+
+
+def save_mp3_files(tts_text_files, mp3_contents):
+    for text_file, mp3_content in zip(tts_text_files, mp3_contents):
+        save_file(text_file.file_name[:-4] + ".mp3", mp3_content)
 
 
 def save_file(file_name, content):
@@ -27,45 +48,37 @@ def save_file(file_name, content):
         f.write(content)
 
 
-def read_texts():
-    files = glob.glob("*.txt")
+def read_tts_text_files():
+    tts_file_names = glob.glob("*.txt")
 
-    text_list = []
-    for file_name in files:
-        with open(file_name, 'r') as f:
-            text_list.append(f.read())
-
-    return files, text_list
+    return [TTSTextFile(file_name) for file_name in tts_file_names]
 
 
-def partition_long_files(files, texts):
-    new_files, new_texts = [], []
+def partition_long_files(tts_text_files):
+    new_tts_text_files = []
 
-    for file_name, text in zip(files, texts):
-        if len(text) > 100:
-            fs, ts = partition_file(file_name, text)
-            new_files += fs
-            new_texts += ts
+    for text_file in tts_text_files:
+        if len(text_file.text) > 100:
+            partitioned_text_files = partition_file(text_file)
 
+            new_tts_text_files += partitioned_text_files
         else:
-            new_files.append(file_name)
-            new_texts.append(text)
+            new_tts_text_files.append(text_file)
 
-    return new_files, new_texts
+    return new_tts_text_files
 
 
-def partition_file(file_name, text):
-    parts = text.split(". ")
-    file_names = [file_name[:-4] + "_part" + str(i) + ".txt" for i, _ in enumerate(parts)]
+def partition_file(text_file):
+    parts = text_file.text.split(". ")
+    file_names = [text_file.file_name[:-4] + "_part" + str(i) + ".txt" for i, _ in enumerate(parts)]
 
-    return file_names, parts
+    return [TTSTextFile(file_name, text=text) for file_name, text in zip(file_names, parts)]
 
 
 if __name__ == '__main__':
-    files, texts = read_texts()
-    files, texts = partition_long_files(files, texts)
+    tts_text_files = read_tts_text_files()
+    tts_text_files = partition_long_files(tts_text_files)
 
-    contents = download_files(files, texts)
+    mp3_contents = download_mp3_files(tts_text_files)
+    save_mp3_files(tts_text_files, mp3_contents)
 
-    for file_name, content in zip(files, contents):
-        save_file(file_name[:-4] + ".mp3", content)
