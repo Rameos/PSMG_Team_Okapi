@@ -269,9 +269,11 @@ namespace iViewX
                 raygaze = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));                
             }
 
+            //Only use the EyeTracking-layer
+            int layerBitmask = 1 << 8;
 
             //Cast a Ray from the Gazepoint into the scene
-            if (Physics.Raycast(raygaze, out hit))
+            if (Physics.Raycast(raygaze, out hit, Mathf.Infinity, layerBitmask))
             {
                 //Only React when a Object has a Monobehabvior with GazeComponent
                 MonoBehaviourWithGazeComponent hitMono = hit.collider.gameObject.GetComponent<MonoBehaviourWithGazeComponent>();

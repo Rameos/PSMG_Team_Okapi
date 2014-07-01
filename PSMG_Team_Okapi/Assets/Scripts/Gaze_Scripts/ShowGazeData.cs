@@ -11,6 +11,7 @@ public class ShowGazeData : MonoBehaviour {
 
     public bool showGUI = false;
     public bool showGazeCursor = false;
+    public bool showRayCast = false;
 
     //Position and Texture for the Gaze
     public Texture2D gazeCursor;
@@ -21,6 +22,14 @@ public class ShowGazeData : MonoBehaviour {
     private int xPos_Elements;
     private int yPos_Element;
 
+    void Update()
+    {
+        if (showRayCast)
+        {
+            //Debug.DrawLine(Camera.main.transform.position, new Vector3(Screen.width / 2, Screen.height / 2, 0), Color.yellow);
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.TransformDirection(Vector3.forward)*10, Color.yellow);
+        }
+    }
 
     void OnGUI()
     {
