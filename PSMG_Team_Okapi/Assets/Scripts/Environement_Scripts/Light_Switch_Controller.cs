@@ -28,24 +28,25 @@ public class Light_Switch_Controller : MonoBehaviour
         {
             if (canPress)
             {
-               
-                Renderer button = gameObject.renderer;
-                Material[] mats = button.materials;
-                for (int i = 0; i < button.materials.Length; i++)
+                foreach (Transform child in gameObject.transform)
                 {
-                    Debug.Log(mats[i].name);
-                    if (mats[i].name == "Light_Switch_Button_Light_Off (Instance)")
+                    for (int i = 0; i < child.gameObject.renderer.materials.Length; i++)
                     {
-                        mats[i] = lightOnMat;
-                        Debug.Log("switch Press");
+                        if (child.gameObject.renderer.materials[i].name == "Light_Switch_Button_Light_Off (Instance)")
+                        {
+                            Material[] mats = child.gameObject.renderer.materials;
+                            mats[i] = lightOnMat;
+                            child.gameObject.renderer.materials = mats;
+                        }
                     }
                 }
-                button.materials = mats;
+                
 
                 if (OnActivateSwitch != null)
                 {
                     // trigger Event
                     OnActivateSwitch(associatedLightsObject);
+                    Debug.Log("Trigger");
                 }
                 audio.Play();
             }
