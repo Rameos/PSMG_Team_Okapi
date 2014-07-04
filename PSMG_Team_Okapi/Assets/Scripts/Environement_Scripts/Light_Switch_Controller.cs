@@ -6,12 +6,13 @@ public class Light_Switch_Controller : MonoBehaviour
 
     public GameObject associatedLightsObject;
     public Material lightOnMat;
+    public Material lightOffMat;
 
     private bool canPress = false;
     private GameObject player;
 
-    public delegate void StateChangeHandler(GameObject lights);
-    public event StateChangeHandler OnActivateSwitch;
+    public delegate void LightSwitchEventHandler(GameObject lights);
+    public event LightSwitchEventHandler OnActivateLightSwitch;
 
 
 
@@ -19,6 +20,7 @@ public class Light_Switch_Controller : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -32,21 +34,27 @@ public class Light_Switch_Controller : MonoBehaviour
                 {
                     for (int i = 0; i < child.gameObject.renderer.materials.Length; i++)
                     {
+                        Material[] mats = child.gameObject.renderer.materials;
                         if (child.gameObject.renderer.materials[i].name == "Light_Switch_Button_Light_Off (Instance)")
                         {
-                            Material[] mats = child.gameObject.renderer.materials;
                             mats[i] = lightOnMat;
-                            child.gameObject.renderer.materials = mats;
                         }
+                        else if (child.gameObject.renderer.materials[i].name == "Light_Switch_Button_Light_On (Instance)" )
+                        {
+                            mats[i] = lightOffMat;
+                        }
+                        child.gameObject.renderer.materials = mats;
+
                     }
                 }
-                
 
-                if (OnActivateSwitch != null)
+                LightSwitchEventHandler handler = OnActivateLightSwitch;
+                //if (handler != null)
                 {
                     // trigger Event
-                    OnActivateSwitch(associatedLightsObject);
                     Debug.Log("Trigger");
+
+                    handler(associatedLightsObject);
                 }
                 audio.Play();
             }

@@ -5,9 +5,7 @@ public class Light_OnOff_Controller : MonoBehaviour {
 
    
     public GameObject associatedSwitch;
- 
-
-    private bool isOn;
+    public bool isOn = true;
     
 
 
@@ -16,13 +14,13 @@ public class Light_OnOff_Controller : MonoBehaviour {
     {
         if (associatedSwitch != null)
         {
-            associatedSwitch.GetComponent<Light_Switch_Controller>().OnActivateSwitch += OnActivateSwitch;
+            associatedSwitch.GetComponent<Light_Switch_Controller>().OnActivateLightSwitch += OnActivateSwitch;
         }
     }
 
     private void OnActivateSwitch(GameObject lights)
     {
-        //if (lights == gameObject)
+        if (lights == gameObject)
         {
             isOn = !isOn;
             Debug.Log("Licht: " + isOn);
@@ -32,7 +30,11 @@ public class Light_OnOff_Controller : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        gameObject.SetActive(isOn);
+        foreach (Transform child in gameObject.transform)
+        {
+            child.gameObject.SetActive(isOn);
+            //gameObject.SetActive(isOn);
+        }
         
     }
 }
