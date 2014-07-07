@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player_HealthVisualFeedback : MonoBehaviour {
+public class HealthVisualFeedback : MonoBehaviour {
 
     public float alphaStage1 = 0.20f;
     public float alphaStage2 = 0.35f;
