@@ -32,7 +32,11 @@ public class HealthVisualFeedback : MonoBehaviour {
     {
         Color currentColor = guiTexture.color;
 
-        if (newHealth <= healthThresholdStage3)
+        if (newHealth <= 0)
+        {
+            currentColor.a = 0.0f;
+        } 
+        else if (newHealth <= healthThresholdStage3)
         {
             currentColor.a = alphaStage3;
         } 
