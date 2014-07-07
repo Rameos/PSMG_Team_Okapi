@@ -48,13 +48,14 @@ public class Light_Switch_Controller : MonoBehaviour
                     }
                 }
 
-                LightSwitchEventHandler handler = OnActivateLightSwitch;
+                //LightSwitchEventHandler handler = OnActivateLightSwitch;
                 //if (handler != null)
+                if(OnActivateLightSwitch != null)
                 {
                     // trigger Event
                     Debug.Log("Trigger");
 
-                    handler(associatedLightsObject);
+                    OnActivateLightSwitch(associatedLightsObject);
                 }
                 audio.Play();
             }
