@@ -6,7 +6,7 @@
 2:
 	"18.September: Die 'Amorphimi Strindgen'. Eine auf den ersten Blick nicht einmal lebendig aussehende Lebensform. Die verschiedenen Pyramiden werden vermutlich durch eine Art Kraftfeld zusammengehalten, welches auch mit ihrer Fortbewegung und ihrer Fähigkeit nahezu transparent zu erscheinen zusammenhängen muss. Ein konstanter Strom gerichteter elektrischer Energie hebt diese Transparenz auf. Dafür haben wir eine Art Helm samt Brille die diese Energie abgeben kann. Gezielt wird dieser mit den Augen um dabei die Hände frei zu haben."
 	
-	"September 18th: The 'Amorphimi Strindgen'. A creature that, at first glance, doesn't even look like it might be alive. The pyramid-like extremities seem to be held together by a sort of force-field, which must also be responsible for its movements and its ability to appear almost completely transparent. A constant stream of directed electronic particles cancels out this transparency. We have a sort of helmet with glasses that can generate this stream. You aim it simply by looking at the creature. An ingenious invention that leaves your hands free for other things."
+	"September 18th: The 'Amorphimi Strindgen'. A creature that, at first glance, doesn't even look like it is alive. The pyramid-like extremities seem to be held together by a sort of force-field, which must also be responsible for its movements and its ability to appear almost completely transparent. A constant stream of directed electronic particles cancels out this transparency. We have a sort of helmet with glasses that can generate this stream. You aim it simply by looking at the creature - an ingenious invention that leaves your hands free for other things."
 
 3:
 	"24.September: In einem alten Eintrag meines Vorgängers hat er die Bezeichnung 'Scyth' für diese Lebewesen verwendet. Ich weis zwar nicht wo er sie herhat aber sie ist immerhin weniger sperrig als ihr wissenschaftlicher Name. Die Herkunft der Scyth ist unklar. Sie wurden in unterirdischen Höhlen in der Nähe des Nordpols durch seismographische Aufnahmen entdeckt. In genau diesen Höhlen in denen jetzt diese Forschungsstation steht. Ansonsten ist fast nichts über sie bekannt. Energieaufnahme, Anatomie. Wir sind uns noch nicht einmal sicher über welche Sinnesorgane sie Verfügen. Bis jetzt reagieren sie auf die Veränderung ihrer Umgebung was eine Art fledermausähnliches Sonar nahelegen würde. Ausserdem scheinen sie auf kurze Entfernungen zu sehen."
@@ -16,17 +16,17 @@
 4:
 	"29.September: Das Licht ist ausgefallen. Ausserdem ist einer der Inkubatoren ausgefallen. Gott sei Dank war er leer. Aber die Experimente kann ich für heute streichen. Wenn es nicht gleich besser wird muss ich mal nachsehen. Ich hoffe es ist nichts schlimmeres. Ersatzteile in diese Einöde zu bringen dauert eine halbe Ewigkeit. Naja wenigstens geht der Notstromgenerator noch."
 	
-	"September 29th: We've had a power-outage. The lights have gone out in the lab, and one of the incubators used to hold the scyth has failed. Thankfully it was empty, but I doubt I'll be able to perform any more experiments today. If the power isn't back soon, I'll have to go and have a look myself. I hope it's nothing serious - getting spare parts out here takes forever. Well. At least the backup-generator is working."
+	"September 29th: We've had a power-outage. The lights have gone out in the lab, and one of the incubators for the scyth has failed. Thankfully it was empty, but I doubt I'll be able to perform any more experiments today. If the power doesn't come back on soon, I'll have to go and have a look myself. I hope it's nothing serious - getting spare parts out here takes forever. Well. At least the backup-generators are working."
 
 5:
 	"Die gesamte Station hat keinen Strom mehr. Scheiße... Ich muss zum Generator laufen um nachzusehen. Immerhin haben die mir erklärt wie ich den wieder zum Laufen kriege und einige kleinere Reperaturen kann ich auch noch... [plötzliches Geräusch] ...Was war das? Ist da jemand? Ich sehe schon Gespenster. Hier ist keiner ausser mir und den Scyth. Oh Nein..."
 	
-	"The power seems to have failed for the entire facility. Shit... I'm going to have to go to the generator to see what's wrong. At least they explained to me how to get it to work again, and I should be able to handle smaller repairs, too... [sudden noise] ...What was that? Is there someone here? [laughs] I'm already seeing ghosts. There's nobody here but me and the scyth... Oh. Oh no..."
+	"The power seems to have failed for the entire facility. Shit... I'm going to have to go down to the generator to see what's wrong. At least they explained to me how to get it working again, and I should be able to handle smaller repairs, too... [sudden noise] ...What was that? Is there someone here? [laughs] I'm already seeing ghosts. There's nobody here but me and the scyth... Oh. Oh no..."
 
 6:
 	"Sie sind ausgebrochen. Mindestens zwei. Und sie scheinen zu einer Art elektrischen Entladung fähig zu sein. Ich weiss nicht ob das ihre Art der Kommunikation sein soll oder ein Angriff ist. Aber ich denke dass macht keinen Unterschied WAS sie erreichen wollen. Noch ein paar von diesen Stronstößen überlebe ich nicht. Ich habe nur eine Chance. Ich muss den Helm verwenden um die Scyth festzuhalten. ungefähr 4 Sekunden direkten Blickkontakt sollten reichen um ihre Bewgungsfähigkeit stark einzuschränken."
 	
-	"They got out. At least two of them. And they seem to be able to direct electric currents. I'm not sure if they're trying to communicate with me, ore attack, but I don't think it really matters WHAT they're trying to do. I don't think I can survive more than a few of those current surges. I only have one chance, and that is to use the helmet to stop them. About four seconds of direct eye-contact should be enough to immobilize them, at least for a short while."
+	"They got out. At least two of them. And they seem to be able to direct electric currents. I'm not sure if they're trying to communicate with me, or attack, but I suppose it doesn't really matter WHAT they're trying to do. I don't think I can survive more than a few of those current surges. I only have one option, and that is to use the helmet to stop them. About four seconds of direct eye-contact should be enough to immobilize them, at least for a short while."
 
 7:
 	"Ich bin nun eine Etage tiefer. Diese Station ist gebaut wie ein Labyrinth. Kein wunder. sie musste ja an die Höhle angepasst werden. Trotzdem bin ich mich grade fast 10 Minuten lang im Kreis gelaufen. Und ich glaube ich habe hier auch wieder einige Scyth gehört. Anscheinend sind die überall von hier bis zum Generator."
@@ -36,27 +36,27 @@
 8:
 	"Wieviele von diesen Dingern haben die denn hier unten eingefangen und weggesperrt? Wie haben die das geschafft? Wir wissen noch nicht einmal wovon diese Scyths sich ernähren. OB sie sich überhaupt ernähren. Und warum funktionieren die Türen und Lichter aber die Käfige nicht? Die sollten doch eine höhere Priorität haben. Von wegen höhere Sicherheitsstandards."
 	
-	"[panting] How many of those things did they catch and lock up down here? How did they do that? We don't even know what they eat. IF they eat. And why are the doors and the lights working but not the cages? Shouldn't they have a higher priority? Higher scurity standards my ass!"
+	"[panting] How many of those things did they catch and lock up down here? How did they do that? We don't even know what they eat. IF they eat. And why are the doors and the lights working but not the cages? Shouldn't they have a higher priority? High security standards my ass!"
 
 9:
 	"Das passt nicht zusammen. Ich habe gerade einen Sicherheitscheck über die Station laufen lassen und anscheinend sind die Stromkreise für die Käfige und die normale Beleuchtung, vollständig intakt. Sie sind einfach nur aus und lassen sich nicht mehr hochfahren. Seltsam. Eigentlich sollten die im großen Stil durchgebrannt sein damit dieser Stromausfall passieren kann."
 
-	"That doesn't make sense. I've just run a systemcheck on all stations and apparently are the curcuits for the cages and the normal lights completely intact. They just shut down and won't boot again. Weird. They should have been completely blown, for this blackout to happen."
+	"This simply doesn't make any sense. I've just run a complete system check for the whole facility, and apparently the curcuits for the cages and the normal lights are completely intact. They've just shut down and won't boot again. Weird. I thought they must have blown completely, for this blackout to happen."
 
 10:
 	"Ich weiß wie das jetzt klingt aber ich glaube irgendwer hat hier seine Hand im Spiel. Das kann kein Zufall sein, dass hier auf einmal die eine Hälfte der Stromkreise zusammenbricht ohne irgendeinen Grund und der Rest ganz normal weiterläuft. Ich... [plötzliches Türgeräusch] Was war das? [Pause und dann rufend] Hallo? Ist da wer? [sarkstisch] Na klar ist da wer. Ich habe Besuch bekommen 2,3 km unter dem Südpol. [Sarkasmus ende] Ich drehe schon durch und bilde mir Sachen ein. Ich sollte mich besser beeilen zum Generator zu kommen sonst sehe ich noch Geister."
 
-	"I know how that sounds but i think somebody is having a hand in this. It can't be a coincidence that one half of the electric circuits breaks down for no reason whatsoever and the rest runs just fine. I... [sudden door sound] What was that? [pause the calling] Hello? Is anyone there? [sarcastic] Of course. I got visitors 2.3 kilometers beneath the south pole. [sarcasm end] Maybe i blew a fuse too. I should better hurry to get to the generator or i might start seeing ghosts."
+	"I know this sounds crazy, but I think somebody else has a hand in this. Half of the electric circuits have shut down for no apparent reason, and the rest is still running just fine. I... [sudden door sound] What was that? [pause] Hello? Is anyone there? [sarcastic] Of course. I've got visitors 2.3 kilometers beneath the south pole. [sarcasm end] Maybe I blew a fuse, too. I'd better get down to the generator before I really start seeing ghosts."
 
 11:
 	"OKAY! Ich habe gerade eine Tür gesehen die sich vor meinen Augen verschlossen hat. Hier ist irgendwer und will mich verarschen. [laut rufend] WO BIST DU? KOMM RAUS DU FEIGE RATTE! [Scythgeräusch] Oh Scheiße. [Schritte entfernen sich] (theoretisch TTS-Ansage: 'Message timed out')"
 
-	"OKAY! I just saw a door lock itself right in front of my eyes. There's somebody here and tries to shit me. [shouting loud] WHERE ARE YOU? SHOW YOURSELF! [Scythsound] Oh shit! [steps] (theoretical TTS: 'message timed out')"
+	"OKAY! I just saw a door lock itself right in front of my eyes. There's somebody here trying to mess with me. [shouting loud] WHERE ARE YOU? SHOW YOURSELF! [Scythsound] Oh shit! [steps] (TTS: 'message timed out')"
 
 12:
 	"Ich bin fast da. Im Reaktorraum gibts eine direkte Sattelitenverbindung über die ich mit dem Hauptquartier Verbindung aufnehmen kann. Dann können die Verstärkung schicken und diesen Eindringling finden."
 
-	"I'm almost there. At the reactor there is a direct sattelite-connection with which i can contact HQ. Then they send someone."
+	"I'm almost there. And the room the generator is in has a terminal with a direct satellite-connection. I'll be able to contact Headquarters, and they can send backup to find the intruder. It'll be ok. It's all gonna be ok."
 
 13: Im Reaktorraum: ""
 
