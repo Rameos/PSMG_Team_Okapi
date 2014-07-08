@@ -43,5 +43,6 @@ public class Player_GruntController : MonoBehaviour {
             Vector3 soundLocation = gameObject.transform.position;
             ChooseRandomClip();
             AudioSource.PlayClipAtPoint(lastClip, soundLocation, lastClipVolume);
+            
     }
 }
