@@ -8,6 +8,7 @@ public class InitEyetrackingDebugMock : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Screen.showCursor = false;
         if (calibrationOnStart && !gazeModel.isEyeTrackerRunning)
         {
             //GazeControlComponent.Instance.StartCalibration();
