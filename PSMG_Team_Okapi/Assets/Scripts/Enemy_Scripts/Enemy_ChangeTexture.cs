@@ -9,54 +9,52 @@ public class Enemy_ChangeTexture : MonoBehaviour
     public Material frozenMat;
 
     private Renderer enemyBody;
+    private Enemy_States enemyState;
 
 	// Use this for initialization
 	void Start () 
     {
         enemyBody = gameObject.renderer;
+        enemyState = gameObject.GetComponent<Enemy_States>();
+
+        enemyState.OnIdle += OnIdle;
+        enemyState.OnAlert += OnAlert;
+        enemyState.OnAngry += OnAngry;
+        enemyState.OnFreeze += OnFreeze;
 	}
 
-    public void changeLooks(Enemy_States.State state)
+    private void OnIdle()
+    {
+        ChangeMaterial(idleMat);
+    }
+
+    private void OnAlert()
+    {
+        ChangeMaterial(alertMat);
+    }
+
+    private void OnAngry()
+    {
+        ChangeMaterial(angryMat);
+    }
+
+    private void OnFreeze()
+    {
+        ChangeMaterial(frozenMat);
+    }
+
+    private void ChangeMaterial(Material newMat)
     {
         Color oldColor = enemyBody.material.color;
 
-        switch(state)
-        {
-            case Enemy_States.State.idle:
-            {
-                enemyBody.material = idleMat;
-                break;
-            }
-            case Enemy_States.State.alert:
-            {
-                enemyBody.material = alertMat;
-                break;
-            }
-
-            case Enemy_States.State.angry:
-            {
-                enemyBody.material = angryMat;
-                break;
-            }
-
-            case Enemy_States.State.frozen:
-            {
-                enemyBody.material = frozenMat;
-                break;
-            }
-                
-            default:
-                break;
-        }
+        enemyBody.material = newMat;
 
         Color newColor = enemyBody.material.color;
         newColor.a = oldColor.a;
-        enemyBody.material.color = newColor; 
+        enemyBody.material.color = newColor;
     }
     void OnCollisionEnter(Collision hit)
     {
         Debug.Log(hit);
-    }
-
-    
+    }    
 }

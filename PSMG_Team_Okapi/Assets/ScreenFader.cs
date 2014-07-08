@@ -76,7 +76,7 @@ public class ScreenFader : MonoBehaviour {
 
         if (Mathf.Abs(guiTexture.color.a - targetColor.a) < 0.01f)
         {
-            Debug.Log("Fading completed!");
+            //Debug.Log("Fading completed!");
             fading = false;
 
             BroadcastCompletion();

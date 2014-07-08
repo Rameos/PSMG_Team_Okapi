@@ -49,6 +49,10 @@ public class HealthVisualFeedback : MonoBehaviour {
         {
             currentColor.a = alphaStage1;
         }
+        else
+        {
+            currentColor.a = 0.0f;
+        }
 
         guiTexture.color = currentColor;
     }

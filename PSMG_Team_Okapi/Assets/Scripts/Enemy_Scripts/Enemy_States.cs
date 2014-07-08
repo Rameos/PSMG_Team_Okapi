@@ -13,7 +13,7 @@ public class Enemy_States : MonoBehaviour
     public enum State { idle, alert, angry, frozen };
     public State currentState;
 
-    private bool debug = true;
+    public bool debug = false;
 
     private Enemy_ChangeTexture changeTexture;
 
@@ -30,9 +30,8 @@ public class Enemy_States : MonoBehaviour
         OnIdle();
 
         if (debug)
-        {
-            changeTexture.changeLooks(State.idle);
-            //print("Enemy idle");
+        {            
+            print("Enemy idle");
         }
     }
 
@@ -43,8 +42,7 @@ public class Enemy_States : MonoBehaviour
 
         if (debug)
         {
-            changeTexture.changeLooks(State.alert);
-            //print("Enemy alert");
+            print("Enemy alert");
         }
     }
 
@@ -54,9 +52,8 @@ public class Enemy_States : MonoBehaviour
         OnAngry();
 
         if (debug)
-        {
-            changeTexture.changeLooks(State.angry);
-            //print("Enemy angry");
+        {            
+            print("Enemy angry");
         }
     }
 
@@ -66,9 +63,8 @@ public class Enemy_States : MonoBehaviour
         OnFreeze();
 
         if (debug)
-        {
-            changeTexture.changeLooks(State.frozen);
-            //print("Enemy frozen");
+        {            
+            print("Enemy frozen");
         }
 
     }
