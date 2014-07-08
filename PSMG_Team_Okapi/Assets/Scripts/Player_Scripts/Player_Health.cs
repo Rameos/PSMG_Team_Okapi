@@ -59,7 +59,7 @@ public class Player_Health : MonoBehaviour {
                 isRegenerating = false;
             }
 
-            yield return new WaitForSeconds(1.0f / regenerationDelaySeconds);
+            yield return new WaitForSeconds(1.0f / regenerationHealthPerSecond);
         }        
     }    
 
