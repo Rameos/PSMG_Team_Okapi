@@ -205,14 +205,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetFrozen()
     {
-        StartCoroutine(Freeze());
-    }
-
-    IEnumerator Freeze()
-    {
-        yield return new WaitForSeconds(freezetime);
-
-        //enemyState.Alert();
+        agent.speed = 0;
     }
 
     public void ResetCurrentpoint()
