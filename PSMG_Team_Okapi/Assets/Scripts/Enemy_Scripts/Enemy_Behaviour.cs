@@ -164,6 +164,16 @@ public class Enemy_Behaviour : MonoBehaviour
         patrolpoints = patrolpointsIdle;
     }
 
+    public void Pause()
+    {
+        StartCoroutine(Schrecksekunde());
+    }
+
+    IEnumerator Schrecksekunde()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
     public void SetPatrolpointsAlert()
     {
         patrolpoints = patrolpointsAlert;
@@ -209,6 +219,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void SetListeners()
     {
+        enemyState.OnAlert += Pause;
         enemyState.OnAlert += SetPatrolpointsAlert;
         enemyState.OnAlert += ResetCurrentpoint;
         enemyState.OnAlert += SetAlertSpeed;
