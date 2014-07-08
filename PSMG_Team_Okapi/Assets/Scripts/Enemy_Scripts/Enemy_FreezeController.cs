@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Enemy_FreezeController : MonoBehaviour {
 
-    public float freezingAmount = 0;
-    public float freezingAmountPerSec = 50;
-    public float thawingTime = 5;    
+    public float freezingAmount = 0.0f;
+    public float freezingAmountPerSec = 30.0f;
+    public float thawingTime = 5.0f;    
 
     public delegate void FreezeHandler();
 
@@ -14,30 +14,38 @@ public class Enemy_FreezeController : MonoBehaviour {
     public event FreezeHandler OnFrozen = delegate { };
     public event FreezeHandler OnThawed = delegate { };
 
+    public bool debug = false;
+
     private Enemy_States enemyState;
     private Enemy_GazeInteraction gazeInteraction;
-
-    private float FreezingStart = 0;
+    
     private bool isCurrentlyFreezing = false;
+
+    // make these public for debugging in unity
+    private bool isAlert= false;
+    private bool isAngry = false;
 
 	void Start () {
         enemyState = gameObject.GetComponent<Enemy_States>();
         
         gazeInteraction = gameObject.GetComponentInChildren<Enemy_GazeInteraction>();
-        gazeInteraction.OnEnemyGazeEntered += OnGazeEntered;
+        gazeInteraction.OnEnemyGazeStay += OnGazeStay;
         gazeInteraction.OnEnemyGazeExited += OnGazeExited;
 	}
 
-    void Update()
+    void FixedUpdate()
     {
         if (isCurrentlyFreezing)
         {
-            freezingAmount = Mathf.Min(100, freezingAmount + (freezingAmountPerSec * Time.deltaTime));
+            freezingAmount = freezingAmount + (freezingAmountPerSec * Time.fixedDeltaTime);
+            freezingAmount = Mathf.Min(100.0f, freezingAmount);
 
             if (freezingAmount >= 100)
             {
                 enemyState.Freeze();
                 OnFrozen();
+                isCurrentlyFreezing = false;
+                freezingAmount = 0.0f;
 
                 StartCoroutine("Thawing");
 
@@ -46,20 +54,27 @@ public class Enemy_FreezeController : MonoBehaviour {
         }
         else
         {
-            freezingAmount = Mathf.Max(0, freezingAmount - freezingAmountPerSec * 0.25f * Time.fixedDeltaTime);
+            freezingAmount = Mathf.Max(0, freezingAmount - (freezingAmountPerSec * 0.25f * Time.fixedDeltaTime));
         }
 
-        //Debug.Log("print: " + freezingAmount);
+        if (debug)
+        {
+            //Debug.Log("print: " + freezingAmount);
+        }        
     }
 
-    private void OnGazeEntered()
+    private void OnGazeStay()
     {
-        bool isAlert = enemyState.currentState == Enemy_States.State.alert;
-        bool isAngry = enemyState.currentState == Enemy_States.State.angry;
+        isAlert = enemyState.currentState == Enemy_States.State.alert;
+        isAngry = enemyState.currentState == Enemy_States.State.angry;
 
-        if (isAlert || isAngry)
+        if (!isCurrentlyFreezing && (isAlert || isAngry))
         {
-            //Debug.Log("gaze entered: " + enemyState.currentState);
+            if (debug)
+            {
+                Debug.Log("gaze staying: " + enemyState.currentState);
+            }
+            
             isCurrentlyFreezing = true;
             OnStartFreezing();
         }        
@@ -67,8 +82,16 @@ public class Enemy_FreezeController : MonoBehaviour {
 
     private void OnGazeExited()
     {
-        isCurrentlyFreezing = false;
-        OnStopFreezing();
+        if (isCurrentlyFreezing)
+        {
+            isCurrentlyFreezing = false;
+            OnStopFreezing();
+            
+            if (debug)
+            {
+                Debug.Log("gaze exited");
+            }
+        }
     }
 
     IEnumerator Thawing()
@@ -77,5 +100,10 @@ public class Enemy_FreezeController : MonoBehaviour {
 
         OnThawed();
         enemyState.Alert();
+
+        if (debug)
+        {
+            Debug.Log("thawed");
+        }
     }
 }
