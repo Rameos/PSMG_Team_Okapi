@@ -7,9 +7,12 @@ public class Light_Switch_Controller : MonoBehaviour
     public GameObject associatedLightsObject;
     public Material lightOnMat;
     public Material lightOffMat;
+    public bool isOn;
 
     private bool canPress = false;
+    
     private GameObject player;
+    private Animator anim;
 
     public delegate void LightSwitchEventHandler(GameObject lights);
     public event LightSwitchEventHandler OnActivateLightSwitch;
@@ -20,6 +23,7 @@ public class Light_Switch_Controller : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = gameObject.GetComponent<Animator>();
         
     }
 
@@ -30,6 +34,8 @@ public class Light_Switch_Controller : MonoBehaviour
         {
             if (canPress)
             {
+                isOn = !isOn;
+                anim.SetBool(Animator.StringToHash("isOn"), isOn);
                 foreach (Transform child in gameObject.transform)
                 {
                     for (int i = 0; i < child.gameObject.renderer.materials.Length; i++)
@@ -48,8 +54,7 @@ public class Light_Switch_Controller : MonoBehaviour
                     }
                 }
 
-                //LightSwitchEventHandler handler = OnActivateLightSwitch;
-                //if (handler != null)
+              
                 if(OnActivateLightSwitch != null)
                 {
                     // trigger Event
