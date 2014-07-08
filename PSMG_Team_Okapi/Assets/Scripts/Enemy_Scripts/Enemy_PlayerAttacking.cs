@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Enemy_PlayerAttacking : MonoBehaviour {
 
+    public delegate void PlayerAttackingHandler();
+    public event PlayerAttackingHandler OnAttackingPlayer = delegate { };
+
     private Player_Health playerHealth;
 
     public int damagePercent = 40;
@@ -34,6 +37,7 @@ public class Enemy_PlayerAttacking : MonoBehaviour {
     IEnumerator DamagePlayer() 
     {
         playerHealth.health -= damagePercent;
+        OnAttackingPlayer();
         isDamaging = false;
 
         yield return new WaitForSeconds(damageCooldown);
