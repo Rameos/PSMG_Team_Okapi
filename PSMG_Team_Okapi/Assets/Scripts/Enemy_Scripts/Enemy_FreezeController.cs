@@ -49,7 +49,7 @@ public class Enemy_FreezeController : MonoBehaviour {
             freezingAmount = Mathf.Max(0, freezingAmount - freezingAmountPerSec * 0.25f * Time.fixedDeltaTime);
         }
 
-        Debug.Log("print: " + freezingAmount);
+        //Debug.Log("print: " + freezingAmount);
     }
 
     private void OnGazeEntered()
