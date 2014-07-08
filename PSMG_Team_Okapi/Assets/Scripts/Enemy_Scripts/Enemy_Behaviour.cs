@@ -8,8 +8,8 @@ public class Enemy_Behaviour : MonoBehaviour
     public Transform[] patrolpointsAlert; // enthält erstmal nur Spieler
     private Transform[] patrolpoints;
 
-    public float idlespeed = 1; // geschwindigkeit wenn idle oder alert
-    public float alertspeed = 2;
+    public float idlespeed = 1; // geschwindigkeit wenn idle
+    public float alertspeed = 2; // geschwindigkeit wenn alert
     public float angryspeed = 3; // geschwindigkeit wenn angry
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
@@ -50,7 +50,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         if (patrolpoints.Length > 0)
         {
-            Rotate();
+            Rotate(agent.speed);
             Move();
         }
 
@@ -133,10 +133,12 @@ public class Enemy_Behaviour : MonoBehaviour
         agent.SetDestination(patrolpoints[currentpoint].position);
     }
 
-    private void Rotate()
+    private void Rotate(float speed)
     {
+        if (speed == 0 && enemyState.currentState == Enemy_States.State.alert) speed = angryspeed;
+
         Vector3 target = patrolpoints[currentpoint].position;
-        float step = 2 * agent.speed * Time.deltaTime;
+        float step = 2 * speed * Time.deltaTime;
 
         Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
         Vector3 v2 = new Vector3(target.x - transform.position.x, 0, target.z - transform.position.z);
@@ -166,12 +168,14 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void Pause()
     {
+        SetNoSpeed();
         StartCoroutine(Schrecksekunde());
     }
 
     IEnumerator Schrecksekunde()
     {
         yield return new WaitForSeconds(1);
+        SetAlertSpeed();
     }
 
     public void SetPatrolpointsAlert()
@@ -192,6 +196,11 @@ public class Enemy_Behaviour : MonoBehaviour
     public void SetAngrySpeed()
     {
         agent.speed = angryspeed;
+    }
+
+    public void SetNoSpeed()
+    {
+        agent.speed = 0;
     }
 
     public void SetFrozen()
@@ -222,7 +231,6 @@ public class Enemy_Behaviour : MonoBehaviour
         enemyState.OnAlert += Pause;
         enemyState.OnAlert += SetPatrolpointsAlert;
         enemyState.OnAlert += ResetCurrentpoint;
-        enemyState.OnAlert += SetAlertSpeed;
         enemyState.OnAlert += SetHomePoint;
 
         enemyState.OnAngry += SetAngrySpeed;
