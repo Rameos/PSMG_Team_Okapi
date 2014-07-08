@@ -105,7 +105,7 @@ public class Door_Animation : MonoBehaviour
 
     void playLockedSound()
     {
-        //play Sound
+        audioSources[2].Play();
     }
 
     void OnTriggerExit(Collider other)

@@ -9,6 +9,8 @@ public class SwitchUnit_Controller : MonoBehaviour {
     private bool canPress = false;
     private GameObject player;
 
+    private AudioSource[] audioSources;
+
     public delegate void StateChangeHandler(GameObject door);
     public event StateChangeHandler OnActivateSwitch;
 
@@ -16,7 +18,8 @@ public class SwitchUnit_Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player"); 
+        player = GameObject.FindGameObjectWithTag("Player");
+        audioSources = gameObject.GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -41,7 +44,8 @@ public class SwitchUnit_Controller : MonoBehaviour {
                     // trigger Event
                     OnActivateSwitch(associatedDoor);
                 }
-                audio.Play();
+                audioSources[0].Play();
+                audioSources[1].Play();
             }
         }
 	}
