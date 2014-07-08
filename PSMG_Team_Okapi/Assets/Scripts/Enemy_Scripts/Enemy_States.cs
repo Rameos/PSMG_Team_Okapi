@@ -15,13 +15,9 @@ public class Enemy_States : MonoBehaviour
 
     public bool debug = false;
 
-    private Enemy_ChangeTexture changeTexture;
-
-
     void Start()
     {
         currentState = State.idle;
-        changeTexture = gameObject.GetComponent<Enemy_ChangeTexture>();
     }
 
     public void Idle()
