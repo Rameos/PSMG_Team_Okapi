@@ -21,6 +21,7 @@ public class HealthVisualFeedback : MonoBehaviour {
     void Awake()
     {
         guiTexture.pixelInset = new Rect(300f, 100f, Screen.width-600, Screen.height-200);
+        guiTexture.enabled = true;
     }
 	
 	// Update is called once per frame

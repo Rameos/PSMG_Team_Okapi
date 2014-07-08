@@ -203,7 +203,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(freezetime);
 
-        enemyState.Alert();
+        //enemyState.Alert();
     }
 
     public void ResetCurrentpoint()
