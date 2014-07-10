@@ -11,6 +11,8 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
     public event EnemyGazeHandler OnEnemyGazeStay = delegate { };
     public event EnemyGazeHandler OnEnemyGazeExited = delegate { };
 
+    public bool gazeHit = false;
+
     public bool debug = false;
 
 	// Use this for initialization
@@ -26,6 +28,8 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
     public override void OnGazeEnter(RaycastHit hit)
     {
         OnEnemyGazeEntered();
+
+        gazeHit = true;
         
         if (debug)
         {
@@ -41,6 +45,8 @@ public class Enemy_GazeInteraction : MonoBehaviourWithGazeComponent
     public override void OnGazeExit()
     {        
         OnEnemyGazeExited();
+
+        gazeHit = false;
 
         if (debug)
         {

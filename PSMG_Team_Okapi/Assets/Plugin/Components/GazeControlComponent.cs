@@ -266,7 +266,8 @@ namespace iViewX
             //Usee the MouseInput as a DebugInput, if no EyeTracker runs
             else
             {
-                raygaze = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));                
+                raygaze = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+                Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 300, Color.yellow);
             }
 
             //Only use the EyeTracking-layer
