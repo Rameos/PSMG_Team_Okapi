@@ -25,11 +25,15 @@ public class Enemy_Behaviour : MonoBehaviour
     private int currentpoint;
     private Vector3 homepoint;
 
+    private GameObject player;
+
     private NavMeshAgent agent;
     private Enemy_States enemyState;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");        
+
         if (patrolpointsAlert.Length == 0)
         {
             patrolpointsAlert = new Transform[1] { GameObject.Find("Player").transform };
@@ -80,7 +84,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void CheckEyeLine() // Wenn Gegner Spieler sieht, soll Gegner alert werden
     {
-        Vector3 target = GameObject.Find("Player").transform.position;
+        Vector3 target = player.transform.position;
         //float step = 2 * agent.speed * Time.deltaTime;
 
         Vector3 v1 = new Vector3(transform.forward.x, 0, transform.forward.z);
@@ -121,7 +125,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Move() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
-        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 0.2)
+        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 3.0f)
         {
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
@@ -152,11 +156,10 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private float GetPlayerDistance()
     {
-        Vector3 enemy = transform.position;
-        Vector3 player = patrolpointsAlert[0].position;
-        player = GameObject.Find("Player").transform.position;
+        Vector3 enemyPosition = transform.position;
+        Vector3 playerPosition = player.transform.position;        
 
-        return Util.GetDistance(enemy, player);
+        return Util.GetDistance(enemyPosition, playerPosition);
     }
 
     // state listeners
