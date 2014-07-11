@@ -15,6 +15,9 @@ public class Enemy_TransparencyController : MonoBehaviour {
 
     public float decaySec = 0.0f;
 
+    public float transparencyMin = 0.0f;
+    public float transparencyMax = 1.0f;
+
     private bool gazeActive = false;
     private float endOfDecay = 0;
 
@@ -116,7 +119,7 @@ public class Enemy_TransparencyController : MonoBehaviour {
     private void UpdateTransparency()
     {
         Color c = gameObject.renderer.material.color;
-        c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, 0.0f), 1.0f);
+        c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
         gameObject.renderer.material.color = c;        
 
         for (int childIndex = 0; childIndex < gameObject.transform.childCount; childIndex++)
