@@ -273,10 +273,13 @@ namespace iViewX
             int layerBitmask = 1 << 8;
 
             //Cast a Ray from the Gazepoint into the scene
-            if (Physics.Raycast(raygaze, out hit, Mathf.Infinity, layerBitmask))
+            //Debug.Log("casting raycast");
+            if (Physics.Raycast(raygaze, out hit, 500, layerBitmask))
             {
                 //Only React when a Object has a Monobehabvior with GazeComponent
                 MonoBehaviourWithGazeComponent hitMono = hit.collider.gameObject.GetComponent<MonoBehaviourWithGazeComponent>();
+                //Debug.Log("hitMono:");
+                //Debug.Log(hitMono);
                 if (hitMono != null)
                 {
                     // Save the OldSelection
