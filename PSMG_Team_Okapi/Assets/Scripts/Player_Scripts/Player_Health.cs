@@ -30,7 +30,7 @@ public class Player_Health : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.K))
         {
             this.health = 0;
-        }   
+        }
 	}
 
     void FixedUpdate()
