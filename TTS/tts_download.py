@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+from __future__ import print_function, unicode_literals
 import requests
 import glob
 import urllib
@@ -26,12 +28,12 @@ def download_mp3_files(tts_text_files):
     mp3_contents = []
     for text_file in tts_text_files:
         if len(text_file.text) > 100:
-            print "text in %s is too long (%s > 100)" % (text_file.file_name, len(text_file.text))
+            print("text in %s is too long (%s > 100)" % (text_file.file_name, len(text_file.text)))
 
         response = requests.get(BASE_URL % text_file.text)
         if response.status_code != 200:
             pass
-            #print "text in %s resulted in status code %s" % (file_name, response.status_code)
+            #print("text in %s resulted in status code %s" % (file_name, response.status_code))
 
         mp3_contents.append(response.content)
 
