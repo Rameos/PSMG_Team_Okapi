@@ -35,12 +35,6 @@ public class Player_HealthAudioController : MonoBehaviour
     {
         currentHealth = playerHealth.health;
         updateThreshold();
-
-        print("current health: " + currentHealth);
-        print("current threshold: " + currentThreshold);
-        print("current interval: " + currentInterval);
-        print("last clip: " + lastClip);
-        print(" ");
     }
 
     private void updateThreshold()
