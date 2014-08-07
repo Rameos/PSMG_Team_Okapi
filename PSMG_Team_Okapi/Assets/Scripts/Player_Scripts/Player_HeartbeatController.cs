@@ -39,12 +39,6 @@ public class Player_HeartbeatController : MonoBehaviour
     {
         currentHealth = playerHealth.health;
         updateThreshold();
-
-        print("current health: " + currentHealth);
-        print("current threshold: " + currentThreshold);
-        print("current interval: " + currentInterval);
-        print("last clip: " + lastClip1);
-        print(" ");
     }
 
     private void updateThreshold()
