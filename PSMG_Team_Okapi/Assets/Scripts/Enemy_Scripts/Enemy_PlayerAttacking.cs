@@ -22,6 +22,7 @@ public class Enemy_PlayerAttacking : MonoBehaviour {
     {
         //Debug.Log("TestIt");
         //Debug.Log(other.tag);
+
         if (other.tag == "Player" && isDamaging)
         {
             StartCoroutine(DamagePlayer());        
