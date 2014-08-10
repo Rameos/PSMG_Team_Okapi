@@ -32,8 +32,8 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TestIt");
-        Debug.Log(other.tag);
+        // Debug.Log("TestIt");
+        // Debug.Log(other.tag);
 
         if (other.tag == "Player" && active)
         {
@@ -50,8 +50,8 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
 
     private void Spawn()
     {
-        // new enemy
-        Rigidbody newEnemy = (Rigidbody) Instantiate(enemy, spawnpoint.position, Quaternion.identity);
-        newEnemy.GetComponent<Enemy_Behaviour>().patrolpointsIdle = patrolpoints;
+        // Debug.Log("Spawning");
+        Transform newEnemy = (Transform) Instantiate(enemy, spawnpoint.position, Quaternion.identity);
+        //newEnemy.GetComponent<Enemy_Behaviour>().patrolpointsIdle = patrolpoints;
     }
 }
