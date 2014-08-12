@@ -1,1 +1,3 @@
 Für die "radio_music" wurde Guitar Rig verwendet, was leider nur als Demo frei verfübar ist und wir deshalb nicht mitliefern können.
+
+Die text-to-speech Sequenzen wurden mittels einer Google-Voice API erstellt. Das Script dazu liegt bei.
