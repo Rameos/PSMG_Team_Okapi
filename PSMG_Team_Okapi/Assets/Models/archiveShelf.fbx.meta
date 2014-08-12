@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: 38f8cfac26b1ec2418a225af7905dd05
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ArchiveShelf_body_001
+    100004: ArchiveShelf_body_003
+    100006: ArchiveShelf_body_004
+    100008: ArchiveShelf_body_005
+    100010: ArchiveShelf_body_006
+    100012: ArchiveShelf_body_007
+    100014: ArchiveShelf_body_008
+    100016: ArchiveShelf_body_009
+    100018: ArchiveShelf_body_010
+    100020: ArchiveShelf_body_011
+    100022: ArchiveShelf_wheel
+    100024: ArchiveShelf_body_002
+    400000: //RootNode
+    400002: ArchiveShelf_body_001
+    400004: ArchiveShelf_body_003
+    400006: ArchiveShelf_body_004
+    400008: ArchiveShelf_body_005
+    400010: ArchiveShelf_body_006
+    400012: ArchiveShelf_body_007
+    400014: ArchiveShelf_body_008
+    400016: ArchiveShelf_body_009
+    400018: ArchiveShelf_body_010
+    400020: ArchiveShelf_body_011
+    400022: ArchiveShelf_wheel
+    400024: ArchiveShelf_body_002
+    2300000: //RootNode
+    2300002: ArchiveShelf_body_001
+    2300004: ArchiveShelf_body_003
+    2300006: ArchiveShelf_body_004
+    2300008: ArchiveShelf_body_005
+    2300010: ArchiveShelf_body_006
+    2300012: ArchiveShelf_body_007
+    2300014: ArchiveShelf_body_008
+    2300016: ArchiveShelf_body_009
+    2300018: ArchiveShelf_body_010
+    2300020: ArchiveShelf_body_011
+    2300022: ArchiveShelf_wheel
+    2300024: ArchiveShelf_body_002
+    3300000: //RootNode
+    3300002: ArchiveShelf_body_001
+    3300004: ArchiveShelf_body_003
+    3300006: ArchiveShelf_body_004
+    3300008: ArchiveShelf_body_005
+    3300010: ArchiveShelf_body_006
+    3300012: ArchiveShelf_body_007
+    3300014: ArchiveShelf_body_008
+    3300016: ArchiveShelf_body_009
+    3300018: ArchiveShelf_body_010
+    3300020: ArchiveShelf_body_011
+    3300022: ArchiveShelf_wheel
+    3300024: ArchiveShelf_body_002
+    4300000: ArchiveShelf_body
+    4300002: ArchiveShelf_body_011
+    4300004: ArchiveShelf_body_010
+    4300006: ArchiveShelf_body_009
+    4300008: ArchiveShelf_body_008
+    4300010: ArchiveShelf_body_007
+    4300012: ArchiveShelf_body_006
+    4300014: ArchiveShelf_body_005
+    4300016: ArchiveShelf_body_004
+    4300018: ArchiveShelf_body_003
+    4300020: ArchiveShelf_body_001
+    4300022: ArchiveShelf_wheel
+    4300024: ArchiveShelf_body_002
+    6400000: //RootNode
+    6400002: ArchiveShelf_body_001
+    6400004: ArchiveShelf_body_003
+    6400006: ArchiveShelf_body_004
+    6400008: ArchiveShelf_body_005
+    6400010: ArchiveShelf_body_006
+    6400012: ArchiveShelf_body_007
+    6400014: ArchiveShelf_body_008
+    6400016: ArchiveShelf_body_009
+    6400018: ArchiveShelf_body_010
+    6400020: ArchiveShelf_body_011
+    6400022: ArchiveShelf_wheel
+    6400024: ArchiveShelf_body_002
+    7400000: Default Take
+    7400002: wheelTurn_left
+    7400004: wheelTurn_right
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArchiveShelf_body_001
+        weight: 1
+      - path: ArchiveShelf_body_002
+        weight: 1
+      - path: ArchiveShelf_body_003
+        weight: 1
+      - path: ArchiveShelf_body_004
+        weight: 1
+      - path: ArchiveShelf_body_005
+        weight: 1
+      - path: ArchiveShelf_body_006
+        weight: 1
+      - path: ArchiveShelf_body_007
+        weight: 1
+      - path: ArchiveShelf_body_008
+        weight: 1
+      - path: ArchiveShelf_body_009
+        weight: 1
+      - path: ArchiveShelf_body_010
+        weight: 1
+      - path: ArchiveShelf_wheel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wheelTurn_left
+      takeName: Default Take
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArchiveShelf_body_001
+        weight: 1
+      - path: ArchiveShelf_body_002
+        weight: 1
+      - path: ArchiveShelf_body_003
+        weight: 1
+      - path: ArchiveShelf_body_004
+        weight: 1
+      - path: ArchiveShelf_body_005
+        weight: 1
+      - path: ArchiveShelf_body_006
+        weight: 1
+      - path: ArchiveShelf_body_007
+        weight: 1
+      - path: ArchiveShelf_body_008
+        weight: 1
+      - path: ArchiveShelf_body_009
+        weight: 1
+      - path: ArchiveShelf_body_010
+        weight: 1
+      - path: ArchiveShelf_wheel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: wheelTurn_right
+      takeName: Default Take
+      firstFrame: 50
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArchiveShelf_body_001
+        weight: 1
+      - path: ArchiveShelf_body_002
+        weight: 1
+      - path: ArchiveShelf_body_003
+        weight: 1
+      - path: ArchiveShelf_body_004
+        weight: 1
+      - path: ArchiveShelf_body_005
+        weight: 1
+      - path: ArchiveShelf_body_006
+        weight: 1
+      - path: ArchiveShelf_body_007
+        weight: 1
+      - path: ArchiveShelf_body_008
+        weight: 1
+      - path: ArchiveShelf_body_009
+        weight: 1
+      - path: ArchiveShelf_body_010
+        weight: 1
+      - path: ArchiveShelf_wheel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
