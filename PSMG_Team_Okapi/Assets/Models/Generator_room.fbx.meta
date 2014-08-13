@@ -13,6 +13,28 @@ ModelImporter:
     100014: Torus
     100016: Torus_001
     100018: Torus_002
+    100020: Icosphere_002
+    100022: Icosphere_003
+    100024: Gelaender
+    100026: Ger_st
+    100028: H_hle
+    100030: Steg_gesamt
+    100032: Kugel_innen
+    100034: Cage
+    100036: glaskuppel
+    100038: Icosphere.002
+    100040: Roundsteg
+    100042: Steg
+    100044: Icosphere_000
+    100046: Icosphere_004
+    100048: Icosphere_005
+    100050: Icosphere_006
+    100052: Icosphere_007
+    100054: Icosphere_008
+    100056: Icosphere_009
+    100058: Icosphere_010
+    100060: Icosphere_011
+    100062: Icosphere_012
     400000: //RootNode
     400002: Camera
     400004: Icosphere
@@ -23,6 +45,28 @@ ModelImporter:
     400014: Torus
     400016: Torus_001
     400018: Torus_002
+    400020: Icosphere_002
+    400022: Icosphere_003
+    400024: Gelaender
+    400026: Ger_st
+    400028: H_hle
+    400030: Steg_gesamt
+    400032: Kugel_innen
+    400034: Cage
+    400036: glaskuppel
+    400038: Icosphere.002
+    400040: Roundsteg
+    400042: Steg
+    400044: Icosphere_000
+    400046: Icosphere_004
+    400048: Icosphere_005
+    400050: Icosphere_006
+    400052: Icosphere_007
+    400054: Icosphere_008
+    400056: Icosphere_009
+    400058: Icosphere_010
+    400060: Icosphere_011
+    400062: Icosphere_012
     2300000: //RootNode
     2300002: Icosphere
     2300004: Icosphere.001
@@ -31,6 +75,28 @@ ModelImporter:
     2300010: Torus
     2300012: Torus_001
     2300014: Torus_002
+    2300016: Icosphere_002
+    2300018: Icosphere_003
+    2300020: Gelaender
+    2300022: Ger_st
+    2300024: H_hle
+    2300026: Steg_gesamt
+    2300028: Kugel_innen
+    2300030: Cage
+    2300032: glaskuppel
+    2300034: Icosphere.002
+    2300036: Roundsteg
+    2300038: Steg
+    2300040: Icosphere_000
+    2300042: Icosphere_004
+    2300044: Icosphere_005
+    2300046: Icosphere_006
+    2300048: Icosphere_007
+    2300050: Icosphere_008
+    2300052: Icosphere_009
+    2300054: Icosphere_010
+    2300056: Icosphere_011
+    2300058: Icosphere_012
     3300000: //RootNode
     3300002: Icosphere
     3300004: Icosphere.001
@@ -39,6 +105,28 @@ ModelImporter:
     3300010: Torus
     3300012: Torus_001
     3300014: Torus_002
+    3300016: Icosphere_002
+    3300018: Icosphere_003
+    3300020: Gelaender
+    3300022: Ger_st
+    3300024: H_hle
+    3300026: Steg_gesamt
+    3300028: Kugel_innen
+    3300030: Cage
+    3300032: glaskuppel
+    3300034: Icosphere.002
+    3300036: Roundsteg
+    3300038: Steg
+    3300040: Icosphere_000
+    3300042: Icosphere_004
+    3300044: Icosphere_005
+    3300046: Icosphere_006
+    3300048: Icosphere_007
+    3300050: Icosphere_008
+    3300052: Icosphere_009
+    3300054: Icosphere_010
+    3300056: Icosphere_011
+    3300058: Icosphere_012
     4300000: Icosphere
     4300002: Icosphere.001
     4300004: Icosphere_001
@@ -46,6 +134,28 @@ ModelImporter:
     4300008: Torus_001
     4300010: Torus_002
     4300012: Circle
+    4300014: Icosphere_002
+    4300016: Icosphere_003
+    4300018: Gelaender
+    4300020: H_hle
+    4300022: Ger_st
+    4300024: Steg_gesamt
+    4300026: Kugel_innen
+    4300028: Roundsteg
+    4300030: Steg
+    4300032: Icosphere.002
+    4300034: Cage
+    4300036: glaskuppel
+    4300038: Icosphere_000
+    4300040: Icosphere_012
+    4300042: Icosphere_011
+    4300044: Icosphere_010
+    4300046: Icosphere_009
+    4300048: Icosphere_008
+    4300050: Icosphere_007
+    4300052: Icosphere_006
+    4300054: Icosphere_005
+    4300056: Icosphere_004
     6400000: //RootNode
     6400002: Icosphere
     6400004: Icosphere.001
@@ -54,6 +164,28 @@ ModelImporter:
     6400010: Torus
     6400012: Torus_001
     6400014: Torus_002
+    6400016: Icosphere_002
+    6400018: Icosphere_003
+    6400020: Gelaender
+    6400022: Ger_st
+    6400024: H_hle
+    6400026: Steg_gesamt
+    6400028: Kugel_innen
+    6400030: Cage
+    6400032: glaskuppel
+    6400034: Icosphere.002
+    6400036: Roundsteg
+    6400038: Steg
+    6400040: Icosphere_000
+    6400042: Icosphere_004
+    6400044: Icosphere_005
+    6400046: Icosphere_006
+    6400048: Icosphere_007
+    6400050: Icosphere_008
+    6400052: Icosphere_009
+    6400054: Icosphere_010
+    6400056: Icosphere_011
+    6400058: Icosphere_012
     7400000: Default Take
     9500000: //RootNode
   materials:
