@@ -63,6 +63,10 @@ public class GeneratorController : MonoBehaviour {
                 particleSys.Play();
             }
             particleSys.playbackSpeed = Mathf.Lerp(particleSys.playbackSpeed, particleSpeed, Time.deltaTime * speed);
+            if(!audio.isPlaying)
+            {
+                audio.Play();
+            }
         }else
         {
             animation["Default Take"].speed = 0;
