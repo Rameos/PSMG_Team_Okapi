@@ -10,6 +10,7 @@ public class GeneratorController : MonoBehaviour {
     public float lightReach;
     public float flareBrightness;
     public float particleSpeed;
+    public float animationSpeed;
 
     //private Animation animation;
     private ParticleSystem particleSys;
@@ -52,7 +53,7 @@ public class GeneratorController : MonoBehaviour {
     {
         if (isOn)
         {
-            animation["Default Take"].speed = Mathf.Lerp(animation["Default Take"].speed, 1.0f, Time.deltaTime * speed);
+            animation["Default Take"].speed = Mathf.Lerp(animation["Default Take"].speed, animationSpeed, Time.deltaTime * speed);
             Debug.Log(animation["Default Take"].speed);
 
             light.light.intensity = Mathf.Lerp(light.light.intensity, lightBrightness, Time.deltaTime * speed);
