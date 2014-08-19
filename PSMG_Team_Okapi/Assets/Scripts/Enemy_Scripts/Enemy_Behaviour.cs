@@ -11,6 +11,10 @@ public class Enemy_Behaviour : MonoBehaviour
     public float idlespeed = 1; // geschwindigkeit wenn idle
     public float alertspeed = 2; // geschwindigkeit wenn alert
     public float angryspeed = 3; // geschwindigkeit wenn angry
+	private float startspeed;
+	private float targetspeed;
+	public float acceleration = 0.1f;
+	private int time;
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
     private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
@@ -20,7 +24,6 @@ public class Enemy_Behaviour : MonoBehaviour
     public float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
-    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
 
     private int currentpoint;
     private Vector3 homepoint;
@@ -33,12 +36,8 @@ public class Enemy_Behaviour : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");        
-
-        if (patrolpointsAlert.Length == 0)
-        {
-            patrolpointsAlert = new Transform[1] { GameObject.Find("Player").transform };
-        }
-
+        patrolpointsAlert = new Transform[1] { player.transform };
+       
         patrolpoints = patrolpointsIdle;
         currentpoint = 0;
 
@@ -63,13 +62,16 @@ public class Enemy_Behaviour : MonoBehaviour
             case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
+				Accelerate();
                 break;
             case Enemy_States.State.alert:
                 CheckAngryRadius();
                 CheckReach();
+				Accelerate();
                 break;
             case Enemy_States.State.angry:
                 CheckReach();
+				Accelerate();
                 break;
         }
     }
@@ -162,6 +164,19 @@ public class Enemy_Behaviour : MonoBehaviour
         return Util.GetDistance(enemyPosition, playerPosition);
     }
 
+	private void Accelerate()
+	{
+		if(startspeed < targetspeed)
+		{
+			agent.speed = Mathf.Min(startspeed + acceleration * time * time, targetspeed);
+		}
+		else 
+		{
+			agent.speed = Mathf.Max(startspeed - acceleration * time * time, targetspeed);
+		}
+		time++;
+	}
+
     // state listeners
 
     public void SetPatrolpointsIdle()
@@ -188,27 +203,26 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetIdleSpeed()
     {
-        agent.speed = idlespeed;
+		startspeed = agent.speed;
+		targetspeed = idlespeed;
     }
 
     public void SetAlertSpeed()
     {
-        agent.speed = alertspeed;
+		startspeed = agent.speed;
+		targetspeed = alertspeed;
     }
 
     public void SetAngrySpeed()
     {
-        agent.speed = angryspeed;
+        startspeed = agent.speed;
+		targetspeed = angryspeed;
     }
 
     public void SetNoSpeed()
     {
-        agent.speed = 0;
-    }
-
-    public void SetFrozen()
-    {
-        agent.speed = 0;
+        startspeed = 0;
+		targetspeed = 0;
     }
 
     public void ResetCurrentpoint()
@@ -231,7 +245,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
         enemyState.OnAngry += SetAngrySpeed;
 
-        enemyState.OnFreeze += SetFrozen;
+        enemyState.OnFreeze += SetNoSpeed;
 
         enemyState.OnIdle += SetPatrolpointsIdle;
         enemyState.OnIdle += SetIdleSpeed;
