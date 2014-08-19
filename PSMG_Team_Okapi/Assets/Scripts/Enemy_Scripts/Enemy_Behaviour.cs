@@ -15,6 +15,7 @@ public class Enemy_Behaviour : MonoBehaviour
 	private float targetspeed;
 	public float acceleration = 0.1f;
 	private int time;
+    private bool braking;
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
     private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
@@ -62,7 +63,8 @@ public class Enemy_Behaviour : MonoBehaviour
             case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
-				Accelerate();
+				if(braking) Brake();
+                else Accelerate();
                 break;
             case Enemy_States.State.alert:
                 CheckAngryRadius();
@@ -127,13 +129,19 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Move() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
-        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 3.0f)
+        if (GetTargetDistance() < 3.0f)
         {
+            braking = false;
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
             {
                 currentpoint = 0;
             }
+        }
+
+        if (GetTargetDistance() < GetBrakeDistance())
+        {
+            braking = true;
         }
 
         agent.SetDestination(patrolpoints[currentpoint].position);
@@ -162,6 +170,24 @@ public class Enemy_Behaviour : MonoBehaviour
         Vector3 playerPosition = player.transform.position;        
 
         return Util.GetDistance(enemyPosition, playerPosition);
+    }
+
+    private float GetTargetDistance()
+    {
+        Vector3 enemyPosition = transform.position;
+        Vector3 targetPosition = patrolpoints[currentpoint].position;
+
+        return Util.GetDistance(enemyPosition, targetPosition);
+    }
+
+    private float GetBrakeDistance()
+    {
+        return (agent.speed * agent.speed) / acceleration;
+    }
+
+    private void Brake()
+    {
+        agent.speed = Mathf.Max(startspeed - acceleration * time * time, 0);
     }
 
 	private void Accelerate()
