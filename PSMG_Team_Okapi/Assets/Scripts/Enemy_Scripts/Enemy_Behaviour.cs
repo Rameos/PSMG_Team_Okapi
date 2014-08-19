@@ -8,12 +8,12 @@ public class Enemy_Behaviour : MonoBehaviour
     public Transform[] patrolpointsAlert; // enthält erstmal nur Spieler
     private Transform[] patrolpoints;
 
-    public float idlespeed = 1; // geschwindigkeit wenn idle
-    public float alertspeed = 2; // geschwindigkeit wenn alert
-    public float angryspeed = 3; // geschwindigkeit wenn angry
+    public float idlespeed = 2; // geschwindigkeit wenn idle
+    public float alertspeed = 3; // geschwindigkeit wenn alert
+    public float angryspeed = 5; // geschwindigkeit wenn angry
 	private float startspeed;
 	private float targetspeed;
-	public float acceleration = 0.1f;
+	public float acceleration = 1f;
 	private int time;
     private bool braking;
 
@@ -45,7 +45,9 @@ public class Enemy_Behaviour : MonoBehaviour
         enemyState = gameObject.GetComponent<Enemy_States>();
         agent = gameObject.GetComponent<NavMeshAgent>();
 
-        agent.speed = idlespeed;
+        targetspeed = idlespeed;
+        time = 0;
+        braking = false;
 
         SetListeners();
     }
@@ -63,8 +65,7 @@ public class Enemy_Behaviour : MonoBehaviour
             case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
-				if(braking) Brake();
-                else Accelerate();
+                Accelerate();
                 break;
             case Enemy_States.State.alert:
                 CheckAngryRadius();
@@ -132,6 +133,7 @@ public class Enemy_Behaviour : MonoBehaviour
         if (GetTargetDistance() < 3.0f)
         {
             braking = false;
+            time = 0;
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
             {
@@ -142,6 +144,7 @@ public class Enemy_Behaviour : MonoBehaviour
         if (GetTargetDistance() < GetBrakeDistance())
         {
             braking = true;
+            time = 0;
         }
 
         agent.SetDestination(patrolpoints[currentpoint].position);
@@ -192,6 +195,12 @@ public class Enemy_Behaviour : MonoBehaviour
 
 	private void Accelerate()
 	{
+        /*if (braking)
+        {
+            Brake();
+            return;
+        }*/
+
 		if(startspeed < targetspeed)
 		{
 			agent.speed = Mathf.Min(startspeed + acceleration * time * time, targetspeed);
@@ -231,24 +240,28 @@ public class Enemy_Behaviour : MonoBehaviour
     {
 		startspeed = agent.speed;
 		targetspeed = idlespeed;
+        time = 0;
     }
 
     public void SetAlertSpeed()
     {
 		startspeed = agent.speed;
 		targetspeed = alertspeed;
+        time = 0;
     }
 
     public void SetAngrySpeed()
     {
         startspeed = agent.speed;
 		targetspeed = angryspeed;
+        time = 0;
     }
 
     public void SetNoSpeed()
     {
         startspeed = 0;
 		targetspeed = 0;
+        time = 0;
     }
 
     public void ResetCurrentpoint()
