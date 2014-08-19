@@ -65,16 +65,16 @@ public class Enemy_Behaviour : MonoBehaviour
             case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
-                Accelerate();
+                //Accelerate();
                 break;
             case Enemy_States.State.alert:
                 CheckAngryRadius();
                 CheckReach();
-				Accelerate();
+				//Accelerate();
                 break;
             case Enemy_States.State.angry:
                 CheckReach();
-				Accelerate();
+				//Accelerate();
                 break;
         }
     }
