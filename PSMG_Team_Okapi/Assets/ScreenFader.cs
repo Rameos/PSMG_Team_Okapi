@@ -4,6 +4,7 @@ using System.Collections;
 public class ScreenFader : MonoBehaviour {
 
     public float fadeSpeed = 1.5f;
+    public bool debug = false;
 
     private bool fading = true;
     private Color targetColor;
@@ -59,8 +60,20 @@ public class ScreenFader : MonoBehaviour {
 
     public void FadeToBlack()
     {
-        Debug.Log("Starting FadeOut");
+        if (debug)
+        {
+            Debug.Log("Starting FadeOut Black");
+        }        
         StartFading(Color.black);
+    }
+
+    public void FadeToWhite()
+    {
+        if (debug)
+        {
+            Debug.Log("Starting FadeOut White");
+        }        
+        StartFading(Color.white);
     }
 
     private void StartFading(Color targetColor)
@@ -76,7 +89,10 @@ public class ScreenFader : MonoBehaviour {
 
         if (Mathf.Abs(guiTexture.color.a - targetColor.a) < 0.01f)
         {
-            //Debug.Log("Fading completed!");
+            if (debug)
+            {
+                Debug.Log("Fading completed!");
+            }            
             fading = false;
 
             BroadcastCompletion();
@@ -91,7 +107,7 @@ public class ScreenFader : MonoBehaviour {
         {
             GlobalEvents.TriggerOnScreenFadeInComplete();
         }
-        else if(targetColor == Color.black)
+        else if(targetColor != Color.clear)
         {
             GlobalEvents.TriggerOnScreenFadeOutComplete();
         }
