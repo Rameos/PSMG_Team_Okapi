@@ -9,7 +9,7 @@ public class PauseController : MonoBehaviour {
     private float previousTimeScale = 1;
 
     private MouseLook playerMouseLook;
-    private MouseLook mainCameraMouseLook;
+    private MouseLook mainCameraMouseLook;    
 
     private static PauseController instance;
 
@@ -35,12 +35,22 @@ public class PauseController : MonoBehaviour {
     void Start()
     {
         playerMouseLook = GameObject.FindGameObjectWithTag("Player").GetComponent<MouseLook>();        
-        mainCameraMouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
+        mainCameraMouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();        
+    }
+
+    void Awake()
+    {
+        if (!instance)
+        {
+            instance = this;
+        }
+
+        guiTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown("p")) {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
             if(!isPaused) {
                 Pause();
             } else {
@@ -56,6 +66,8 @@ public class PauseController : MonoBehaviour {
         Time.timeScale = 0;        
         playerMouseLook.enabled = false;        
         mainCameraMouseLook.enabled = false;
+
+        guiTexture.enabled = true;
     }
 
     public void UnPause()
@@ -64,5 +76,7 @@ public class PauseController : MonoBehaviour {
         Time.timeScale = previousTimeScale;
         playerMouseLook.enabled = true;
         mainCameraMouseLook.enabled = true;
+
+        guiTexture.enabled = false;
     }
 }
