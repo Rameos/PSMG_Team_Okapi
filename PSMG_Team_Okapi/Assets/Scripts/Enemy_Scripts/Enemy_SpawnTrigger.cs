@@ -9,7 +9,7 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
     // waypoints: falls nicht spezifiziert, waypoint = spawnpunkt, d.h. enemy bleibt dort stehen.
 
     public int delay = 5;
-    public bool active = true;
+    public bool triggerActive = true;
 
     public Transform spawnpoint;
     public Transform[] patrolpoints;
@@ -35,7 +35,7 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
         // Debug.Log("TestIt");
         // Debug.Log(other.tag);
 
-        if (other.tag == "Player" && active)
+        if (other.tag == "Player" && triggerActive)
         {
             StartCoroutine(StartSpawnSequence());
         }
@@ -43,7 +43,7 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
 
     IEnumerator StartSpawnSequence()
     {
-        active = false;
+        triggerActive = false;
         yield return new WaitForSeconds(delay);
         Spawn();
     }

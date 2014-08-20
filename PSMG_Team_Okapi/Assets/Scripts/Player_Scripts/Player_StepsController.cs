@@ -4,7 +4,7 @@ using System.Collections;
 public class Player_StepsController : MonoBehaviour {
     public string actualState;
 
-    private Player_Status status;
+    private Player_Status status;    
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,12 @@ public class Player_StepsController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (PauseController.Instance.IsPaused())
+        {
+            audio.Stop();
+            return;
+        }
+
         actualState = status.getState();
         switch(actualState)
         {
