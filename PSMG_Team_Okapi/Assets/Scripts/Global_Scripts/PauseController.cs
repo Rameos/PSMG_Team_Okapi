@@ -67,6 +67,8 @@ public class PauseController : MonoBehaviour {
         playerMouseLook.enabled = false;        
         mainCameraMouseLook.enabled = false;
 
+        GlobalEvents.TriggerOnPause();
+
         guiTexture.enabled = true;
     }
 
@@ -77,6 +79,13 @@ public class PauseController : MonoBehaviour {
         playerMouseLook.enabled = true;
         mainCameraMouseLook.enabled = true;
 
+        GlobalEvents.TriggerOnUnPause();
+
         guiTexture.enabled = false;
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 }

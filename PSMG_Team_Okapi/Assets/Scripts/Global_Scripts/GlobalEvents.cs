@@ -9,6 +9,9 @@ public class GlobalEvents : MonoBehaviour {
     public static event DefaultEventHandler OnScreenFadeInComplete = delegate { };
     public static event DefaultEventHandler OnScreenFadeOutComplete = delegate { };
 
+    public static event DefaultEventHandler OnPause = delegate { };
+    public static event DefaultEventHandler OnUnPause = delegate { };
+
 
     // Triggers
 
@@ -24,5 +27,15 @@ public class GlobalEvents : MonoBehaviour {
     public static void TriggerOnScreenFadeOutComplete()
     {
         OnScreenFadeOutComplete();
+    }
+
+    public static void TriggerOnPause()
+    {
+        OnPause();
+    }
+
+    public static void TriggerOnUnPause()
+    {
+        OnUnPause();
     }
 }
