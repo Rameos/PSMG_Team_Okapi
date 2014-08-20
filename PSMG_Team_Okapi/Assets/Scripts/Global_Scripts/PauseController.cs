@@ -8,8 +8,8 @@ public class PauseController : MonoBehaviour {
     private bool isPaused = false;
     private float previousTimeScale = 1;
 
-    private GameObject player;
-    private GameObject mainCamera;
+    private MouseLook playerMouseLook;
+    private MouseLook mainCameraMouseLook;
 
     private static PauseController instance;
 
@@ -34,8 +34,8 @@ public class PauseController : MonoBehaviour {
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");        
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        playerMouseLook = GameObject.FindGameObjectWithTag("Player").GetComponent<MouseLook>();        
+        mainCameraMouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
     }
 
     void Update()
@@ -53,18 +53,16 @@ public class PauseController : MonoBehaviour {
     {
         isPaused = true;
         previousTimeScale = Time.timeScale;
-        Time.timeScale = 0;
-        Debug.Log(player.GetComponent("MouseLook"));
-        player.GetComponent<MouseLook>().enabled = false;
-        Debug.Log(mainCamera.GetComponent<MouseLook>());
-        mainCamera.GetComponent<MouseLook>().enabled = false;
+        Time.timeScale = 0;        
+        playerMouseLook.enabled = false;        
+        mainCameraMouseLook.enabled = false;
     }
 
     public void UnPause()
     {
         isPaused = false;
         Time.timeScale = previousTimeScale;
-        player.GetComponent<MouseLook>().enabled = true;
-        mainCamera.GetComponent<MouseLook>().enabled = true;
+        playerMouseLook.enabled = true;
+        mainCameraMouseLook.enabled = true;
     }
 }
