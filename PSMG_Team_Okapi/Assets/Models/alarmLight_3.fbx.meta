@@ -1,41 +1,53 @@
 fileFormatVersion: 2
-guid: 41298d5a68e0914469b72f4e96553cc8
+guid: b22e2b40d7cb58646be66e55c4ce18a4
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Glass
-    100004: Rotator
-    100006: Socket_001
-    100008: Cage
-    400000: //RootNode
-    400002: Glass
-    400004: Rotator
-    400006: Socket_001
-    400008: Cage
+    100000: Alarm_Light
+    100002: //RootNode
+    100004: Camera
+    100006: Glass
+    100008: Lamp
+    100010: Rotator
+    100012: Socket.001
+    100014: Sphere
+    100016: Socket_001
+    400000: Alarm_Light
+    400002: //RootNode
+    400004: Camera
+    400006: Glass
+    400008: Lamp
+    400010: Rotator
+    400012: Socket.001
+    400014: Sphere
+    400016: Socket_001
     2300000: Glass
     2300002: Rotator
-    2300004: Socket_001
-    2300006: Cage
+    2300004: Socket.001
+    2300006: Sphere
+    2300008: Socket_001
     3300000: Glass
     3300002: Rotator
-    3300004: Socket_001
-    3300006: Cage
-    4300000: Socket_001
-    4300002: Glass
-    4300004: Rotator
-    4300006: Cage
+    3300004: Socket.001
+    3300006: Sphere
+    3300008: Socket_001
+    4300000: Sphere
+    4300002: Socket.001
+    4300004: Glass
+    4300006: Rotator
+    4300008: Socket_001
+    7400000: Default Take
     9500000: //RootNode
-    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
-    legacyGenerateAnimations: 0
+    legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
-    animationCompression: 3
+    motionNodeName: 
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
