@@ -40,11 +40,13 @@ public class Door_Animation : MonoBehaviour
 
     private void OnActivateSwitch(GameObject[] doors)
     {
+        Debug.Log("door unlocked");
         for (int i = 0; i < doors.Length; i++)
         {
             if (doors[i] == gameObject)
             {
                 isLocked = false;
+               
             }
         }
     }
