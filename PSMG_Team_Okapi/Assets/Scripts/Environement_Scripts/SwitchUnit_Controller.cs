@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SwitchUnit_Controller : MonoBehaviour {
 
-    public GameObject associatedDoor;
+    public GameObject[] associatedDoors;
     public Material unlockedMat;
 
     private bool canPress = false;
@@ -11,7 +11,7 @@ public class SwitchUnit_Controller : MonoBehaviour {
 
     private AudioSource[] audioSources;
 
-    public delegate void StateChangeHandler(GameObject door);
+    public delegate void StateChangeHandler(GameObject[] doors);
     public event StateChangeHandler OnActivateSwitch;
 
 
@@ -42,7 +42,7 @@ public class SwitchUnit_Controller : MonoBehaviour {
                 if (OnActivateSwitch != null)
                 {
                     // trigger Event
-                    OnActivateSwitch(associatedDoor);
+                    OnActivateSwitch(associatedDoors);
                 }
                 audioSources[0].Play();
                 audioSources[1].Play();

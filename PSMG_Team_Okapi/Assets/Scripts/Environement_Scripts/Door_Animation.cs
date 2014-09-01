@@ -38,11 +38,14 @@ public class Door_Animation : MonoBehaviour
 
     }
 
-    private void OnActivateSwitch(GameObject door)
+    private void OnActivateSwitch(GameObject[] doors)
     {
-        if (door == gameObject)
+        for (int i = 0; i < doors.Length; i++)
         {
-            isLocked = false;
+            if (doors[i] == gameObject)
+            {
+                isLocked = false;
+            }
         }
     }
 

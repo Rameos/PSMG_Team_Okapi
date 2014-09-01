@@ -19,7 +19,7 @@ public class Door_IsLockedSound_Controller : MonoBehaviour {
 	}
 	
 
-    void OnActivateSwitch(GameObject door)
+    void OnActivateSwitch(GameObject[] doors)
     {
         isLocked = false;
     }
