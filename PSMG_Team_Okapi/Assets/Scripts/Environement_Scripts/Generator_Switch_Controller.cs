@@ -32,7 +32,7 @@ public class Generator_Switch_Controller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (canPress)
+            if (canPress && !isOn)
             {
                 isOn = !isOn;
                 anim.SetBool(Animator.StringToHash("isOn"), isOn);
