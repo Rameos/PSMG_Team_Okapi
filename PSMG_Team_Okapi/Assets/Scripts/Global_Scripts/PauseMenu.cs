@@ -5,7 +5,13 @@ public class PauseMenu : MonoBehaviour {
 
     private bool showGUI = false;
 
+    public Color notSelectedColor = Color.white;
+    public Color selectedColor1 = Color.white;
+    public Color selectedColor2 = Color.red;
+
     private int selectedIndex = 0;
+    private float pulseCounter = 0;
+    public float pulseRate = 5.0f;
 
     private GUIText[] guiTexts;
     	
@@ -43,15 +49,17 @@ public class PauseMenu : MonoBehaviour {
 
     private void HighlightGUIText()
     {
+        pulseCounter += (pulseRate / 100);
+
         for (int i = 0; i < guiTexts.Length; i++)
         {
             if (i == selectedIndex)
-            {
-                guiTexts[i].material.color = Color.red;
+            {                
+                guiTexts[i].material.color = Color.Lerp(selectedColor1, selectedColor2, Mathf.Sin(pulseCounter) * 0.5f + 0.5f);
             }
             else
             {
-                guiTexts[i].material.color = Color.white;
+                guiTexts[i].material.color = notSelectedColor;
             }
         }
     }
