@@ -1,1 +1,1 @@
-Simulation attempt 19 complete. Result: succes. [Pause] Creating Data backup. [Pause] Calculating variables. [Pause] Restarting.
+Simulation attempt 19 complete. Result: success. Creating Data backup. Calculating variables. Restarting.
