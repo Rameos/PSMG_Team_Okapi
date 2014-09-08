@@ -34,7 +34,7 @@ public class Generator_Switch_Controller : MonoBehaviour
         {
             if (canPress && !isOn)
             {
-                isOn = !isOn;
+                isOn = true;
                 anim.SetBool(Animator.StringToHash("isOn"), isOn);
                 foreach (Transform child in gameObject.transform)
                 {

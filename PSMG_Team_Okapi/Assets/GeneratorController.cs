@@ -40,12 +40,9 @@ public class GeneratorController : MonoBehaviour {
     }
 
     private void OnActivateSwitch(GameObject generator)
-    {
-        Debug.Log("HalloWelt");
-       
-            isOn = !isOn;
-            Debug.Log("Generator: " + isOn);
-        
+    {  
+        isOn = !isOn;
+        Debug.Log("Generator: " + isOn);        
     }
 
     // Update is called once per frame
@@ -54,7 +51,7 @@ public class GeneratorController : MonoBehaviour {
         if (isOn)
         {
             animation["Default Take"].speed = Mathf.Lerp(animation["Default Take"].speed, animationSpeed, Time.deltaTime * speed);
-            Debug.Log(animation["Default Take"].speed);
+            //Debug.Log(animation["Default Take"].speed);
 
             light.light.intensity = Mathf.Lerp(light.light.intensity, lightBrightness, Time.deltaTime * speed);
             light.light.range = Mathf.Lerp(light.light.range, lightReach, Time.deltaTime * speed);
