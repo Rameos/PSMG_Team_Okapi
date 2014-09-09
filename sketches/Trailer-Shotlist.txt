@@ -3,9 +3,9 @@ Aufblende aus schwarz. Ego-Perspektive, Spieler wacht auf (Bild zunächst verschw
 Abblende nach schwarz über unscharf
 
 Quartier: Schwenks l-r
--	1.1 T, Normal, aus extrem schräg wird gerade, erst ganz ruhig, dann hektisch, evtl Reißschwenk
--	1.2 HT, Reißschwenk, leicht Tele, Röntgen
--	1.3 Detail, Reißschwenk, Tele, Radio
++	1.1 T, Normal, aus extrem schräg wird gerade, erst ganz ruhig, dann hektisch, evtl Reißschwenk
++	1.2 HT, Reißschwenk, leicht Tele, Röntgen
++	1.3 Detail, Reißschwenk, Tele, Radio
 
 
 8 - 23 sec
@@ -14,47 +14,47 @@ evtl dazwischen Text
 Abblende nach schwarz
 
 Verschiedene Gänge: Schwenks r-l
--	2.1 - 2.7 T, leicht WW, von oben
--	2.8	T, leicht WW Alarmlicht wird sichtbar im VG
++	2.1 - 2.7 T, leicht WW, von oben
++	2.8	T, leicht WW Alarmlicht wird sichtbar im VG
 
 
 23 - 30 sec
 ähnlich dem Anfang, aber Kamera deutlich weitwinkliger, schräger, hektischer, Spieler läuft jetzt
 
 Gang zum Tutorial Raum mit Türöffnen, Tutorial Raum: 
--	3.1 HT, WW, schräg, Bewegung richtung Quartier Tür, hektisch
-- 	3.2 HT, WW, schräg, Lampen an der Decke, hektisch
--	3.3 HT, WW, schräg, Gegenschuss Tür, hektisch
-- 	3.4 HT, WW, durch Tür Tutorial Raum
-- 	3.5ff Detail Tele, Röntgen, Inkubatoren
++	3.1 HT, WW, schräg, Bewegung richtung Quartier Tür, hektisch
++ 	3.2 HT, WW, schräg, Lampen an der Decke, hektisch
++	3.3 HT, WW, schräg, Gegenschuss Tür, hektisch
++ 	3.4 HT, WW, durch Tür Tutorial Raum
++ 	3.5ff Detail Tele, Röntgen, Inkubatoren
 
 
 30 - 39 sec
 evtl Spieler wird ruhiger, wird gerade, nähert sich Alarmlicht-Bereich, während 37 - 39 Andeutung Enemy
 
 Gang vor 1. Enemy
--	4.1 T, WW, ruhiger, auf Alarmlight zu, blickt sich vorsichtig um
-- 	4.2-4 T, WW, 3 mal Flash von Blut-Splatter, statisch (Photo)
-- 	4.5 HN Flash Enemy wird plötzlich nah vor Spieler sichtbar 
++	4.1 T, WW, ruhiger, auf Alarmlight zu, blickt sich vorsichtig um
++ 	4.2-4 T, WW, 3 mal Flash von Blut-Splatter, statisch (Photo)
++ 	4.5 HN Flash Enemy wird plötzlich nah vor Spieler sichtbar 
 
 39 - 55 sec
 erste Phase Action, Musik ist aber noch nicht auf full Power
 Bilder: 
 
 Level 1:
--	5.1 T WW, Spieler flüchtet rückwärts
--	5.2 HT WW, Gang in OP, dunkel, Bewegung zum Schalter, Licht an
--	5.3 NA, WW, Gang zu Schalter, Licht an
-- 	5.4 T, WW, OP, Licht geht an
--	5.6	T, WW, dunkler Gang
--	5.7 T, WW, seitl, Gang vorbei an Nische 1
-- 	5.8 T, Tele, seitl Gang vorbei an Nische 1
--	5.8 T, WW, seitl, Gang vorbei an Nische 2
-- 	5.10 T, Tele, seitl Gang vorbei an Nische 2
--	5.11 T, WW, seitl, Gang vorbei an Behandlungszimmer
-- 	5.12 T, Tele, seitl Gang vorbei an Nische 2
--	5.13 T, WW, Gang zu Schalter
--	5.14 HN, WW, Angriff Gegner mit Blitz, Treffer
++	5.1 T WW, Spieler flüchtet rückwärts
++	5.2 HT WW, Gang in OP, dunkel, Bewegung zum Schalter, Licht an
++	5.3 NA, WW, Gang zu Schalter, Licht an
++ 	5.4 T, WW, OP, Licht geht an
++	5.6	T, WW, dunkler Gang
++	5.7 T, WW, seitl, Gang vorbei an Nische 1
++ 	5.8 T, Tele, seitl Gang vorbei an Nische 1
++	5.8 T, WW, seitl, Gang vorbei an Nische 2
++ 	5.10 T, Tele, seitl Gang vorbei an Nische 2
++	5.11 T, WW, seitl, Gang vorbei an Behandlungszimmer
++ 	5.12 T, Tele, seitl Gang vorbei an Behandlungszimmer
++	5.13 T, WW, Gang zu Schalter
++	5.14 HN, WW, Angriff Gegner mit Blitz, Treffer
 
 
 56 bis 1:10
@@ -62,18 +62,20 @@ Musik steigert sich zum Höhepunkt
 Bilder:
 
 Level 2:
--	6.1 ST, WW, Serverroom
--	6.2 HT, WW, Serverroom, zwischen Racks
--	6.3 T, WW, Büro
--	6.4 T, WW, Archiv, durchrennen
--	6.5 HT, WW, rote Gänge, POV Enemy
--	6.6 HN, WW, Enemy von Vorne, Blitze
--	6.7 HT, WW, Door is locked...
-- 	6.8	HN, WW, Schalter, Door unlock
--	6.9 HT, WW, letzte Tür, evtl direkt im Generator Raum
--	6.10 ST, WW, GeneratorRaum, Weg zum Schalter
--	6.11 D, WW, Schlter drücken
-- 	6.12ff verschiedene Perspektiven auf Generator
++	6.1 ST, WW, Serverroom
++	6.2 HT, WW, Serverroom, zwischen Racks
++	6.3 T, WW, Büro
++	6.4 T, WW, Archiv, durchrennen
++	6.5 HT, WW, rote Gänge, POV Enemy
++	6.6 HN, WW, Enemy von Vorne, Blitze
++	6.7 HT, WW, Door is locked...
++ 	6.8	HN, WW, Schalter, Door unlock
++	6.9 HT, WW, letzte Tür, evtl direkt im Generator Raum
+
+
++	6.10 ST, WW, GeneratorRaum, Weg zum Schalter
++	6.11 D, WW, Schlter drücken
++ 	6.12ff verschiedene Perspektiven auf Generator
 
 1:10 - 1:20
 Musik bricht ab, Herzschlag
