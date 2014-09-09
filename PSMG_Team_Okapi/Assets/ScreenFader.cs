@@ -30,6 +30,14 @@ public class ScreenFader : MonoBehaviour {
         }
     }
 
+    void OnLevelWasLoaded()
+    {
+        if (EnvironmentVars.restartFromEnding)
+        {
+            guiTexture.color = Color.white;
+        }
+    }
+
     void Awake()
     {
         if (!instance)
@@ -87,7 +95,7 @@ public class ScreenFader : MonoBehaviour {
     {
         guiTexture.color = Color.Lerp(guiTexture.color, targetColor, fadeSpeed * Time.deltaTime);        
 
-        if (Mathf.Abs(guiTexture.color.a - targetColor.a) < 0.01f)
+        if (Mathf.Abs(guiTexture.color.a - targetColor.a) < (0.02f / fadeSpeed))
         {
             if (debug)
             {
