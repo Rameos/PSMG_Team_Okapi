@@ -44,8 +44,7 @@ public class PauseController : MonoBehaviour {
         {
             instance = this;
         }
-
-        Debug.Log(guiTexture);
+                
         guiTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
     }
 
