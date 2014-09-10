@@ -45,6 +45,10 @@ ModelImporter:
     4300010: Inner_Ring
     4300012: Sturz
     4300014: Outer_Ring
+    6400000: Inner_Ring
+    6400002: Outer_Ring
+    6400004: Sockel
+    6400006: Sturz
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -67,10 +71,10 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
