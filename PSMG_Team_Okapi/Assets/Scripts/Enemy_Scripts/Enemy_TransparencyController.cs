@@ -131,10 +131,14 @@ public class Enemy_TransparencyController : MonoBehaviour {
             {
                 foreach (Material childMat in childRenderer.materials)
                 {
-                    Color childColor = childMat.color;
-                    childColor.a = c.a;
+                    if (childMat.color != null)
+                    {
+                        //Debug.Log(childMat.color);
+                        Color childColor = childMat.color;
+                        childColor.a = c.a;
 
-                    childMat.color = childColor;
+                        childMat.color = childColor;
+                    }
                 }                
             }
         }
