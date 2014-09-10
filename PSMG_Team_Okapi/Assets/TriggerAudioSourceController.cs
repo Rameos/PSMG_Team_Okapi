@@ -4,6 +4,7 @@ using System.Collections;
 public class TriggerAudioSourceController : MonoBehaviour {
 
     private GameObject player;
+    private bool hasPlayed = false;
 
     private void Start()
     {
@@ -13,11 +14,15 @@ public class TriggerAudioSourceController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject == player)
+        if (!hasPlayed)
         {
-            if(!audio.isPlaying)
+            if (col.gameObject == player)
             {
-                audio.Play();
+                if (!audio.isPlaying)
+                {
+                    audio.Play();
+                    hasPlayed = true;
+                }
             }
         }
     }
