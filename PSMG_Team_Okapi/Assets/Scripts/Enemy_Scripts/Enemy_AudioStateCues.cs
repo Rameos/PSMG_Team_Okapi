@@ -37,7 +37,8 @@ public class Enemy_AudioStateCues : MonoBehaviour {
     {
         if (angryCueClip != null && angryCueReady)
         {
-            StartCoroutine(AlertCueCooldown());
+            Debug.Log("angryCue");
+            //StartCoroutine(AlertCueCooldown());
             AudioSource.PlayClipAtPoint(angryCueClip, transform.position, 100.0f);
         }
     }
