@@ -27,11 +27,12 @@ public class InkubatorEnemy_GazeInteraction : MonoBehaviourWithGazeComponent {
         {
             Debug.Log("GazeEnter");
         }
+        OnEnemyGazeEntered();
     }
 
     public override void OnGazeStay(RaycastHit hit)
     {
-
+        OnEnemyGazeStay();
     }
 
     public override void OnGazeExit()
@@ -40,5 +41,6 @@ public class InkubatorEnemy_GazeInteraction : MonoBehaviourWithGazeComponent {
         {
             Debug.Log("GazeExit");
         }
+        OnEnemyGazeExited();
     }
 }
