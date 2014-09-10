@@ -74,25 +74,31 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
     private void UpdateTransparency()
     {
-        Color c = gameObject.renderer.material.color;
-        c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
-        gameObject.renderer.material.color = c;
+        //Color c = gameObject.renderer.material.color;
+        //c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
+        //gameObject.renderer.material.color = c;
 
-        for (int childIndex = 0; childIndex < gameObject.transform.childCount; childIndex++)
+        UpdateTransparencyInChildren(gameObject.transform);
+    }
+
+    private void UpdateTransparencyInChildren(Transform parent)
+    {
+        for (int childIndex = 0; childIndex < parent.childCount; childIndex++)
         {
-            Transform child = gameObject.transform.GetChild(childIndex);
+            Transform child = parent.GetChild(childIndex);
             Renderer childRenderer = child.gameObject.renderer;
 
             if (childRenderer != null)
             {
                 foreach (Material childMat in childRenderer.materials)
                 {
-                    Color childColor = childMat.color;
-                    childColor.a = c.a;
-
-                    childMat.color = childColor;
+                    Color c = childMat.color;
+                    c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
+                    childMat.color = c;
                 }
             }
+
+            UpdateTransparencyInChildren(child);
         }
     }
 }
