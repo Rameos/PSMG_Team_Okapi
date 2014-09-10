@@ -30,7 +30,7 @@ public class Light_Switch_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Input.GetKeyDown(KeyCode.F))
         {
             if (canPress)
             {
