@@ -21,9 +21,8 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
 	void Start () {
         currentDelta = becomeInvisibleDelta;
-        //enemy = gameObject.transform.parent.gameObject;
-        gazeInteraction = gameObject.GetComponentInChildren<InkubatorEnemy_GazeInteraction>();
 
+        gazeInteraction = gameObject.GetComponentInChildren<InkubatorEnemy_GazeInteraction>();
         gazeInteraction.OnEnemyGazeEntered += GazeEnter;
         gazeInteraction.OnEnemyGazeExited += GazeExit;
 	}
