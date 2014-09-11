@@ -1,30 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/*Formel gleichmäßig beschleunigte Bewegung (Geschwindigkeit-Zeit-Gesetz):
+
+v = a · t + v0
+"v" ist die Geschwindigkeit in Meter pro Sekunde [m/s]
+"a" ist die Beschleunigung in Meter pro Sekunde-Quadrat [ m/s2 ]
+"t" ist die Zeit in Sekunden [s]
+"v0" ist die Anfangsgeschwindigkeit in Meter pro Sekunde [ m/s ]*/
+
 public class Enemy_Behaviour : MonoBehaviour
 {
 
-    public Transform[] patrolpointsIdle; // reihe von waypoints
-    public Transform[] patrolpointsAlert; // enthält erstmal nur Spieler
-    private Transform[] patrolpoints;
+    public Transform[] patrolpointsIdle; // waypoints
+    private Transform[] patrolpointsAlert; // enthält nur Spieler
+    private Transform[] patrolpoints; // aktuell verwendete patrolpoints
 
-    public float idlespeed = 2; // geschwindigkeit wenn idle
-    public float alertspeed = 3; // geschwindigkeit wenn alert
-    public float angryspeed = 5; // geschwindigkeit wenn angry
-	private float startspeed;
-	private float targetspeed;
-	public float acceleration = 1f;
-	private int time;
-    private bool braking;
+    public float idlespeed = 1.00f; // geschwindigkeit wenn idle
+    public float alertspeed = 2.00f; // geschwindigkeit wenn alert
+    public float angryspeed = 3.00f; // geschwindigkeit wenn angry
 
     public float alertRadius = 12; // radius in dem spieler erkannt wird
     private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
-    public float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
-    public float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
+    private float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
+    private float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
+    private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
+
+    private float idleacceleration = 0.5f;
+    private float alertacceleration = 1;
+    private float angryacceleration = 1.5f;
+    private bool braking = false;
 
     private int currentpoint;
     private Vector3 homepoint;
@@ -36,24 +46,25 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");        
+        player = GameObject.FindGameObjectWithTag("Player");
         patrolpointsAlert = new Transform[1] { player.transform };
-       
         patrolpoints = patrolpointsIdle;
         currentpoint = 0;
 
         enemyState = gameObject.GetComponent<Enemy_States>();
         agent = gameObject.GetComponent<NavMeshAgent>();
 
-        targetspeed = idlespeed;
-        time = 0;
-        braking = false;
-
+        agent.speed = idlespeed;
         SetListeners();
     }
 
     void Update()
     {
+        print("speed: " + agent.speed);
+        print("braking: " + braking);
+        print("target distance: " + GetTargetDistance());
+        print("braking distance: " + CalcBrakeDistance());
+
         if (patrolpoints.Length > 0)
         {
             Rotate(agent.speed);
@@ -65,16 +76,17 @@ public class Enemy_Behaviour : MonoBehaviour
             case Enemy_States.State.idle:
                 CheckAlertRadius();
                 CheckEyeLine();
-                //Accelerate();
+                if (!braking)
+                {
+                    CheckShouldBrake();
+                }
                 break;
             case Enemy_States.State.alert:
                 CheckAngryRadius();
                 CheckReach();
-				//Accelerate();
                 break;
             case Enemy_States.State.angry:
                 CheckReach();
-				//Accelerate();
                 break;
         }
     }
@@ -97,10 +109,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
         if (Vector3.Angle(v1, v2) < 5 && GetPlayerDistance() <= eyereach) // if player in front of enemy
         {
-            //print("player was hit");
             enemyState.Alert();
         }
-
     }
 
     private void CheckReach() // überprüft ob Verfolgung abgebrochen werden kann
@@ -130,21 +140,16 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void Move() // überprüft ob aktuelles Ziel erreicht wurde und setzt ggf. neues Ziel
     {
-        if (GetTargetDistance() < 3.0f)
+        if (Util.GetDistance(transform.position, patrolpoints[currentpoint].position) < 3.0f)
         {
-            braking = false;
-            time = 0;
             currentpoint++;
             if (currentpoint >= patrolpoints.Length)
             {
                 currentpoint = 0;
             }
-        }
-
-        if (GetTargetDistance() < GetBrakeDistance())
-        {
-            braking = true;
-            time = 0;
+            braking = false;
+            StopCoroutine("Brake");
+            AccelerateToIdle();
         }
 
         agent.SetDestination(patrolpoints[currentpoint].position);
@@ -170,9 +175,91 @@ public class Enemy_Behaviour : MonoBehaviour
     private float GetPlayerDistance()
     {
         Vector3 enemyPosition = transform.position;
-        Vector3 playerPosition = player.transform.position;        
+        Vector3 playerPosition = player.transform.position;
 
         return Util.GetDistance(enemyPosition, playerPosition);
+    }
+
+
+    // dynamische Geschwindigkeit
+
+    private void AccelerateToAlert()
+    {
+        StartCoroutine(Accelerate(alertspeed, alertacceleration));
+    }
+
+    private void AccelerateToAngry()
+    {
+        StartCoroutine(Accelerate(angryspeed, angryacceleration));
+    }
+
+    private void BrakeToIdle()
+    {
+        StartCoroutine(FastBrake(idlespeed));
+    }
+
+    private void BrakeToStop()
+    {
+        StartCoroutine("Brake",0);
+    }
+
+    private void AccelerateToIdle()
+    {
+        StartCoroutine(Accelerate(idlespeed, idleacceleration));
+    }
+
+
+    IEnumerator Accelerate(float targetSpeed, float acceleration)
+    {
+        float startSpeed = agent.speed;
+        int time = 0;
+
+        while (agent.speed < targetSpeed)
+        {
+            yield return new WaitForSeconds(1);
+            agent.speed = acceleration * time * time + startSpeed;
+            time++;
+        }
+    }
+
+    IEnumerator Brake(float targetSpeed)
+    {
+        int time = 0;
+        float startSpeed = agent.speed;
+
+        while (agent.speed > targetSpeed)
+        {
+            yield return new WaitForSeconds(1);
+            agent.speed = startSpeed - idleacceleration * time * time;
+            time++;
+        }
+    }
+
+    IEnumerator FastBrake(float targetSpeed)
+    {
+        int time = 0;
+        float startSpeed = agent.speed;
+
+        while (agent.speed > targetSpeed)
+        {
+            yield return new WaitForSeconds(1);
+            agent.speed = startSpeed - angryacceleration * time * time;
+            time++;
+        }
+    }
+
+    private void CheckShouldBrake()
+    {
+        if (CalcBrakeDistance() >= GetTargetDistance())
+        {
+            braking = true;
+            BrakeToStop();
+        }
+    }
+
+    private float CalcBrakeDistance()
+    {
+        return ((agent.speed * agent.speed) / (2 * idleacceleration));
     }
 
     private float GetTargetDistance()
@@ -182,35 +269,6 @@ public class Enemy_Behaviour : MonoBehaviour
 
         return Util.GetDistance(enemyPosition, targetPosition);
     }
-
-    private float GetBrakeDistance()
-    {
-        return (agent.speed * agent.speed) / acceleration;
-    }
-
-    private void Brake()
-    {
-        agent.speed = Mathf.Max(startspeed - acceleration * time * time, 0);
-    }
-
-	private void Accelerate()
-	{
-        /*if (braking)
-        {
-            Brake();
-            return;
-        }*/
-
-		if(startspeed < targetspeed)
-		{
-			agent.speed = Mathf.Min(startspeed + acceleration * time * time, targetspeed);
-		}
-		else 
-		{
-			agent.speed = Mathf.Max(startspeed - acceleration * time * time, targetspeed);
-		}
-		time++;
-	}
 
     // state listeners
 
@@ -238,30 +296,30 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetIdleSpeed()
     {
-		startspeed = agent.speed;
-		targetspeed = idlespeed;
-        time = 0;
+        //agent.speed = idlespeed;
+        BrakeToIdle();
     }
 
     public void SetAlertSpeed()
     {
-		startspeed = agent.speed;
-		targetspeed = alertspeed;
-        time = 0;
+        //agent.speed = alertspeed;
+        AccelerateToAlert();
     }
 
     public void SetAngrySpeed()
     {
-        startspeed = agent.speed;
-		targetspeed = angryspeed;
-        time = 0;
+        //agent.speed = angryspeed;
+        AccelerateToAngry();
     }
 
     public void SetNoSpeed()
     {
-        startspeed = 0;
-		targetspeed = 0;
-        time = 0;
+        agent.speed = 0.00f;
+    }
+
+    public void SetFrozen()
+    {
+        agent.speed = 0.00f;
     }
 
     public void ResetCurrentpoint()
@@ -281,11 +339,8 @@ public class Enemy_Behaviour : MonoBehaviour
         enemyState.OnAlert += SetPatrolpointsAlert;
         enemyState.OnAlert += ResetCurrentpoint;
         enemyState.OnAlert += SetHomePoint;
-
         enemyState.OnAngry += SetAngrySpeed;
-
-        enemyState.OnFreeze += SetNoSpeed;
-
+        enemyState.OnFreeze += SetFrozen;
         enemyState.OnIdle += SetPatrolpointsIdle;
         enemyState.OnIdle += SetIdleSpeed;
     }
