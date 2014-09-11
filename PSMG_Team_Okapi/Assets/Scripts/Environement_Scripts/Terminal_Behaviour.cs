@@ -31,7 +31,7 @@ public class Terminal_Behaviour : MonoBehaviour {
         }
         gameObject.renderer.material = actMaterial;
 
-        if (Input.GetMouseButtonDown(0) && Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
         {
             if (canPlay)
             {
