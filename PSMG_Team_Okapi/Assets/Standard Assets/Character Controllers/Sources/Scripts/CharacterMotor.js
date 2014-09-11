@@ -3,7 +3,7 @@
 #pragma downcast
 
 // Does this script currently respond to input?
-var canControl : boolean = true;
+var inputEnabled : boolean = true;
 
 var useFixedUpdate : boolean = true;
 
@@ -337,7 +337,7 @@ function Update () {
 }
 
 private function ApplyInputVelocityChange (velocity : Vector3) {	
-	if (!canControl)
+    if (!inputEnabled)
 		inputMoveDirection = Vector3.zero;
 	
 	// Find desired velocity
@@ -373,7 +373,7 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 	}
 	// If we're in the air and don't have control, don't apply any velocity change at all.
 	// If we're on the ground and don't have control we do apply it - it will correspond to friction.
-	if (grounded || canControl)
+	if (grounded || inputEnabled)
 		velocity += velocityChangeVector;
 	
 	if (grounded) {
@@ -388,12 +388,12 @@ private function ApplyInputVelocityChange (velocity : Vector3) {
 
 private function ApplyGravityAndJumping (velocity : Vector3) {
 	
-	if (!inputJump || !canControl) {
+    if (!inputJump || !inputEnabled) {
 		jumping.holdingJumpButton = false;
 		jumping.lastButtonDownTime = -100;
 	}
 	
-	if (inputJump && jumping.lastButtonDownTime < 0 && canControl)
+    if (inputJump && jumping.lastButtonDownTime < 0 && inputEnabled)
 		jumping.lastButtonDownTime = Time.time;
 	
 	if (grounded)
@@ -422,7 +422,7 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 		// because players will often try to jump in the exact moment when hitting the ground after a jump
 		// and if they hit the button a fraction of a second too soon and no new jump happens as a consequence,
 		// it's confusing and it feels like the game is buggy.
-		if (jumping.enabled && canControl && (Time.time - jumping.lastButtonDownTime < 0.2)) {
+	    if (jumping.enabled && inputEnabled && (Time.time - jumping.lastButtonDownTime < 0.2)) {
 			grounded = false;
 			jumping.jumping = true;
 			jumping.lastStartTime = Time.time;
@@ -559,7 +559,7 @@ function GetDirection () {
 }
 
 function SetControllable (controllable : boolean) {
-	canControl = controllable;
+    inputEnabled = controllable;
 }
 
 // Project a direction onto elliptical quater segments based on forward, sideways, and backwards speed.

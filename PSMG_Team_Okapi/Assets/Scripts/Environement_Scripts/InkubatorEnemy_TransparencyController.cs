@@ -3,6 +3,9 @@ using System.Collections;
 
 public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
+    public delegate void InkubatorEnemyHandler();
+    public event InkubatorEnemyHandler OnInkubatorEnemyVisible = delegate { };
+    
     // negative == become invisible
     // positive == become visible
     public float currentDelta = 0.00f;
@@ -16,6 +19,8 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
     private bool gazeActive = false;
     private float endOfDecay = 0;
+
+    private float currentValue = 0;
 
     private InkubatorEnemy_GazeInteraction gazeInteraction;
 
@@ -44,6 +49,11 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
         else
         {
             DecreaseVisibility();
+        }
+
+        if (currentValue >= 0.7f)
+        {            
+            OnInkubatorEnemyVisible();
         }
     }
 
@@ -77,10 +87,10 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
         //c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
         //gameObject.renderer.material.color = c;
 
-        UpdateTransparencyInChildren(gameObject.transform);
+        UpdateTransparencyInChildren(gameObject.transform, false);
     }
 
-    private void UpdateTransparencyInChildren(Transform parent)
+    private void UpdateTransparencyInChildren(Transform parent, bool globalUpdated)
     {
         for (int childIndex = 0; childIndex < parent.childCount; childIndex++)
         {
@@ -94,10 +104,16 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
                     Color c = childMat.color;
                     c.a = Mathf.Min(Mathf.Max(c.a + currentDelta, transparencyMin), transparencyMax);
                     childMat.color = c;
+
+                    if (!globalUpdated)
+                    {
+                        currentValue = c.a;
+                        globalUpdated = true;
+                    }
                 }
             }
 
-            UpdateTransparencyInChildren(child);
+            UpdateTransparencyInChildren(child, globalUpdated);
         }
     }
 }
