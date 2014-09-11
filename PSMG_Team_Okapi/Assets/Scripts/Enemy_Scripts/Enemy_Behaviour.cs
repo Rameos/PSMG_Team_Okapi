@@ -25,8 +25,8 @@ public class Enemy_Behaviour : MonoBehaviour
     private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
 
     private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
-    private float maxPlayerDistance = 15; // Obergrenze des Abstands für die Verfolgung
-    private float minPlayerDistance = 13; // Untergrenze des Abstands für die Verfolgung
+    private float maxPlayerDistance = 20; // Obergrenze des Abstands für die Verfolgung
+    private float minPlayerDistance = 15; // Untergrenze des Abstands für die Verfolgung
 
     public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
     private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
@@ -60,8 +60,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Update()
     {
-        /*print("speed: " + agent.speed);
-        print("braking: " + braking);
+        print("speed: " + agent.speed);
+        /*print("braking: " + braking);
         print("target distance: " + GetTargetDistance());
         print("braking distance: " + CalcBrakeDistance());*/
 
@@ -185,33 +185,40 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private void AccelerateToAlert()
     {
-        StartCoroutine(Accelerate(alertspeed, alertacceleration));
+        float[] args = new float[] { alertspeed, alertacceleration };
+        StartCoroutine("Accelerate", args);
     }
 
     private void AccelerateToAngry()
     {
-        StartCoroutine(Accelerate(angryspeed, angryacceleration));
+        float[] args = new float[] { angryspeed, angryacceleration };
+        StartCoroutine("Accelerate", args);
     }
 
     private void BrakeToIdle()
     {
-        StartCoroutine(FastBrake(idlespeed));
+        float[] args = new float[]{idlespeed, angryacceleration};
+        StartCoroutine("Brake", args);
     }
 
     private void BrakeToStop()
     {
-        StartCoroutine("Brake",0);
+        float[] args = new float[] { 0, idleacceleration };
+        StartCoroutine("Brake", args);
     }
 
     private void AccelerateToIdle()
     {
-        StartCoroutine(Accelerate(idlespeed, idleacceleration));
+        float[] args = new float[] { idlespeed, idleacceleration };
+        StartCoroutine("Accelerate", args);
     }
 
 
-    IEnumerator Accelerate(float targetSpeed, float acceleration)
+    IEnumerator Accelerate(float[] args)
     {
         float startSpeed = agent.speed;
+        float targetSpeed = args[0];
+        float acceleration = args[1];
         int time = 0;
 
         while (agent.speed < targetSpeed)
@@ -222,15 +229,17 @@ public class Enemy_Behaviour : MonoBehaviour
         }
     }
 
-    IEnumerator Brake(float targetSpeed)
+    IEnumerator Brake(float[] args)
     {
         int time = 0;
         float startSpeed = agent.speed;
+        float targetSpeed = args[0];
+        float acceleration = args[1];
 
         while (agent.speed > targetSpeed)
         {
             yield return new WaitForSeconds(1);
-            agent.speed = startSpeed - idleacceleration * time * time;
+            agent.speed = startSpeed - acceleration * time * time;
             time++;
         }
     }
@@ -296,8 +305,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetIdleSpeed()
     {
-        //agent.speed = idlespeed;
-        BrakeToIdle();
+        agent.speed = idlespeed;
+        //BrakeToIdle();
     }
 
     public void SetAlertSpeed()
@@ -319,7 +328,10 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetFrozen()
     {
+        StopCoroutine("Brake");
+        StopCoroutine("Accelerate");
         agent.speed = 0;
+
     }
 
     public void ResetCurrentpoint()
