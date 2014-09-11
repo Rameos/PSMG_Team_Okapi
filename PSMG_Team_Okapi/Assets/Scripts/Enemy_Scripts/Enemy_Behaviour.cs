@@ -60,10 +60,10 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Update()
     {
-        print("speed: " + agent.speed);
+        /*print("speed: " + agent.speed);
         print("braking: " + braking);
         print("target distance: " + GetTargetDistance());
-        print("braking distance: " + CalcBrakeDistance());
+        print("braking distance: " + CalcBrakeDistance());*/
 
         if (patrolpoints.Length > 0)
         {
@@ -319,7 +319,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     public void SetFrozen()
     {
-        agent.speed = 0.00f;
+        agent.speed = 0;
     }
 
     public void ResetCurrentpoint()
