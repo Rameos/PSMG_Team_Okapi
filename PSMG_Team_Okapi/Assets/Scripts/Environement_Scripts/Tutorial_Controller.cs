@@ -11,6 +11,9 @@ public class Tutorial_Controller : MonoBehaviour {
 
     private InkubatorEnemy_TransparencyController[] inkubatorEnemyControllers;
 
+    public delegate void PowerOffEventHandler();
+    public event PowerOffEventHandler OnPowerFalloff;
+
     public bool debug = false;
 
 	// Use this for initialization
@@ -55,6 +58,8 @@ public class Tutorial_Controller : MonoBehaviour {
                 StartCoroutine(PlayTTS(1, State.postFinished));
                 break;
             case State.postFinished:
+                Debug.Log("postFinished");
+                OnPowerFalloff();
                 break;
         }        
     }
