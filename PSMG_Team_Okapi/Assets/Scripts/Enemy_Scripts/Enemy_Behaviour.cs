@@ -36,6 +36,8 @@ public class Enemy_Behaviour : MonoBehaviour
     private float angryacceleration = 1.5f;
     private bool braking = false;
 
+    private bool frozen = false;
+
     private int currentpoint;
     private Vector3 homepoint;
 
@@ -65,7 +67,7 @@ public class Enemy_Behaviour : MonoBehaviour
         print("target distance: " + GetTargetDistance());
         print("braking distance: " + CalcBrakeDistance());*/
 
-        if (patrolpoints.Length > 0)
+        if (patrolpoints.Length > 0 && !frozen)
         {
             Rotate(agent.speed);
             Move();
@@ -294,7 +296,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     IEnumerator Schrecksekunde()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         SetAlertSpeed();
     }
 
@@ -312,6 +314,7 @@ public class Enemy_Behaviour : MonoBehaviour
     public void SetAlertSpeed()
     {
         //agent.speed = alertspeed;
+        frozen = false;
         AccelerateToAlert();
     }
 
@@ -330,6 +333,7 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         StopCoroutine("Brake");
         StopCoroutine("Accelerate");
+        frozen = true;
         agent.speed = 0;
 
     }
