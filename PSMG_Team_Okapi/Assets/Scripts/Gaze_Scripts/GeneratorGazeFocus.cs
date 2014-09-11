@@ -6,6 +6,7 @@ public class GeneratorGazeFocus : MonoBehaviourWithGazeComponent {
 
     public float fadeSpeed = 0.3f;
     public bool debug = false;
+    public float waitTime;
 
     private bool endingSequenceFinished = false;
     private bool fadeOutStarted = false;
@@ -36,6 +37,7 @@ public class GeneratorGazeFocus : MonoBehaviourWithGazeComponent {
         if (endingSequenceFinished && !fadeOutStarted)
         {
             fadeOutStarted = true;
+          
 
             GlobalEvents.OnScreenFadeOutComplete += delegate
             {
@@ -65,7 +67,7 @@ public class GeneratorGazeFocus : MonoBehaviourWithGazeComponent {
     {
         Debug.Log("Starting Ending Sequence!");        
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(waitTime);
 
         endingSequenceFinished = true;
     }
