@@ -23,7 +23,7 @@ public class PauseController : MonoBehaviour {
                 {
                     if (!instance)
                     {
-                        Debug.LogError("Couldn't find ScreenFader");
+                        Debug.LogError("Couldn't find PuaseController");
                     }
                 }
             }
