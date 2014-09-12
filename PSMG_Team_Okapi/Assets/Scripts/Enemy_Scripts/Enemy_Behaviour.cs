@@ -1,15 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-/*Formel gleichmäßig beschleunigte Bewegung (Geschwindigkeit-Zeit-Gesetz):
-
-v = a · t + v0
-"v" ist die Geschwindigkeit in Meter pro Sekunde [m/s]
-"a" ist die Beschleunigung in Meter pro Sekunde-Quadrat [ m/s2 ]
-"t" ist die Zeit in Sekunden [s]
-"v0" ist die Anfangsgeschwindigkeit in Meter pro Sekunde [ m/s ]*/
-
 public class Enemy_Behaviour : MonoBehaviour
 {
 
@@ -228,7 +219,7 @@ public class Enemy_Behaviour : MonoBehaviour
         while (agent.speed < targetSpeed)
         {
             yield return new WaitForSeconds(1);
-            agent.speed = acceleration * time * time + startSpeed;
+            agent.speed = Mathf.Min((acceleration * time * time + startSpeed),targetSpeed);
             time++;
         }
     }
@@ -243,7 +234,7 @@ public class Enemy_Behaviour : MonoBehaviour
         while (agent.speed > targetSpeed)
         {
             yield return new WaitForSeconds(1);
-            agent.speed = startSpeed - acceleration * time * time;
+            agent.speed = Mathf.Max((startSpeed - acceleration * time * time),targetSpeed);
             time++;
         }
     }
