@@ -18,6 +18,7 @@ public class GameOverHandler : MonoBehaviour {
 
         reloadAfterScreenFadeOut = true;
         ScreenFader.Instance.FadeToBlack();
+        AudioFader.Instance.FadeOut();
     }
 
     private void OnScreenFadeOutComplete()
