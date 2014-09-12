@@ -55,7 +55,6 @@ public class AudioFader : MonoBehaviour {
         {
             print("volume:" + AudioListener.volume);
         }
-        print("volume:" + AudioListener.volume);
         if (fading)
         {
             CalcFadedColor();
