@@ -63,7 +63,8 @@ public class Enemy_Behaviour : MonoBehaviour
 
     void Update()
     {
-        print("speed: " + agent.speed);
+        //print("speed: " + agent.speed);
+
         /*print("braking: " + braking);
         print("target distance: " + GetTargetDistance());
         print("braking distance: " + CalcBrakeDistance());*/

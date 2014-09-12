@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AudioFader : MonoBehaviour {
 
-    public float fadeSpeed = 20f;
+    public float fadeSpeed = 2f;
     public bool debug = false;
 
     private bool fading = true;
@@ -51,7 +51,11 @@ public class AudioFader : MonoBehaviour {
 
     void Update()
     {
-        print(AudioListener.volume);
+        if (debug)
+        {
+            print("volume:" + AudioListener.volume);
+        }
+        print("volume:" + AudioListener.volume);
         if (fading)
         {
             CalcFadedColor();
@@ -61,13 +65,17 @@ public class AudioFader : MonoBehaviour {
 
     public void FadeOut()
     {
+        if (debug)
+        {
+            print("start Audio Fadeout");
+        }
         StartFading(0);
     }
 
 
     public void FadeIn()
     {
-        StartFading(100);
+        StartFading(1);
     }
 
 
