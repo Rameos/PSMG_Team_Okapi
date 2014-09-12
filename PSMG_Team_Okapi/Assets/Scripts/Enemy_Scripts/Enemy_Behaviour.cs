@@ -219,7 +219,7 @@ public class Enemy_Behaviour : MonoBehaviour
         while (agent.speed < targetSpeed)
         {
             yield return new WaitForSeconds(1);
-            agent.speed = Mathf.Min((acceleration * time * time + startSpeed),targetSpeed);
+            agent.speed = Mathf.Min((acceleration * time + startSpeed),targetSpeed);
             time++;
         }
     }
@@ -234,20 +234,7 @@ public class Enemy_Behaviour : MonoBehaviour
         while (agent.speed > targetSpeed)
         {
             yield return new WaitForSeconds(1);
-            agent.speed = Mathf.Max((startSpeed - acceleration * time * time),targetSpeed);
-            time++;
-        }
-    }
-
-    IEnumerator FastBrake(float targetSpeed)
-    {
-        int time = 0;
-        float startSpeed = agent.speed;
-
-        while (agent.speed > targetSpeed)
-        {
-            yield return new WaitForSeconds(1);
-            agent.speed = startSpeed - angryacceleration * time * time;
+            agent.speed = Mathf.Max((startSpeed - acceleration * time),targetSpeed);
             time++;
         }
     }
@@ -263,7 +250,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     private float CalcBrakeDistance()
     {
-        return ((agent.speed * agent.speed) / (2 * idleacceleration));
+        return ((agent.speed * agent.speed) / (2 * idleacceleration))+2;
     }
 
     private float GetTargetDistance()
