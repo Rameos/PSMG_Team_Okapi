@@ -1,0 +1,1106 @@
+fileFormatVersion: 2
+guid: 8c9f387362bd28d4d8f47b5894252c95
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmsDown
+    100002: ArmsDown_001
+    100004: ArmsJunction
+    100006: ArmsJunction_001
+    100008: ArmsMiddle
+    100010: ArmsMiddle_001
+    100012: ArmsSpike
+    100014: ArmsSpike_001
+    100016: BodyFive
+    100018: BodyFour
+    100020: BodyOne
+    100022: BodySix
+    100024: BodyThree
+    100026: BodyTwo
+    100028: Foot
+    100030: Foot_001
+    100032: HeadPiece
+    100034: LeghsTwo_
+    100036: LeghsTwo__001
+    100038: LegsFour
+    100040: LegsFour_001
+    100042: LegsOne
+    100044: LegsOne_001
+    100046: LegsThree
+    100048: LegsThree_001
+    100050: //RootNode
+    100052: TriforceDown
+    100054: TriforceLeft
+    100056: TriforceMiddle
+    100058: TriforceRight
+    400000: ArmsDown
+    400002: ArmsDown_001
+    400004: ArmsJunction
+    400006: ArmsJunction_001
+    400008: ArmsMiddle
+    400010: ArmsMiddle_001
+    400012: ArmsSpike
+    400014: ArmsSpike_001
+    400016: BodyFive
+    400018: BodyFour
+    400020: BodyOne
+    400022: BodySix
+    400024: BodyThree
+    400026: BodyTwo
+    400028: Foot
+    400030: Foot_001
+    400032: HeadPiece
+    400034: LeghsTwo_
+    400036: LeghsTwo__001
+    400038: LegsFour
+    400040: LegsFour_001
+    400042: LegsOne
+    400044: LegsOne_001
+    400046: LegsThree
+    400048: LegsThree_001
+    400050: //RootNode
+    400052: TriforceDown
+    400054: TriforceLeft
+    400056: TriforceMiddle
+    400058: TriforceRight
+    2300000: ArmsDown
+    2300002: ArmsDown_001
+    2300004: ArmsJunction
+    2300006: ArmsJunction_001
+    2300008: ArmsMiddle
+    2300010: ArmsMiddle_001
+    2300012: ArmsSpike
+    2300014: ArmsSpike_001
+    2300016: BodyFive
+    2300018: BodyFour
+    2300020: BodyOne
+    2300022: BodySix
+    2300024: BodyThree
+    2300026: BodyTwo
+    2300028: Foot
+    2300030: Foot_001
+    2300032: HeadPiece
+    2300034: LeghsTwo_
+    2300036: LeghsTwo__001
+    2300038: LegsFour
+    2300040: LegsFour_001
+    2300042: LegsOne
+    2300044: LegsOne_001
+    2300046: LegsThree
+    2300048: LegsThree_001
+    2300050: TriforceDown
+    2300052: TriforceLeft
+    2300054: TriforceMiddle
+    2300056: TriforceRight
+    3300000: ArmsDown
+    3300002: ArmsDown_001
+    3300004: ArmsJunction
+    3300006: ArmsJunction_001
+    3300008: ArmsMiddle
+    3300010: ArmsMiddle_001
+    3300012: ArmsSpike
+    3300014: ArmsSpike_001
+    3300016: BodyFive
+    3300018: BodyFour
+    3300020: BodyOne
+    3300022: BodySix
+    3300024: BodyThree
+    3300026: BodyTwo
+    3300028: Foot
+    3300030: Foot_001
+    3300032: HeadPiece
+    3300034: LeghsTwo_
+    3300036: LeghsTwo__001
+    3300038: LegsFour
+    3300040: LegsFour_001
+    3300042: LegsOne
+    3300044: LegsOne_001
+    3300046: LegsThree
+    3300048: LegsThree_001
+    3300050: TriforceDown
+    3300052: TriforceLeft
+    3300054: TriforceMiddle
+    3300056: TriforceRight
+    4300000: TriforceLeft
+    4300002: TriforceMiddle
+    4300004: TriforceDown
+    4300006: TriforceRight
+    4300008: HeadPiece
+    4300010: ArmsJunction_001
+    4300012: ArmsDown_001
+    4300014: ArmsSpike_001
+    4300016: ArmsMiddle_001
+    4300018: ArmsSpike
+    4300020: ArmsMiddle
+    4300022: ArmsDown
+    4300024: ArmsJunction
+    4300026: LegsFour_001
+    4300028: LegsThree_001
+    4300030: LeghsTwo__001
+    4300032: LegsOne_001
+    4300034: Foot_001
+    4300036: LeghsTwo_
+    4300038: LegsThree
+    4300040: LegsFour
+    4300042: LegsOne
+    4300044: Foot
+    4300046: BodyTwo
+    4300048: BodyThree
+    4300050: BodyFour
+    4300052: BodyFive
+    4300054: BodySix
+    4300056: BodyOne
+    6400000: ArmsDown
+    6400002: ArmsDown_001
+    6400004: ArmsJunction
+    6400006: ArmsJunction_001
+    6400008: ArmsMiddle
+    6400010: ArmsMiddle_001
+    6400012: ArmsSpike
+    6400014: ArmsSpike_001
+    6400016: BodyFive
+    6400018: BodyFour
+    6400020: BodyOne
+    6400022: BodySix
+    6400024: BodyThree
+    6400026: BodyTwo
+    6400028: Foot
+    6400030: Foot_001
+    6400032: HeadPiece
+    6400034: LeghsTwo_
+    6400036: LeghsTwo__001
+    6400038: LegsFour
+    6400040: LegsFour_001
+    6400042: LegsOne
+    6400044: LegsOne_001
+    6400046: LegsThree
+    6400048: LegsThree_001
+    6400050: TriforceDown
+    6400052: TriforceLeft
+    6400054: TriforceMiddle
+    6400056: TriforceRight
+    7400000: scyth_agressive-frozen
+    7400002: scyth_frozen-alert
+    7400004: scyth_alert-agressive
+    7400006: scyth_agressive-idle
+    7400008: scyth_idle-alert
+    7400010: scyth_alert-idle
+    7400012: scyth_idle
+    7400014: scyth_alert
+    7400016: Default Takescyth_agressive
+    7400018: scyth_frozen
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: scyth_agressive-frozen
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_frozen-alert
+      takeName: Default Take
+      firstFrame: 50
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_alert-agressive
+      takeName: Default Take
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_agressive-idle
+      takeName: Default Take
+      firstFrame: 130
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_idle-alert
+      takeName: Default Take
+      firstFrame: 170
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_alert-idle
+      takeName: Default Take
+      firstFrame: 210
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_idle
+      takeName: Default Take
+      firstFrame: 160
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_alert
+      takeName: Default Take
+      firstFrame: 200
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Default Takescyth_agressive
+      takeName: Default Take
+      firstFrame: 120
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: scyth_frozen
+      takeName: Default Take
+      firstFrame: 40
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmsDown
+        weight: 1
+      - path: ArmsDown_001
+        weight: 1
+      - path: ArmsJunction
+        weight: 1
+      - path: ArmsJunction_001
+        weight: 1
+      - path: ArmsMiddle
+        weight: 1
+      - path: ArmsMiddle_001
+        weight: 1
+      - path: ArmsSpike
+        weight: 1
+      - path: ArmsSpike_001
+        weight: 1
+      - path: BodyFive
+        weight: 1
+      - path: BodyFour
+        weight: 1
+      - path: BodyOne
+        weight: 1
+      - path: BodySix
+        weight: 1
+      - path: BodyThree
+        weight: 1
+      - path: BodyTwo
+        weight: 1
+      - path: Foot
+        weight: 1
+      - path: Foot_001
+        weight: 1
+      - path: HeadPiece
+        weight: 1
+      - path: LeghsTwo_
+        weight: 1
+      - path: LeghsTwo__001
+        weight: 1
+      - path: LegsFour
+        weight: 1
+      - path: LegsFour_001
+        weight: 1
+      - path: LegsOne
+        weight: 1
+      - path: LegsOne_001
+        weight: 1
+      - path: LegsThree
+        weight: 1
+      - path: LegsThree_001
+        weight: 1
+      - path: TriforceDown
+        weight: 1
+      - path: TriforceLeft
+        weight: 1
+      - path: TriforceMiddle
+        weight: 1
+      - path: TriforceRight
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
