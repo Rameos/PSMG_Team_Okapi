@@ -6,6 +6,7 @@ public class LevelLoader : MonoBehaviour {
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
+        Screen.showCursor = false;
     }
 
     public static void LoadNextLevel()
