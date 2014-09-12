@@ -5,10 +5,12 @@ public class Enemy_AudioStateCues : MonoBehaviour {
 
     public AudioClip alertCueClip;
     public AudioClip angryCueClip;
+    public AudioClip frozenCueClip;
     public float alertCueCooldownSec = 5;
 
     private bool alertCueReady = true;
     private bool angryCueReady = true;
+    private bool frozenCueReady = true;
 
     private Enemy_States enemyState;    
 
@@ -17,6 +19,7 @@ public class Enemy_AudioStateCues : MonoBehaviour {
         enemyState = gameObject.GetComponent<Enemy_States>();
         enemyState.OnAlert += PlayAlertCue;
         enemyState.OnAngry += PlayAngryCue;
+        enemyState.OnFreeze += PlayFrozenCue;
 	}
 	
 	// Update is called once per frame
@@ -37,9 +40,15 @@ public class Enemy_AudioStateCues : MonoBehaviour {
     {
         if (angryCueClip != null && angryCueReady)
         {
-            Debug.Log("angryCue");
-            //StartCoroutine(AlertCueCooldown());
             AudioSource.PlayClipAtPoint(angryCueClip, transform.position, 100.0f);
+        }
+    }
+
+    private void PlayFrozenCue()
+    {
+        if(frozenCueClip != null && frozenCueReady)
+        {
+            AudioSource.PlayClipAtPoint(frozenCueClip, transform.position, 100.0f);
         }
     }
 

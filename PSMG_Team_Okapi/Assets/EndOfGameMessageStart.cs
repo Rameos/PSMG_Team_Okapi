@@ -21,9 +21,10 @@ public class EndOfGameMessageStart : MonoBehaviour {
     private void OnActivateSwitch(GameObject obj)
 
     {
+       // Debug.Log("TEXT");
        // if (obj == associatedSwitch)
-        {
+        
             audio.Play();
-        }
+        
     }
 }

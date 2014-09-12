@@ -7,7 +7,9 @@ public class Player_Status  : MonoBehaviour
     public MovementState movementState = MovementState.none;
 
     private float vertAxis;
-    private float horizAxis;    
+    private float horizAxis;
+
+    public bool inputEnabled = true;
 
     public List<GameObject> enemiesChasing;
 
@@ -18,6 +20,11 @@ public class Player_Status  : MonoBehaviour
 
     void Update()
     {
+        if (!inputEnabled)
+        {
+            setState("none");
+            return;
+        }
 
         vertAxis = Input.GetAxis("Vertical");
         horizAxis = Input.GetAxis("Horizontal");

@@ -296,7 +296,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     IEnumerator Schrecksekunde()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         SetAlertSpeed();
     }
 
