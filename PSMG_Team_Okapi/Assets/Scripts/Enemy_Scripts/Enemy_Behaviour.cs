@@ -31,9 +31,10 @@ public class Enemy_Behaviour : MonoBehaviour
     public float angryRadius = 8; // Abstand zum Spieler, bei der Geist angry wird
     private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
 
-    private float idleacceleration = 0.5f;
-    private float alertacceleration = 1;
-    private float angryacceleration = 1.5f;
+    public float idleacceleration = 0.5f;
+    public float alertacceleration = 1;
+    public float angryacceleration = 1.5f;
+    public float pauselength = 0;
     private bool braking = false;
 
     private bool frozen = false;
@@ -292,11 +293,12 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         SetNoSpeed();
         StartCoroutine(Schrecksekunde());
+        //SetAlertSpeed();
     }
 
     IEnumerator Schrecksekunde()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(pauselength);
         SetAlertSpeed();
     }
 
