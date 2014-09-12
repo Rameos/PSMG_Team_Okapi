@@ -1,0 +1,32 @@
+Unser Protagonist ist ein Wissenschaftler der in einer Unterirdischen Anlage Paranormale Phänomene untersucht. Ere ist jedoch nicht der erste Wissenschaftler. An terminals an den Wänden lassen sich Logeinträge von vorhergenden Wissenschaftlern finden.
+
+Wie jeden Tag begibt sich unser Wissenschaftler in sein Labor. Die Kalibrierung des Eyetrackers kann hier überprüft werden.
+
+In den Inkubatoren befinden sich die sogenannten Scyth. Sie sind das Hauptproblem unseres Protagonisten. wie wir sehen, sehen wir meistens nichts. Sie lassen sich sichtbar machen durch direkten Blickkontakt.
+
+Durch diesen Stromausfall sind wir gezwungen uns in den Generatorraum zu begeben um den Schaden zu beheben. Der Generatorraum liegt zwei Stockwerke tiefer.
+
+Durch Türsteuerungen können verschlossene Türen geöffnet werden.
+
+Wie es aussieht sind einige Gefahren unterwegs. Wie wir vorhin schon gesehen haben werden die Scyth durch direketen Augenkontakt sichtbar und nach einiger zeit auch unbeweglich. Der Spieler verträgt nur wenige solcher Attacken bevor er stirbt.
+
+Nun sind wir auf der Suche nach dem Ausgang ins nächsttiefere Stockwerk.
+
+Der Ausgang ist verschlossen. Auf jedem Stock befindet sich glücklicherweise eine zentrale Türsteuerung.
+
+Jetzt ist der Ausgang offen und wir können in das nächste Level gehen.
+
+
+Jetzt ist der Spieler data Center. Der Weg zu Generator liegt direkt hinter der nächsten Tür. Also muss wieder eine Türsteuerung gefunden werden. Allerdings hat diese Tür eine höhere Sicherheitsstufe. Wir suchen eine bestimmte Türsteuerung in einem Archiv.
+
+Auf dieser Ebene sind mehrere Teile Des Levels nicht zugänglich. Über eine erste türsteuerung kann ein großteil der Türen geöffnet werden. Jetzt Ist der Zugang zum Archiv frei. Wir müssen es nur noch finden.
+
+in einigen Nischen kann der Spieler  sich verkrichen. Die Scyth sind manchmal zu breit um ihn dorthin zu verfolgen. Man kann sie jetzt unbeweglich machen. Allerdings nimmt man immer noch bei jeder Berührung schaden.
+
+Jetzt Ist die Tür offen und wir können zum Generator laufen.
+
+Anscheinend ist direkt vor dem Ausgang noch ein Scyth aufgetaucht.
+
+Wir sind am Ziel. Jetzt muss nur noch der Generator eingeschaltet werden.
+
+Und das wars.
