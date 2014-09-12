@@ -93,6 +93,7 @@ public class MainMenu : MonoBehaviour {
                         Application.LoadLevel("Level_one");
                     };
                     ScreenFader.Instance.FadeToBlack();
+                    AudioFader.Instance.FadeOut();
                     break;
                 case 1:
                     Application.Quit();

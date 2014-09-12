@@ -19,6 +19,7 @@ public class NextLevelScript : MonoBehaviour {
 
         GlobalEvents.OnScreenFadeOutComplete += OnScreenFadeOutComplete;
         ScreenFader.Instance.FadeToBlack();
+        AudioFader.Instance.FadeOut();
     }
 
     void OnScreenFadeOutComplete()

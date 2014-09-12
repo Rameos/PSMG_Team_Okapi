@@ -17,23 +17,24 @@ public class Enemy_Behaviour : MonoBehaviour
     private Transform[] patrolpointsAlert; // enthält nur Spieler
     private Transform[] patrolpoints; // aktuell verwendete patrolpoints
 
-    public float idlespeed = 1.00f; // geschwindigkeit wenn idle
-    public float alertspeed = 2.00f; // geschwindigkeit wenn alert
-    public float angryspeed = 3.00f; // geschwindigkeit wenn angry
+    public float idlespeed; // geschwindigkeit wenn idle
+    public float alertspeed; // geschwindigkeit wenn alert
+    public float angryspeed; // geschwindigkeit wenn angry
 
-    public float alertRadius = 12; // radius in dem spieler erkannt wird
+    public float alertRadius = 20; // radius in dem spieler erkannt wird
     private float eyereach = 16; // sichtweite des gegners (sollte gleich Sichtweite des Spielers sein)
 
-    private float maxStartDistance = 20; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
-    private float maxPlayerDistance = 20; // Obergrenze des Abstands für die Verfolgung
-    private float minPlayerDistance = 15; // Untergrenze des Abstands für die Verfolgung
+    private float maxStartDistance = 40; // maximale Entfernung zwischen Startpunkt und Geist bevor minPlayerReach erreicht wird
+    private float maxPlayerDistance = 30; // Obergrenze des Abstands für die Verfolgung
+    private float minPlayerDistance = 25; // Untergrenze des Abstands für die Verfolgung
 
-    public float angryRadius = 6; // Abstand zum Spieler, bei der Geist angry wird
+    public float angryRadius = 8; // Abstand zum Spieler, bei der Geist angry wird
     private float freezetime = 10; // zeit, die gegner eingefroren bleiben soll
 
-    private float idleacceleration = 0.5f;
-    private float alertacceleration = 1;
-    private float angryacceleration = 1.5f;
+    public float idleacceleration = 0.5f;
+    public float alertacceleration = 1;
+    public float angryacceleration = 1.5f;
+    public float pauselength = 0;
     private bool braking = false;
 
     private bool frozen = false;
@@ -292,11 +293,12 @@ public class Enemy_Behaviour : MonoBehaviour
     {
         SetNoSpeed();
         StartCoroutine(Schrecksekunde());
+        //SetAlertSpeed();
     }
 
     IEnumerator Schrecksekunde()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(pauselength);
         SetAlertSpeed();
     }
 
