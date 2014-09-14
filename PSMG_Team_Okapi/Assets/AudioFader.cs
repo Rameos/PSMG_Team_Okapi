@@ -34,7 +34,7 @@ public class AudioFader : MonoBehaviour {
     {
         if (EnvironmentVars.restartFromEnding)
         {
-            guiTexture.color = Color.white;
+            //guiTexture.color = Color.white;
         }
     }
 
