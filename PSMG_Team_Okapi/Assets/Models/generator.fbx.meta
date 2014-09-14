@@ -93,7 +93,7 @@ ModelImporter:
     7400026: Circle|Torus.001Action
     7400028: Circle|Torus.002Action
     7400030: Circle|TorusAction.001
-    7400032: Default Take
+    7400032: GeneratorAnimation
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -113,7 +113,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
+      name: GeneratorAnimation
       takeName: Default Take
       firstFrame: 0
       lastFrame: 59

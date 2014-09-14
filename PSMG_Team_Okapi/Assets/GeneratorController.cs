@@ -22,7 +22,7 @@ public class GeneratorController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        animation["Default Take"].speed = 0;
+        animation["GeneratorAnimation"].speed = 0;
         animation.wrapMode = WrapMode.Loop;
 
         Transform mychildtransform = transform.FindChild("Point light");
@@ -50,7 +50,7 @@ public class GeneratorController : MonoBehaviour {
     {
         if (isOn)
         {
-            animation["Default Take"].speed = Mathf.Lerp(animation["Default Take"].speed, animationSpeed, Time.deltaTime * speed);
+            animation["GeneratorAnimation"].speed = Mathf.Lerp(animation["GeneratorAnimation"].speed, animationSpeed, Time.deltaTime * speed);
             //Debug.Log(animation["Default Take"].speed);
 
             light.light.intensity = Mathf.Lerp(light.light.intensity, lightBrightness, Time.deltaTime * speed);
@@ -67,7 +67,7 @@ public class GeneratorController : MonoBehaviour {
             }
         }else
         {
-            animation["Default Take"].speed = 0;
+            animation["GeneratorAnimation"].speed = 0;
             light.light.intensity = 0;
             light.light.range = 0;
             flare.brightness = 0;
