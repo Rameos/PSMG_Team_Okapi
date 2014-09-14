@@ -52,6 +52,8 @@ public class Enemy_SpawnTrigger : MonoBehaviour {
     {
         // Debug.Log("Spawning");
         Transform newEnemy = (Transform) Instantiate(enemy, spawnpoint.position, Quaternion.identity);
-        //newEnemy.GetComponent<Enemy_Behaviour>().patrolpointsIdle = patrolpoints;
+        Transform[] patrolPointsTemp = newEnemy.GetComponent<Enemy_Behaviour>().patrolpointsIdle;
+        patrolPointsTemp = patrolpoints;
+        newEnemy.GetComponent<Enemy_Behaviour>().patrolpointsIdle = patrolPointsTemp;
     }
 }
