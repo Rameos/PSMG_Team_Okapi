@@ -125,21 +125,20 @@ public class Enemy_TransparencyController : MonoBehaviour {
         for (int childIndex = 0; childIndex < gameObject.transform.childCount; childIndex++)
         {
             Transform child = gameObject.transform.GetChild(childIndex);
-            Renderer childRenderer = child.gameObject.renderer;
-
-            if (childRenderer != null)
+            if (child.gameObject.GetComponent("ParticleSystem") == null)
             {
-                foreach (Material childMat in childRenderer.materials)
+                Renderer childRenderer = child.gameObject.renderer;
+
+                if (childRenderer != null)
                 {
-                    if (childMat.color != null)
+                    foreach (Material childMat in childRenderer.materials)
                     {
-                        //Debug.Log(childMat.color);
                         Color childColor = childMat.color;
                         childColor.a = c.a;
 
                         childMat.color = childColor;
                     }
-                }                
+                }
             }
         }
     }
