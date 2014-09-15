@@ -30,4 +30,10 @@ public class GameOverHandler : MonoBehaviour {
             LevelLoader.ReloadCurrentLevel();
         }
     }
+
+    void OnDestroy()
+    {
+        GlobalEvents.OnPlayerDeath -= OnPlayerDeath;
+        GlobalEvents.OnScreenFadeOutComplete -= OnScreenFadeOutComplete;
+    }
 }
