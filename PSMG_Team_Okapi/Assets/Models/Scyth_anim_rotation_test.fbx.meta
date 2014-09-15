@@ -730,7 +730,7 @@ ModelImporter:
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 30
+      cycleOffset: 100
       loop: 0
       loopTime: 1
       loopBlend: 0
@@ -816,7 +816,7 @@ ModelImporter:
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 30
+      cycleOffset: 100
       loop: 0
       loopTime: 1
       loopBlend: 0
@@ -902,7 +902,7 @@ ModelImporter:
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 30
+      cycleOffset: 100
       loop: 0
       loopTime: 1
       loopBlend: 0
