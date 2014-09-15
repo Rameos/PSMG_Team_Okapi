@@ -88,10 +88,7 @@ public class MainMenu : MonoBehaviour {
             switch (selectedIndex)
             {
                 case 0:
-                    GlobalEvents.OnScreenFadeOutComplete += delegate
-                    {
-                        Application.LoadLevel("Level_one");
-                    };
+                    GlobalEvents.OnScreenFadeOutComplete += OnScreenFadeOutComplete;
                     ScreenFader.Instance.FadeToBlack();
                     AudioFader.Instance.FadeOut();
                     break;
@@ -100,5 +97,15 @@ public class MainMenu : MonoBehaviour {
                     break;
             }
         }
+    }
+
+    private void OnScreenFadeOutComplete()
+    {
+        Application.LoadLevel("Level_one");
+    }
+
+    void OnDestroy()
+    {
+        GlobalEvents.OnScreenFadeOutComplete -= OnScreenFadeOutComplete;
     }
 }
