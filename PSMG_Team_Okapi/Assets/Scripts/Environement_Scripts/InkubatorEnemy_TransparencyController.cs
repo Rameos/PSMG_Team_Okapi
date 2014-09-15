@@ -5,7 +5,9 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
     public delegate void InkubatorEnemyHandler();
     public event InkubatorEnemyHandler OnInkubatorEnemyVisible = delegate { };
-    
+
+    public bool isActive = false;
+
     // negative == become invisible
     // positive == become visible
     public float currentDelta = 0.00f;
@@ -40,6 +42,11 @@ public class InkubatorEnemy_TransparencyController : MonoBehaviour {
 
     private void UpdateRates()
     {
+        if (!isActive)
+        {
+            return;
+        }
+
         float currentTime = Time.fixedTime;
 
         if (gazeActive || endOfDecay >= currentTime)

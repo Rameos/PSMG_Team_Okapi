@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using iViewX;
 
 public class Tutorial_Controller : MonoBehaviour {
 
@@ -91,6 +92,7 @@ public class Tutorial_Controller : MonoBehaviour {
     {
         foreach (InkubatorEnemy_TransparencyController controller in inkubatorEnemyControllers)
         {
+            controller.isActive = true;
             controller.OnInkubatorEnemyVisible += OnInkubatorEnemyVisible;
         }
     }
@@ -106,6 +108,7 @@ public class Tutorial_Controller : MonoBehaviour {
     private IEnumerator Calibration()
     {
         // start eye tracker calibration
+        GazeControlComponent.Instance.StartCalibration();
 
         yield return new WaitForSeconds(3);
 
