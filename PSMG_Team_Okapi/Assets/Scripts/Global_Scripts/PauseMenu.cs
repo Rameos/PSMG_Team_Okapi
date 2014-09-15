@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using iViewX;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -30,7 +31,7 @@ public class PauseMenu : MonoBehaviour {
 
     private void PositionGUITexts()
     {
-        int[] yOffsets = { 40, 0, -40 };
+        int[] yOffsets = { 40, 0, -40, -80 };
 
         for (int i = 0; i < guiTexts.Length; i++)
         {
@@ -92,6 +93,10 @@ public class PauseMenu : MonoBehaviour {
                     PauseController.Instance.UnPause();
                     break;
                 case 2:
+                    GazeControlComponent.Instance.StartCalibration();
+                    PauseController.Instance.UnPause();
+                    break;
+                case 3:
                     Application.Quit();
                     break;
             }
