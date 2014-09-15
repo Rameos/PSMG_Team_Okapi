@@ -97,7 +97,10 @@ public class PauseMenu : MonoBehaviour {
                     PauseController.Instance.UnPause();
                     break;
                 case 3:
-                    Application.Quit();
+                    Debug.Log("clicked");
+                    GlobalEvents.OnScreenFadeOutComplete += OnScreenFadeOutComplete;
+                    ScreenFader.Instance.FadeToBlack();
+                    PauseController.Instance.UnPause();
                     break;
             }
         }
@@ -122,10 +125,16 @@ public class PauseMenu : MonoBehaviour {
         SetMenuEnabled(false);
     }
 
+    private void OnScreenFadeOutComplete()
+    {
+        Application.LoadLevel("main_menu");
+    }
+
     void OnDestroy()
     {
         // Remove delegates from previous world instance
         GlobalEvents.OnPause -= EnableMenu;
         GlobalEvents.OnUnPause -= DisableMenu;
+        GlobalEvents.OnScreenFadeOutComplete -= OnScreenFadeOutComplete;
     }
 }
