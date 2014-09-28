@@ -101,7 +101,7 @@ public class MainMenu : MonoBehaviour {
 
     private void OnScreenFadeOutComplete()
     {
-        Application.LoadLevel("Level_one");
+        LevelLoader.LoadLevel("Level_one");
     }
 
     void OnDestroy()

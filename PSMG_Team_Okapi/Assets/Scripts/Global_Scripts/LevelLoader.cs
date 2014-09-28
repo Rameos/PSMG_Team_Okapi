@@ -15,6 +15,7 @@ public class LevelLoader : MonoBehaviour {
 
         if (nextLevelIndex < Application.levelCount)
         {
+            GlobalEvents.Reset();
             Application.LoadLevel(nextLevelIndex);
         }
         else
@@ -25,16 +26,19 @@ public class LevelLoader : MonoBehaviour {
 
     public static void ReloadCurrentLevel()
     {
+        GlobalEvents.Reset();
         Application.LoadLevel(Application.loadedLevel);
     }
 
     public static void LoadLevel(int index)
     {
+        GlobalEvents.Reset();
         Application.LoadLevel(index);
     }
 
     public static void LoadLevel(string name)
     {
+        GlobalEvents.Reset();
         Application.LoadLevel(name);
     }
 }

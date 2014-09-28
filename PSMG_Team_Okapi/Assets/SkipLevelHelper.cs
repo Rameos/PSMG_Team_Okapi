@@ -33,7 +33,7 @@ public class SkipLevelHelper : MonoBehaviour {
 
     private void OnFadeOutComplete()
     {
-        Application.LoadLevel(levelName);
+        LevelLoader.LoadLevel(levelName);
     }
 
     void OnDestroy()

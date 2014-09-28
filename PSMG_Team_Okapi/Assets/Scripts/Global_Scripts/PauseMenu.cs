@@ -127,7 +127,7 @@ public class PauseMenu : MonoBehaviour {
 
     private void OnScreenFadeOutComplete()
     {
-        Application.LoadLevel("main_menu");
+        LevelLoader.LoadLevel("main_menu");
     }
 
     void OnDestroy()

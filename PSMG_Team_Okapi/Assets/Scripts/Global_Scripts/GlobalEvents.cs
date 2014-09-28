@@ -14,7 +14,17 @@ public class GlobalEvents : MonoBehaviour {
 
     public static event DefaultEventHandler OnPause = delegate { };
     public static event DefaultEventHandler OnUnPause = delegate { };
-
+    
+    public static void Reset()
+    {
+        OnPlayerDeath = delegate { };
+        OnScreenFadeInComplete = delegate { };
+        OnScreenFadeOutComplete = delegate { };
+        OnAudioFadeInComplete = delegate { };
+        OnAudioFadeOutComplete = delegate { };
+        OnPause = delegate { };
+        OnUnPause = delegate { };
+    }
 
     // Triggers
 

@@ -24,7 +24,7 @@ public class NextLevelScript : MonoBehaviour {
 
     void OnScreenFadeOutComplete()
     {
-        Application.LoadLevel(nextLevel);
+        LevelLoader.LoadLevel(nextLevel);
     }
 
     void OnDestroy()

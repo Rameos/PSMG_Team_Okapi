@@ -47,7 +47,7 @@ public class GeneratorGazeFocus : MonoBehaviourWithGazeComponent {
                 }
 
                 EnvironmentVars.restartFromEnding = true;
-                Application.LoadLevel("main_menu");                
+                LevelLoader.LoadLevel("main_menu");
             };
 
             ScreenFader.Instance.fadeSpeed = fadeSpeed;
