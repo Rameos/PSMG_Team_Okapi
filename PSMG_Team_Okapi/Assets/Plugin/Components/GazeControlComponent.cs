@@ -119,6 +119,8 @@ namespace iViewX
 
         void Awake()
         {
+            GameObject[] etDriver = GameObject.FindGameObjectsWithTag("EyeTracking");
+            Debug.Log("ETDriverCount: " + etDriver.Length);
             if (!instance)
             {
                 instance = this;
@@ -127,15 +129,21 @@ namespace iViewX
 
                 instance.initEyeThread();
                 instance.startEyeThread();
-
-
             }
             else
             {
                 Destroy(gameObject);
             }
+        }
 
+        void Start()
+        {
+            GameObject obj = GameObject.Find("EyeTrackingScripts");
 
+            if(obj != null && obj != this.gameObject)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
 
@@ -145,6 +153,7 @@ namespace iViewX
         /// </summary>
         void Update()
         {
+            DontDestroyOnLoad(this.gameObject);
 
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
             if (gazeModel.isEyeTrackerRunning)
