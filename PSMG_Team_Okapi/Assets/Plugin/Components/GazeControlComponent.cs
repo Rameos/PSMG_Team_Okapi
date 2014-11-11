@@ -34,6 +34,8 @@ namespace iViewX
         {
             get
             {
+                Debug.Log("get");
+
                 if (!instance)
                 {
                     instance = (GazeControlComponent)FindObjectOfType(typeof(GazeControlComponent));
@@ -123,15 +125,22 @@ namespace iViewX
             Debug.Log("ETDriverCount: " + etDriver.Length);
             if (!instance)
             {
+                Debug.Log(gameObject);
                 instance = this;
-                DontDestroyOnLoad(gameObject);
-                gazeController = new GazeController();
+             
+                //DontDestroyOnLoad(gameObject);
+                if (gazeController == null)
+                {
+                    gazeController = new GazeController();
+                }
+               
 
                 instance.initEyeThread();
                 instance.startEyeThread();
             }
             else
             {
+                Debug.Log("else");
                 Destroy(gameObject);
             }
         }
@@ -142,7 +151,9 @@ namespace iViewX
 
             if(obj != null && obj != this.gameObject)
             {
-                Destroy(this.gameObject);
+                Debug.Log("existing EyeTrackingScripts: " + obj);
+
+               Destroy(this.gameObject);
             }
         }
 
@@ -153,7 +164,7 @@ namespace iViewX
         /// </summary>
         void Update()
         {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
 
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
             if (gazeModel.isEyeTrackerRunning)
@@ -184,6 +195,11 @@ namespace iViewX
             instance.joinEyeThread();
         }
 
+        void OnDestroy()
+        {
+            //gazeController.finish();
+            instance.joinEyeThread();
+        }
 
         /// <summary>
         /// Enable Raycasts from the Gazeposition everyFrame 
